@@ -1,0 +1,43 @@
+{
+  "name": "content-hierarchy",
+  "title": "Content Hierarchy Optimization",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": [
+    "content",
+    "hierarchy",
+    "information-architecture",
+    "trust"
+  ],
+  "useWhen": [
+    "Homepage repeats project details",
+    "Pages feel long but say little",
+    "Critical content is buried"
+  ],
+  "avoidWhen": [
+    "Filling negative space with text",
+    "Removing credibility proof",
+    "Hiding emergency or operational info"
+  ],
+  "inputs": [
+    "Page text",
+    "User goal brief",
+    "Trust evidence",
+    "Call to action priority"
+  ],
+  "outputs": [
+    "Reorganize content table",
+    "Revised copy outline",
+    "CTA placement roadmap",
+    "Trust credentials structure"
+  ],
+  "recommendedWith": [
+    "design-me",
+    "portfolio-ux",
+    "automotive-ux",
+    "healthcare-ux"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Reduces repetition and reorganizes content around trust, evidence, understanding, and action."
+}

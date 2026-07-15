@@ -1,0 +1,41 @@
+{
+  "name": "component-refactor",
+  "title": "Component Refactoring",
+  "version": "1.0.0",
+  "category": "architecture",
+  "tags": [
+    "refactoring",
+    "components",
+    "css",
+    "clean-code"
+  ],
+  "useWhen": [
+    "One component controls the entire homepage",
+    "Project-specific CSS is scattered",
+    "Magic numbers exist"
+  ],
+  "avoidWhen": [
+    "Over-abstracting one-off editorial layouts",
+    "Refactoring unrelated backend code during visual fixes"
+  ],
+  "inputs": [
+    "Legacy component files",
+    "Markup structure",
+    "CSS rule locations",
+    "Component state data"
+  ],
+  "outputs": [
+    "Refactored component code",
+    "Props contract details",
+    "Cleaned styles",
+    "State separation map"
+  ],
+  "recommendedWith": [
+    "media-fit-specialist",
+    "visual-qa-agent",
+    "interaction-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Refactors brittle page code into reusable, testable, data-driven components."
+}

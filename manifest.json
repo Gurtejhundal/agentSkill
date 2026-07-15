@@ -1,0 +1,62 @@
+{
+  "name": "website-agent-skills-repo",
+  "version": "1.1.0",
+  "description": "Specialist AI-agent skills for website design, frontend implementation, responsive optimization, motion engineering, quality assurance, accessibility, SEO, backend preservation, and deployment verification.",
+  "documentation": "docs/index.html",
+  "skillsCount": 24,
+  "categories": [
+    "strategy",
+    "responsive",
+    "motion",
+    "architecture",
+    "domain-ux",
+    "quality-delivery"
+  ],
+  "skills": [
+    "3d-animation",
+    "accessibility-auditor",
+    "asset-optimizer",
+    "automotive-ux",
+    "backend-admin-preserver",
+    "codebase-recon",
+    "component-refactor",
+    "content-hierarchy",
+    "deployment-verifier",
+    "design-me",
+    "design-system-extractor",
+    "designer-mobile",
+    "healthcare-ux",
+    "interaction-qa-agent",
+    "media-fit-specialist",
+    "motion-architect",
+    "performance-optimizer",
+    "portfolio-ux",
+    "route-transition-designer",
+    "scroll-systems-engineer",
+    "seo-local-search",
+    "typography-director",
+    "ux-conversion-strategist",
+    "visual-qa-agent"
+  ],
+  "workflows": [
+    "full-website-audit.md",
+    "mobile-reconstruction.md",
+    "cinematic-motion.md",
+    "route-transition.md",
+    "portfolio-workflow.md",
+    "automotive-workflow.md",
+    "healthcare-workflow.md",
+    "release-gate.md"
+  ],
+  "examples": [
+    "house-of-details",
+    "bibi-kaulan-hospital",
+    "gurtejbir-portfolio"
+  ],
+  "schemas": [
+    "schemas/skill.schema.json",
+    "schemas/audit-report.schema.json",
+    "schemas/workflow.schema.json",
+    "schemas/completion-report.schema.json"
+  ]
+}

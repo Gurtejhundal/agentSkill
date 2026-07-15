@@ -1,0 +1,42 @@
+{
+  "name": "3d-animation",
+  "title": "Purposeful 3D Animation",
+  "version": "1.0.0",
+  "category": "motion",
+  "tags": [
+    "3d",
+    "webgl",
+    "animation",
+    "threejs"
+  ],
+  "useWhen": [
+    "A product needs spatial explanation",
+    "A car, object, or interface benefits from depth",
+    "A hero requires an interactive 3D reveal"
+  ],
+  "avoidWhen": [
+    "Simple hover effects",
+    "Decorative spinning logos",
+    "Sites without a performance budget"
+  ],
+  "inputs": [
+    "Brand assets",
+    "3D models",
+    "WebGL library configuration",
+    "Performance budgets"
+  ],
+  "outputs": [
+    "3D scene specification",
+    "Mobile fallback asset",
+    "Reduced-motion stylesheet",
+    "Performance metrics"
+  ],
+  "recommendedWith": [
+    "performance-optimizer",
+    "asset-optimizer",
+    "designer-mobile"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Designs restrained, performant 3D interactions with explicit mobile and reduced-motion fallbacks."
+}

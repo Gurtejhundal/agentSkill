@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual QA Auditing — Website Agent Skills</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body style="background-color: #f3f0e8; color: #11110f; font-family: Inter, Arial, Helvetica, sans-serif; padding: 2rem 0;">
+  <main class="container" role="main">
+    <div style="margin-bottom: 2rem; border-bottom: 1px solid rgba(17, 17, 15, 0.14); padding-bottom: 1rem;">
+      <a href="../../index.html#skill/visual-qa-agent" id="back-link" style="color: #78172f; font-weight: 700; text-decoration: underline;">&larr; Back to skill explorer</a>
+    </div>
+    
+    <article>
+      <header>
+        <span style="font-size: 0.8rem; text-transform: uppercase; color: #78172f; font-weight: 700;" id="skill-name">agents/visual-qa-agent</span>
+        <h1 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">Visual QA Auditing</h1>
+        <p style="font-size: 1.1rem; color: #66635d; margin-bottom: 2rem;" id="skill-description">Performs screenshot-based visual regression testing across routes, breakpoints, and animation states.</p>
+      </header>
+
+      <section class="skill-markdown" style="margin-bottom: 3rem;">
+        <h1>visual-qa-agent</h1>
+<h2>Trigger</h2>
+<p>Use after significant visual implementation.</p>
+<h2>Mission</h2>
+<p>Prove whether implementation matches the specification rather than trusting code completion.</p>
+<h2>Mandatory Inspection</h2>
+<p>Target screenshots, routes, viewport matrix, animation states, fixed controls, overlays, and known defects.</p>
+<h2>Workflow</h2>
+<ol>
+<li>Capture baseline.</li>
+<li>Capture after changes.</li>
+<li>Compare layout, type, spacing, crop, and controls.</li>
+<li>Capture initial, middle, and final motion states.</li>
+<li>Flag regressions.</li>
+<li>Repeat until criteria pass.</li>
+</ol>
+<h2>Guardrails</h2>
+<ul>
+<li>Do not approve based on build success.</li>
+<li>Do not test only desktop.</li>
+<li>Do not use one screenshot for a scroll-driven section.</li>
+</ul>
+<h2>Deliverables</h2>
+<ul>
+<li>Screenshot matrix</li>
+<li>Visual defect list</li>
+<li>Pass/fail report</li>
+<li>Before/after evidence</li>
+<li>Remaining differences</li>
+</ul>
+<h2>Acceptance Criteria</h2>
+<ol>
+<li>Required viewports are covered.</li>
+<li>Each route is captured.</li>
+<li>Critical interaction states are captured.</li>
+<li>Fixed controls remain stable.</li>
+<li>No new overflow or clipping appears.</li>
+</ol>
+<h2>Handoff</h2>
+<p>Return failures to the responsible implementation agent and then use <code>interaction-qa-agent</code>.</p>
+
+      </section>
+
+      <section class="skill-examples" id="examples-section" style="border-top: 1px solid rgba(17, 17, 15, 0.14); padding-top: 2rem; margin-bottom: 3rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Examples</h2>
+        <h1>Visual QA Auditing Examples</h1>
+<h2>Simple Request</h2>
+<p>Use <code>visual-qa-agent</code> to use visual-qa-agent to capture screenshots at different breakpoints.</p>
+<h2>Advanced Request</h2>
+<p>Use <code>visual-qa-agent</code> to use visual-qa-agent to record 1440px and 390px layouts during scroll triggers, checking project card scaling.</p>
+<h2>Incorrect Use</h2>
+<p>Do not use <code>visual-qa-agent</code> to do not use visual-qa-agent to test backend form validation scripts.</p>
+<h2>Multi-Agent Workflow Example</h2>
+<pre><code class="language-text">Use designer-mobile to modify layout, visual-qa-agent to capture screenshots across 5 viewports, and interaction-qa-agent to test click targets.
+</code></pre>
+
+      </section>
+    </article>
+  </main>
+</body>
+</html>

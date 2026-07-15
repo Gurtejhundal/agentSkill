@@ -1,0 +1,41 @@
+{
+  "name": "ux-conversion-strategist",
+  "title": "UX Conversion Strategy",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": [
+    "conversion",
+    "cro",
+    "cta",
+    "trust"
+  ],
+  "useWhen": [
+    "The site looks good but users do not know what to do",
+    "Contact is buried",
+    "Too many CTAs compete"
+  ],
+  "avoidWhen": [
+    "Putting a CTA in every section",
+    "Asking for commitment before establishing trust"
+  ],
+  "inputs": [
+    "Conversion goals",
+    "Contact points",
+    "User concerns",
+    "Evidence assets"
+  ],
+  "outputs": [
+    "CTA layout rules",
+    "Trust placement specifications",
+    "Friction reduction plan",
+    "Mobile actions list"
+  ],
+  "recommendedWith": [
+    "automotive-ux",
+    "healthcare-ux",
+    "portfolio-ux"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Optimizes trust, evidence, CTA hierarchy, and conversion paths."
+}

@@ -1,0 +1,41 @@
+{
+  "name": "route-transition-designer",
+  "title": "Route Transition Design",
+  "version": "1.0.0",
+  "category": "motion",
+  "tags": [
+    "routing",
+    "transitions",
+    "navigation",
+    "shared-elements"
+  ],
+  "useWhen": [
+    "The transition is only a fade",
+    "A generic curtain looks cheap",
+    "Navigation unmounts between pages"
+  ],
+  "avoidWhen": [
+    "Adding unrelated center lines",
+    "Fake loading percentages",
+    "Breaking modified clicks or external links"
+  ],
+  "inputs": [
+    "Route architecture",
+    "Persistent shared element selectors",
+    "Source and destination geometry"
+  ],
+  "outputs": [
+    "Route lifecycle config",
+    "Page transition styles",
+    "Morph geometry values",
+    "Back/Forward handler"
+  ],
+  "recommendedWith": [
+    "motion-architect",
+    "interaction-qa-agent",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Creates premium page transitions rooted in persistent navigation and shared elements."
+}

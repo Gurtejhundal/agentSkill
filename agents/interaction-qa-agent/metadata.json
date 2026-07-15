@@ -1,0 +1,40 @@
+{
+  "name": "interaction-qa-agent",
+  "title": "Interaction QA Auditing",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "interaction-qa",
+    "gestures",
+    "clicks",
+    "modals"
+  ],
+  "useWhen": [
+    "After navigation changes",
+    "Route transitions",
+    "Bottom nav updates",
+    "Forms and lightboxes"
+  ],
+  "avoidWhen": [
+    "Assuming visible elements work",
+    "Letting swipes trigger accidental navigation",
+    "Ignoring browser back/forward"
+  ],
+  "inputs": [
+    "Nav link paths",
+    "Interactions list",
+    "Keyboard flow targets"
+  ],
+  "outputs": [
+    "Interaction matrix results",
+    "Browser back/forward report",
+    "Console logs audit"
+  ],
+  "recommendedWith": [
+    "accessibility-auditor",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Tests clicks, taps, keyboard actions, scrolling, drawers, modals, routes, and external links."
+}

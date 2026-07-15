@@ -1,0 +1,40 @@
+{
+  "name": "healthcare-ux",
+  "title": "Healthcare UX Design",
+  "version": "1.0.0",
+  "category": "domain-ux",
+  "tags": [
+    "healthcare",
+    "hospital",
+    "opd",
+    "appointments"
+  ],
+  "useWhen": [
+    "Designing clinics, hospital websites, or medical directories"
+  ],
+  "avoidWhen": [
+    "Adding entertainment-style motion to critical tasks",
+    "Hard-coding admin content",
+    "Reducing text readability"
+  ],
+  "inputs": [
+    "OPD timings",
+    "Doctor listings",
+    "Departments info",
+    "Emergency call numbers"
+  ],
+  "outputs": [
+    "Emergency quick links",
+    "OPD schedules layout",
+    "Doctor search design",
+    "Bilingual Punjabi/English targets"
+  ],
+  "recommendedWith": [
+    "accessibility-auditor",
+    "backend-admin-preserver",
+    "designer-mobile"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Designs trustworthy hospital experiences with clear emergency, doctor, OPD, and appointment flows."
+}

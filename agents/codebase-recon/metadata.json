@@ -1,0 +1,39 @@
+{
+  "name": "codebase-recon",
+  "title": "Codebase Reconnaissance",
+  "version": "1.0.0",
+  "category": "architecture",
+  "tags": [
+    "codebase",
+    "inspection",
+    "route-map",
+    "dependencies"
+  ],
+  "useWhen": [
+    "First time inspecting the codebase",
+    "Before beginning major component refactors",
+    "Understanding data flows and builds"
+  ],
+  "avoidWhen": [
+    "Modifying code during inspection unless explicitly requested"
+  ],
+  "inputs": [
+    "Repository path",
+    "Live domain",
+    "Vercel configuration"
+  ],
+  "outputs": [
+    "Route mapping table",
+    "CSS token list",
+    "Framework version audit",
+    "Risk assessment report"
+  ],
+  "recommendedWith": [
+    "component-refactor",
+    "visual-qa-agent",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Maps an unfamiliar website codebase before design or implementation begins."
+}

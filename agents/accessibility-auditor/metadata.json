@@ -1,0 +1,41 @@
+{
+  "name": "accessibility-auditor",
+  "title": "Accessibility Auditing",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "accessibility",
+    "wcag",
+    "keyboard",
+    "focus"
+  ],
+  "useWhen": [
+    "Before every production release",
+    "For hospital websites",
+    "After adding drawers, menus, or modals"
+  ],
+  "avoidWhen": [
+    "Relying only on automated testing tools",
+    "Removing focus outlines to improve aesthetic look"
+  ],
+  "inputs": [
+    "Web page routes",
+    "Components list",
+    "Color codes",
+    "Tab index layouts"
+  ],
+  "outputs": [
+    "Keyboard tab matrix",
+    "Color contrast overrides",
+    "Focus trap code fixes",
+    "Reduced motion stylesheet"
+  ],
+  "recommendedWith": [
+    "interaction-qa-agent",
+    "healthcare-ux",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Audits keyboard, focus, semantics, contrast, motion, touch, and assistive-technology behavior."
+}

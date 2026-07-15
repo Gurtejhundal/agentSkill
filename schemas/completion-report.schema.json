@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Completion Report Schema",
+  "type": "object",
+  "required": [
+    "rootCause",
+    "changesMade",
+    "filesChanged",
+    "breakpointsTested",
+    "interactionsTested",
+    "accessibility",
+    "performance",
+    "productionStatus",
+    "remainingLimitations"
+  ],
+  "properties": {
+    "rootCause": {
+      "type": "string"
+    },
+    "changesMade": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "filesChanged": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "breakpointsTested": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interactionsTested": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accessibility": {
+      "type": "string"
+    },
+    "performance": {
+      "type": "string"
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "productionStatus": {
+      "type": "string"
+    },
+    "remainingLimitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedNextSkill": {
+      "type": "string"
+    }
+  }
+}

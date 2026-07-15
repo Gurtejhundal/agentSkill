@@ -1,0 +1,42 @@
+{
+  "name": "motion-architect",
+  "title": "Motion Architecture",
+  "version": "1.0.0",
+  "category": "motion",
+  "tags": [
+    "motion",
+    "animation",
+    "gsap",
+    "transitions"
+  ],
+  "useWhen": [
+    "Animations feel random",
+    "Every section uses a different effect",
+    "Entrance order lacks hierarchy"
+  ],
+  "avoidWhen": [
+    "Hiding poor static composition",
+    "Animating every character on a page",
+    "Creating long artificial delays"
+  ],
+  "inputs": [
+    "Static designs",
+    "Easing tokens",
+    "Animation timelines",
+    "Responsive requirements"
+  ],
+  "outputs": [
+    "Motion guidelines",
+    "Animation duration tokens",
+    "Timeline selectors",
+    "Reduced-motion fallbacks"
+  ],
+  "recommendedWith": [
+    "scroll-systems-engineer",
+    "route-transition-designer",
+    "visual-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Creates a coherent motion language for entrances, reveals, parallax, hover, and cinematic transitions."
+}

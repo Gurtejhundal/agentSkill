@@ -1,0 +1,41 @@
+{
+  "name": "typography-director",
+  "title": "Typography Direction",
+  "version": "1.0.0",
+  "category": "responsive",
+  "tags": [
+    "typography",
+    "fonts",
+    "fluid-type",
+    "multilingual"
+  ],
+  "useWhen": [
+    "Fonts feel cheap",
+    "Punjabi and English do not match",
+    "Headings overflow or wrap awkwardly"
+  ],
+  "avoidWhen": [
+    "Using multiple decorative fonts in one identity",
+    "Ignoring fallback layout shift"
+  ],
+  "inputs": [
+    "Font names",
+    "Screenshots",
+    "Multilingual text samples",
+    "Target breakpoints"
+  ],
+  "outputs": [
+    "Font pairings",
+    "Fluid sizing tokens",
+    "Tracking and leading specs",
+    "Font fallback overrides"
+  ],
+  "recommendedWith": [
+    "design-system-extractor",
+    "designer-mobile",
+    "performance-optimizer"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Builds responsive, multilingual typography systems with correct hierarchy and optical balance."
+}

@@ -1,0 +1,41 @@
+{
+  "name": "backend-admin-preserver",
+  "title": "Backend & Admin Preservation",
+  "version": "1.0.0",
+  "category": "architecture",
+  "tags": [
+    "backend",
+    "django",
+    "cms",
+    "database"
+  ],
+  "useWhen": [
+    "Doctors or timings come from admin",
+    "Redesign may hard-code existing data"
+  ],
+  "avoidWhen": [
+    "Replacing backend content with static arrays",
+    "Breaking old records",
+    "Changing fields without migrations"
+  ],
+  "inputs": [
+    "Backend schemas",
+    "Django settings",
+    "API consumption hooks",
+    "Form models"
+  ],
+  "outputs": [
+    "Database compatibility report",
+    "Model field mapping",
+    "Admin test verification",
+    "API integrations validation"
+  ],
+  "recommendedWith": [
+    "healthcare-ux",
+    "component-refactor",
+    "interaction-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Protects CMS, Django Admin, database, and editable content flows during redesigns."
+}

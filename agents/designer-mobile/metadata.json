@@ -1,0 +1,40 @@
+{
+  "name": "designer-mobile",
+  "title": "Mobile Design Reconstruction",
+  "description": "Reconstructs desktop experiences for mobile without cropping, shrinking, or deleting core behavior.",
+  "version": "1.0.0",
+  "category": "responsive",
+  "tags": [
+    "mobile",
+    "responsive",
+    "touch",
+    "layout"
+  ],
+  "useWhen": [
+    "Cards fill the mobile screen",
+    "Desktop animations disappear on mobile",
+    "Fixed controls overlap content"
+  ],
+  "avoidWhen": [
+    "The problem is only a broken production deployment"
+  ],
+  "inputs": [
+    "Repository",
+    "Live URL",
+    "Mobile screenshots",
+    "Target breakpoints"
+  ],
+  "outputs": [
+    "Mobile layout specification",
+    "Responsive type scale",
+    "Breakpoint behavior",
+    "QA screenshots"
+  ],
+  "recommendedWith": [
+    "typography-director",
+    "scroll-systems-engineer",
+    "visual-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md"
+}

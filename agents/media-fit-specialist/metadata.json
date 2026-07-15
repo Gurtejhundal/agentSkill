@@ -1,0 +1,41 @@
+{
+  "name": "media-fit-specialist",
+  "title": "Media Fit Specialization",
+  "version": "1.0.0",
+  "category": "responsive",
+  "tags": [
+    "images",
+    "cropping",
+    "aspect-ratio",
+    "cards"
+  ],
+  "useWhen": [
+    "Portrait assets are forced into landscape cards",
+    "Titles are cropped",
+    "Images stretch or blur"
+  ],
+  "avoidWhen": [
+    "Applying one global object-fit rule",
+    "Stretching artwork to fit a container"
+  ],
+  "inputs": [
+    "Asset list",
+    "Container aspect ratios",
+    "Image focal points",
+    "Card components"
+  ],
+  "outputs": [
+    "Object-fit properties",
+    "Object-position values",
+    "Responsive card media configs",
+    "Crop guidelines"
+  ],
+  "recommendedWith": [
+    "asset-optimizer",
+    "designer-mobile",
+    "visual-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Fits mixed-ratio artwork into cards without stretching, severe crop, or exposed artboards."
+}

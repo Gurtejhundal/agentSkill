@@ -1,0 +1,43 @@
+{
+  "name": "design-me",
+  "title": "Creative Design Audit",
+  "description": "Audits and redesigns websites while preserving the strongest parts of their identity.",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": [
+    "design",
+    "creative-direction",
+    "audit"
+  ],
+  "useWhen": [
+    "The entire page looks generic",
+    "The hierarchy feels wrong",
+    "The user wants a redesign",
+    "Several sections need coordinated improvement"
+  ],
+  "avoidWhen": [
+    "A single broken link",
+    "A deployment mismatch",
+    "A narrowly isolated image-crop problem"
+  ],
+  "inputs": [
+    "Live URL",
+    "Screenshots",
+    "Business goal",
+    "Desired personality",
+    "Reference websites"
+  ],
+  "outputs": [
+    "Design audit",
+    "Prioritized defects",
+    "Revised section architecture",
+    "Design tokens"
+  ],
+  "recommendedWith": [
+    "design-system-extractor",
+    "designer-mobile",
+    "content-hierarchy"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md"
+}

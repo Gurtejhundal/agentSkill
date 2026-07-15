@@ -1,0 +1,42 @@
+{
+  "name": "deployment-verifier",
+  "title": "Deployment Verification",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "deployment",
+    "vercel",
+    "domain",
+    "production"
+  ],
+  "useWhen": [
+    "Live and local differ",
+    "Vercel preview and production differ",
+    "Build succeeded but behavior is wrong"
+  ],
+  "avoidWhen": [
+    "Assuming local build equals production",
+    "Trusting one stale fetch",
+    "Declaring fixed without checking live URL"
+  ],
+  "inputs": [
+    "Production domain",
+    "Expected commit ID",
+    "Git branch",
+    "Vercel preview link"
+  ],
+  "outputs": [
+    "Build and runtime logs audit",
+    "Production status report",
+    "Alias configuration check",
+    "Cache status check"
+  ],
+  "recommendedWith": [
+    "accessibility-auditor",
+    "interaction-qa-agent",
+    "visual-qa-agent"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Verifies Git branch, production deployment, domain alias, logs, cache, and live-site behavior."
+}

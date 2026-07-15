@@ -1,0 +1,42 @@
+{
+  "name": "performance-optimizer",
+  "title": "Performance Optimization",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "performance",
+    "speed",
+    "lighthouse",
+    "rendering"
+  ],
+  "useWhen": [
+    "Scroll stutters",
+    "Mobile feels delayed",
+    "Images are heavy",
+    "WebGL or blur operations are expensive"
+  ],
+  "avoidWhen": [
+    "Removing core design details without measuring",
+    "Optimizing only Lighthouse while ignoring interaction lag"
+  ],
+  "inputs": [
+    "Performance baseline metrics",
+    "Animation loops",
+    "Bundle asset sizes",
+    "Mobile target test devices"
+  ],
+  "outputs": [
+    "RAF loop cleanups",
+    "Filters and blur optimizations",
+    "Loading strategy",
+    "Before/after performance comparisons"
+  ],
+  "recommendedWith": [
+    "asset-optimizer",
+    "scroll-systems-engineer",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Improves loading, rendering, animation, and mobile runtime performance without degrading design."
+}

@@ -1,0 +1,40 @@
+{
+  "name": "automotive-ux",
+  "title": "Automotive UX Design",
+  "version": "1.0.0",
+  "category": "domain-ux",
+  "tags": [
+    "automotive",
+    "detailing",
+    "ceramic-coating",
+    "booking"
+  ],
+  "useWhen": [
+    "Designing automotive detailing studios",
+    "Structuring ceramic coating or PPF page layouts"
+  ],
+  "avoidWhen": [
+    "Applying generic gold luxury styling",
+    "Showing cars without local context or proof"
+  ],
+  "inputs": [
+    "Services list",
+    "Package prices",
+    "Studio location",
+    "Before/after media"
+  ],
+  "outputs": [
+    "Service comparison cards",
+    "Before/after gallery configs",
+    "WhatsApp booking integrations",
+    "Brand colors selection"
+  ],
+  "recommendedWith": [
+    "ux-conversion-strategist",
+    "designer-mobile",
+    "seo-local-search"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Designs premium automotive detailing websites around trust, craftsmanship, proof, and booking intent."
+}

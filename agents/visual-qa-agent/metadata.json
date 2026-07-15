@@ -1,0 +1,41 @@
+{
+  "name": "visual-qa-agent",
+  "title": "Visual QA Auditing",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "visual-qa",
+    "screenshots",
+    "regression",
+    "breakpoints"
+  ],
+  "useWhen": [
+    "After any redesign",
+    "Mobile changes",
+    "Typography changes",
+    "Scroll animation updates"
+  ],
+  "avoidWhen": [
+    "Approve based on build success only",
+    "Testing only desktop screens",
+    "Capture only one screenshot of animation"
+  ],
+  "inputs": [
+    "Target breakpoints",
+    "Scroll states to capture",
+    "Baseline references"
+  ],
+  "outputs": [
+    "Viewport screenshot matrix",
+    "Layout regression report",
+    "State comparison charts"
+  ],
+  "recommendedWith": [
+    "designer-mobile",
+    "motion-architect",
+    "scroll-systems-engineer"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Performs screenshot-based visual regression testing across routes, breakpoints, and animation states."
+}

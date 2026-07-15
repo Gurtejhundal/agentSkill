@@ -1,0 +1,41 @@
+{
+  "name": "design-system-extractor",
+  "title": "Design System Extraction",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": [
+    "tokens",
+    "design-system",
+    "analysis",
+    "spacing"
+  ],
+  "useWhen": [
+    "The user likes another website",
+    "Exact font or spacing needs inspection",
+    "A new website should borrow mechanics, not identity"
+  ],
+  "avoidWhen": [
+    "Copying private source code",
+    "Reusing project images",
+    "Copying written content"
+  ],
+  "inputs": [
+    "Reference URL",
+    "Reference screenshots",
+    "Target components"
+  ],
+  "outputs": [
+    "Design system tokens",
+    "Spacing scales",
+    "Typography scales",
+    "Originality safeguards"
+  ],
+  "recommendedWith": [
+    "design-me",
+    "typography-director",
+    "motion-architect"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Extracts reusable visual rules from references without blindly cloning them."
+}

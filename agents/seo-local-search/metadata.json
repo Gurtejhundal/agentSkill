@@ -1,0 +1,42 @@
+{
+  "name": "seo-local-search",
+  "title": "SEO & Local Search",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "seo",
+    "metadata",
+    "schema",
+    "sitemap"
+  ],
+  "useWhen": [
+    "Before production",
+    "For hospitals and local businesses",
+    "Favicon or OG images are missing"
+  ],
+  "avoidWhen": [
+    "Fabricating reviews or ratings",
+    "Keyword stuffing",
+    "Using identical metadata everywhere"
+  ],
+  "inputs": [
+    "Business location",
+    "Services list",
+    "Contact numbers",
+    "Public routes"
+  ],
+  "outputs": [
+    "Schema markup files",
+    "Sitemap configuration",
+    "Robots.txt config",
+    "Route-specific meta tags"
+  ],
+  "recommendedWith": [
+    "automotive-ux",
+    "healthcare-ux",
+    "deployment-verifier"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Improves technical SEO, local search, metadata, schema, and social previews."
+}

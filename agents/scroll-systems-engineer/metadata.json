@@ -1,0 +1,42 @@
+{
+  "name": "scroll-systems-engineer",
+  "title": "Scroll Systems Engineering",
+  "version": "1.0.0",
+  "category": "motion",
+  "tags": [
+    "scroll",
+    "scrolltrigger",
+    "lenis",
+    "pinning"
+  ],
+  "useWhen": [
+    "A pinned section skips content",
+    "Horizontal movement does not complete",
+    "Lenis and ScrollTrigger fight"
+  ],
+  "avoidWhen": [
+    "Adding global scroll-snap-type mandatorily",
+    "Debouncing normal scrolling",
+    "Forcing mobile users through desktop timing"
+  ],
+  "inputs": [
+    "Viewport layouts",
+    "Scroll track containers",
+    "Lenis configuration",
+    "Trigger timings"
+  ],
+  "outputs": [
+    "Scroll timeline code",
+    "Snap calculations",
+    "Breakpoint cleanup rules",
+    "Touch scroll fallbacks"
+  ],
+  "recommendedWith": [
+    "designer-mobile",
+    "motion-architect",
+    "performance-optimizer"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Builds and debugs pinned scenes, horizontal tracks, snap states, Lenis integration, and touch scrolling."
+}

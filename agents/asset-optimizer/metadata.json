@@ -1,0 +1,40 @@
+{
+  "name": "asset-optimizer",
+  "title": "Asset Optimization",
+  "version": "1.0.0",
+  "category": "quality-delivery",
+  "tags": [
+    "assets",
+    "images",
+    "compression",
+    "fonts"
+  ],
+  "useWhen": [
+    "Project images are oversized",
+    "Portraits download at desktop sizes on phones",
+    "SVG logos are noisy"
+  ],
+  "avoidWhen": [
+    "Preloading every image",
+    "Compressing assets until they degrade or blur"
+  ],
+  "inputs": [
+    "Asset folder",
+    "Image files",
+    "Font files",
+    "SVG vector files"
+  ],
+  "outputs": [
+    "Compressed WebP/AVIF files",
+    "WOFF2 sub-setted fonts",
+    "Optimized clean SVGs",
+    "Responsive size set definitions"
+  ],
+  "recommendedWith": [
+    "media-fit-specialist",
+    "performance-optimizer"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md",
+  "description": "Optimizes images, video, fonts, and visual assets for responsive delivery."
+}
