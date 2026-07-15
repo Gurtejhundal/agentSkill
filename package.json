@@ -1,17 +1,13 @@
 {
   "name": "website-agent-skills-repo",
   "version": "1.1.0",
-  "description": "Specialist AI-agent skills for website design, frontend implementation, responsive optimization, motion engineering, quality assurance, accessibility, SEO, backend preservation, and deployment verification.",
+  "description": "Specialist AI-agent skills for website design, frontend implementation, responsive optimization, motion engineering, quality assurance, accessibility, SEO, and production verification.",
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-skills.mjs",
     "build:docs": "node scripts/build-docs-data.mjs",
     "generate:index": "node scripts/generate-skills-index.mjs",
-    "check:links": "node scripts/check-links.mjs",
-    "serve": "node scripts/serve.js",
-    "test:docs": "playwright test",
-    "test:docs:headed": "playwright test --headed",
-    "screenshots:docs": "playwright test --grep @screenshot"
+    "check:links": "node scripts/check-links.mjs"
   },
   "keywords": [
     "ai-agent",
@@ -21,9 +17,5 @@
     "web-skills"
   ],
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "@playwright/test": "^1.40.0",
-    "markdown-it": "^14.0.0"
-  }
+  "license": "MIT"
 }

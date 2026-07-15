@@ -3,23 +3,807 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Agent Skills — Specialist AI-Agents for Websites</title>
-  <meta name="description" content="A structured system of specialist AI-agent skills for website design, mobile reconstruction, cinematic motion, testing, and production verification.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Agent Skills Archive // Cybernetic Portal</title>
+  <meta name="description" content="Specialist agent skills, workflows, and blueprints database styled with cybertech aesthetics.">
+  <style>
+    /* Cyberpunk Design Tokens */
+    :root {
+      --bg-cyber: #050508;
+      --bg-surface: #0c0d14;
+      --border-neon: #00f0ff;
+      --border-pink: #ff007f;
+      --text-glow: #00f0ff;
+      --text-pink: #ff007f;
+      --text-green: #39ff14;
+      --text-muted: #6f7587;
+      --text-main: #d1d5db;
+      --transition-cyber: 0.15s ease;
+      --font-code: 'Consolas', 'Courier New', Courier, monospace;
+    }
+
+    /* Core Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cyber);
+      color: var(--text-main);
+      font-family: var(--font-code);
+      line-height: 1.5;
+      overflow-x: hidden;
+      /* Scanlines visual effect overlay */
+      background-image: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+      background-size: 100% 4px, 6px 100%;
+    }
+
+    a {
+      color: var(--border-neon);
+      text-decoration: none;
+      transition: color var(--transition-cyber);
+    }
+
+    a:hover {
+      color: var(--border-pink);
+      text-shadow: 0 0 5px var(--border-pink);
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--border-pink);
+      color: white;
+      padding: 8px;
+      z-index: 100000;
+      transition: top var(--transition-cyber);
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Terminal Grid Layout Header */
+    .cyber-header {
+      background-color: rgba(12, 13, 20, 0.85);
+      border-bottom: 2px solid var(--border-neon);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo-glow {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--border-neon);
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+      letter-spacing: 2px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-neon);
+      color: var(--border-neon);
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      padding: 0.25rem 0.5rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--border-neon);
+      border-color: var(--border-neon);
+      text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-cyber {
+      background: transparent;
+      border: 1px solid var(--border-neon);
+      color: var(--border-neon);
+      font-family: inherit;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all var(--transition-cyber);
+      box-shadow: 0 0 5px rgba(0, 240, 255, 0.1);
+    }
+
+    .btn-cyber:hover {
+      background: var(--border-neon);
+      color: var(--bg-cyber);
+      box-shadow: 0 0 10px var(--border-neon);
+    }
+
+    .btn-cyber-pink {
+      border-color: var(--border-pink);
+      color: var(--border-pink);
+    }
+
+    .btn-cyber-pink:hover {
+      background: var(--border-pink);
+      color: white;
+      box-shadow: 0 0 10px var(--border-pink);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+      position: relative;
+    }
+
+    .hero-glitch-title {
+      font-size: 2.5rem;
+      color: var(--border-pink);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px var(--border-neon), -2px -2px rgba(255, 0, 127, 0.5);
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-main);
+      max-width: 750px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-box {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .stat-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background: var(--border-neon);
+    }
+
+    .stat-num {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--border-neon);
+      text-shadow: 0 0 5px rgba(0, 240, 255, 0.4);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--border-neon);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--border-pink);
+      padding-left: 1rem;
+      text-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+    }
+
+    /* Explorer / Filters */
+    .explorer-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .filter-panel {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-row {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-cyber);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      color: var(--text-main);
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--border-neon);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--border-neon);
+    }
+
+    .search-hint {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 2px 6px;
+    }
+
+    .filter-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .btn-filter {
+      background: transparent;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      color: var(--text-main);
+      padding: 0.35rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all var(--transition-cyber);
+    }
+
+    .btn-filter:hover, .btn-filter.active {
+      border-color: var(--border-pink);
+      color: var(--border-pink);
+      box-shadow: 0 0 5px rgba(255, 0, 127, 0.3);
+    }
+
+    .results-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-reset {
+      font-size: 0.8rem;
+      color: var(--border-pink);
+      text-decoration: underline;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-cyber);
+      position: relative;
+    }
+
+    .skill-card:hover {
+      border-color: var(--border-neon);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .skill-card-header {
+      margin-bottom: 1rem;
+    }
+
+    .skill-category-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      color: var(--border-pink);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .skill-title {
+      font-size: 1.15rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-code-name {
+      font-size: 0.75rem;
+      color: var(--text-glow);
+      font-family: var(--font-code);
+    }
+
+    .skill-description {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-cyber {
+      font-size: 0.7rem;
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      color: var(--text-glow);
+      padding: 1px 6px;
+    }
+
+    .skill-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(0, 240, 255, 0.1);
+      padding-top: 0.75rem;
+    }
+
+    .companion-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .card-link {
+      font-size: 0.8rem;
+      color: var(--border-neon);
+      font-weight: 700;
+    }
+
+    /* Dialog Panel styling */
+    dialog.drawer {
+      display: none;
+      background-color: var(--bg-surface);
+      border: 2px solid var(--border-pink);
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.4);
+      width: 600px;
+      height: 100vh;
+      max-height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -600px;
+      left: auto;
+      margin: 0;
+      z-index: 10001;
+      flex-direction: column;
+      transition: right 0.2s ease-out;
+      color: var(--text-main);
+      font-family: var(--font-code);
+    }
+
+    dialog.drawer[open] {
+      display: flex;
+      right: 0;
+    }
+
+    dialog.drawer::backdrop {
+      background-color: rgba(5, 5, 8, 0.75);
+      backdrop-filter: blur(4px);
+    }
+
+    .drawer-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255, 0, 127, 0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .drawer-title {
+      font-size: 1.35rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);
+    }
+
+    .drawer-close {
+      background: transparent;
+      border: 1px solid var(--border-pink);
+      color: var(--border-pink);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .drawer-close:hover {
+      background: var(--border-pink);
+      color: white;
+      box-shadow: 0 0 8px var(--border-pink);
+    }
+
+    .drawer-content {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .drawer-section-heading {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-pink);
+      border-bottom: 1px solid rgba(255, 0, 127, 0.2);
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .drawer-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .drawer-bullets li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .drawer-bullets li::before {
+      content: ">>";
+      position: absolute;
+      left: 0;
+      color: var(--border-neon);
+      font-size: 0.75rem;
+    }
+
+    .drawer-code-block {
+      background-color: var(--bg-cyber);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 1rem;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      color: var(--text-green);
+    }
+
+    /* Workflows Section */
+    .workflows-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .workflows-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .workflow-card {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 1.5rem;
+    }
+
+    .workflow-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .workflow-node-btn {
+      background: transparent;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      color: var(--text-main);
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.85rem;
+      width: fit-content;
+      transition: all var(--transition-cyber);
+    }
+
+    .workflow-node-btn:hover {
+      border-color: var(--border-neon);
+      color: var(--border-neon);
+      box-shadow: 0 0 5px rgba(0, 240, 255, 0.25);
+    }
+
+    .workflow-node-arrow {
+      color: var(--text-pink);
+      padding-left: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* Workflow Builder */
+    .builder-box {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 2rem;
+    }
+
+    .builder-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+
+    .builder-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-pink);
+      margin-bottom: 0.5rem;
+    }
+
+    .builder-select {
+      width: 100%;
+      background: var(--bg-cyber);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      color: var(--text-main);
+      padding: 0.6rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .builder-select:focus {
+      outline: none;
+      border-color: var(--border-neon);
+    }
+
+    .builder-flow-nodes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Case Studies / Examples */
+    .examples-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .example-card {
+      background-color: var(--bg-surface);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Structure tree view */
+    .structure-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .tree-list {
+      list-style: none;
+    }
+
+    .tree-node {
+      margin: 0.5rem 0;
+    }
+
+    .tree-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .tree-toggle-btn:hover {
+      color: var(--border-neon);
+    }
+
+    .tree-details {
+      display: none;
+      padding-left: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .tree-details.active {
+      display: block;
+    }
+
+    /* Footer & Contributions */
+    .contributions-section {
+      background-color: var(--bg-surface);
+      border-top: 2px solid var(--border-neon);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(0, 240, 255, 0.1);
+    }
+
+    /* Toast */
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--border-pink);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      z-index: 100000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-cyber);
+    }
+
+    .toast-msg.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsiveness overrides */
+    @media (max-width: 1024px) {
+      .skills-grid, .examples-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid, .examples-grid, .workflows-grid, .builder-layout, .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: var(--bg-cyber);
+        padding: 2rem;
+        border-top: 2px solid var(--border-neon);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      dialog.drawer {
+        width: 100vw;
+        right: -100vw;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      body {
+        background-image: none;
+      }
+      *, *::before, *::after {
+        transition: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Skip Link for Accessibility -->
+  <!-- Access Jump -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Persistent Header -->
-  <header class="header" role="banner">
-    <div class="container">
-      <a href="#" class="logo">Website Agent Skills</a>
+  <!-- Header -->
+  <header class="cyber-header" role="banner">
+    <div class="container header-inner">
+      <a href="#" class="logo-glow">AGENT_SKILLS_SYSTEM // ACTIVE</a>
       
       <nav role="navigation" aria-label="Main navigation">
         <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-          ☰
+          [MENU_EXE]
         </button>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#overview" class="nav-link">Overview</a></li>
@@ -29,419 +813,1897 @@
           <li><a href="#structure" class="nav-link">Structure</a></li>
         </ul>
       </nav>
-      
+
       <div class="header-actions">
-        <a href="https://github.com/Gurtejhundal/agentSkill" class="btn btn-secondary" target="_blank" rel="noopener">View Repository</a>
-        <button class="btn btn-primary" id="copy-starter-btn">Copy Starter Prompt</button>
+        <button class="btn-cyber" id="copy-starter-btn">[COPY_STARTER_PRMPT]</button>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content" role="main">
+  <!-- Content Portal -->
+  <main id="main-content" class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    
+    <!-- Hero / Info -->
+    <section class="hero" id="overview">
+      <h1 class="hero-glitch-title">CYBER_INDEX_SYSTEM</h1>
+      <p class="hero-tagline">
+        Specialist agent skills, checklists, and pipeline routing models. Curated, validated, and optimized to enable high-concurrency coding and zero-drift deployments.
+      </p>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-heading">Specialist agents for serious website work.</h1>
-          <p class="hero-tagline">A structured system for design, responsive reconstruction, motion, domain UX, testing, and production verification.</p>
-          <div class="hero-ctas">
-            <a href="#skills" class="btn btn-primary">Explore skills</a>
-            <a href="#workflows" class="btn btn-secondary">View workflows</a>
-          </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-num">24</div>
+          <div class="stat-label">Agent modules</div>
         </div>
-        
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-val">24</span>
-            <span class="stat-lbl">Specialist Skills</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val">8</span>
-            <span class="stat-lbl">Core Workflows</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val">3</span>
-            <span class="stat-lbl">Real Project Examples</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val">100%</span>
-            <span class="stat-lbl">Framework-Free & Static</span>
-          </div>
+        <div class="stat-box">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Routing pipelines</div>
         </div>
-
-        <div class="hero-diagram">
-          <div class="diagram-title">Operating Pipeline</div>
-          <div class="diagram-flow">
-            <div class="diagram-node">Inspect</div>
-            <span class="diagram-arrow">→</span>
-            <div class="diagram-node">Design</div>
-            <span class="diagram-arrow">→</span>
-            <div class="diagram-node">Implement</div>
-            <span class="diagram-arrow">→</span>
-            <div class="diagram-node">Test</div>
-            <span class="diagram-arrow">→</span>
-            <div class="diagram-node">Deploy</div>
-          </div>
+        <div class="stat-box">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Project Blueprints</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Offline self-contained</div>
         </div>
       </div>
     </section>
 
-    <!-- Repository Overview -->
-    <section id="overview" class="overview">
-      <div class="container">
-        <h2 class="section-heading">Why this repository exists</h2>
-        <p class="body-text" style="max-width: 800px; margin-bottom: 3rem;">
-          Generic frontend agents usually fail at complex website tasks. They modify code before inspecting, treat mobile as a cropped desktop, break ScrollTriggers, ignore accessibility, and claim completion without production verification. This repository solves these failures by dividing website engineering into focused, specialist skills.
-        </p>
+    <!-- Explorer -->
+    <section class="explorer-section" id="skills">
+      <h2 class="section-title">Module Explorer</h2>
 
-        <div class="overview-grid">
-          <div class="problem-column">
-            <h3>Common Agent Failures</h3>
-            <div class="problem-list">
-              <div class="problem-card">
-                <h4>Generic agents skip inspection</h4>
-                <p class="body-text">They rush to patch style files without understanding CSS token hierarchies, breaking global design architectures.</p>
-              </div>
-              <div class="problem-card">
-                <h4>Mobile becomes cropped desktop</h4>
-                <p class="body-text">They shrink container dimensions or hide desktop animations, resulting in long vertical lists and unreadable layouts.</p>
-              </div>
-              <div class="problem-card">
-                <h4>Animation ships without verification</h4>
-                <p class="body-text">They deploy timelines that trigger layout shifts or run slow scroll calculations, causing runtime stutter.</p>
-              </div>
-              <div class="problem-card">
-                <h4>Local and production drift apart</h4>
-                <p class="body-text">They assume local build compilation means the live server state behaves identically, ignoring caching or env config errors.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="solution-column">
-            <h3>The Repository Solution</h3>
-            <div class="solution-list">
-              <div class="solution-card">
-                <h4>Specialized Roles</h4>
-                <p class="body-text">Focused skills for layout reconstruction, mobile adaptation, scroll-animations, SEO, accessibility, and deployments.</p>
-              </div>
-              <div class="solution-card">
-                <h4>Explicit Workflows</h4>
-                <p class="body-text">Structured sequences that route assignments systematically from mapping to coding to QA to delivery gates.</p>
-              </div>
-              <div class="solution-card">
-                <h4>Measurable Acceptance Criteria</h4>
-                <p class="body-text">Strict requirements specifying minimum touch targets, no scroll overflow, and exact viewport screenshot matrices.</p>
-              </div>
-              <div class="solution-card">
-                <h4>Evidence-Based Completion</h4>
-                <p class="body-text">Completion reports require files changed, live URLs, and screenshots of start, middle, and final scroll states.</p>
-              </div>
-            </div>
-          </div>
+      <div class="filter-panel">
+        <div class="search-row">
+          <span class="search-icon">>></span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search modules by code, description, tags, capabilities..." aria-label="Search modules">
+          <span class="search-hint">Hot key "/"</span>
         </div>
-      </div>
-    </section>
 
-    <!-- Skill Explorer -->
-    <section id="skills" class="skills-section">
-      <div class="container">
-        <h2 class="section-heading">Skill Explorer</h2>
-        
-        <div class="filter-bar">
-          <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
-            <input type="text" class="search-input" id="search-input" placeholder="Search skills by title, tags, outputs..." aria-label="Search skills">
-            <kbd class="search-kbd">Press / to focus</kbd>
+        <div class="filter-row">
+          <div class="category-buttons" id="categories-list" role="group" aria-label="Category filters">
+            <button class="btn-filter active" data-category="all">All Modules</button>
+            <button class="btn-filter" data-category="strategy">Strategy</button>
+            <button class="btn-filter" data-category="responsive">Responsive</button>
+            <button class="btn-filter" data-category="motion">Motion</button>
+            <button class="btn-filter" data-category="architecture">Architecture</button>
+            <button class="btn-filter" data-category="domain-ux">Domain UX</button>
+            <button class="btn-filter" data-category="quality-delivery">QA & Verification</button>
           </div>
           
-          <div class="filters-row">
-            <div class="categories-list" id="categories-list" role="group" aria-label="Category filters">
-              <button class="cat-btn active" data-category="all">All Skills</button>
-              <button class="cat-btn" data-category="strategy">Strategy & Design</button>
-              <button class="cat-btn" data-category="responsive">Responsive & Typography</button>
-              <button class="cat-btn" data-category="motion">Motion & Interaction</button>
-              <button class="cat-btn" data-category="architecture">Architecture</button>
-              <button class="cat-btn" data-category="domain-ux">Domain UX</button>
-              <button class="cat-btn" data-category="quality-delivery">Quality & Delivery</button>
-            </div>
-            
-            <div class="results-stats">
-              <span id="results-count" aria-live="polite">24 skills visible</span>
-              <button class="btn-reset" id="reset-filters" style="display: none;">Reset Filters</button>
-            </div>
+          <div class="results-stats">
+            <span id="results-count">24 modules active</span>
+            <span id="reset-filters" class="btn-reset" style="display: none;">[RESET_FILTERS]</span>
           </div>
         </div>
+      </div>
 
-        <div class="skills-grid" id="skills-grid">
-          <!-- Skills dynamically loaded -->
-        </div>
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid" id="skills-grid">
+        <!-- Rendered by js -->
       </div>
     </section>
 
-    <!-- Skill Details dialog modal -->
+    <!-- Skill Details Dialog -->
     <dialog class="drawer" id="drawer" aria-labelledby="drawer-title">
       <div class="drawer-header">
-        <h2 id="drawer-title">Skill Title</h2>
+        <h2 id="drawer-title" class="drawer-title">MODULE DETAILS</h2>
         <button class="drawer-close" id="drawer-close" aria-label="Close details">✕</button>
       </div>
       <div class="drawer-content" id="drawer-content">
-        <!-- Details dynamically loaded -->
+        <!-- Loaded by js -->
       </div>
     </dialog>
 
-    <!-- Workflow Explorer -->
-    <section id="workflows" class="workflows-section">
-      <div class="container">
-        <h2 class="section-heading">Workflow Explorer</h2>
-        <p class="body-text" style="max-width: 800px; margin-bottom: 3rem;">
-          Multi-agent workflows guide agents step-by-step through complex engineering processes. Click on any step in a workflow to view details for that skill.
-        </p>
+    <!-- Workflows -->
+    <section class="workflows-section" id="workflows">
+      <h2 class="section-title">Pipelines & Routings</h2>
+      
+      <div class="workflows-grid" id="workflows-grid">
+        <!-- Rendered by js -->
+      </div>
 
-        <div class="workflows-grid" id="workflows-grid">
-          <!-- Workflows dynamically loaded -->
-        </div>
-
-        <!-- Workflow Builder -->
-        <div class="builder-box">
-          <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Interactive Workflow Builder</h3>
-          <div class="builder-controls">
-            <div class="builder-select-group">
-              <label for="problem-selector">What are you trying to fix?</label>
-              <select class="builder-select" id="problem-selector">
-                <option value="full-redesign">Full redesign</option>
-                <option value="mobile-opt">Mobile optimization</option>
-                <option value="broken-scroll">Broken scroll animation</option>
-                <option value="image-fitting">Project image fitting</option>
-                <option value="page-transition">Page transition</option>
-                <option value="accessibility">Accessibility review</option>
-                <option value="performance">Performance optimization</option>
-                <option value="local-biz">Local business conversion</option>
-                <option value="hospital-ux">Hospital UX</option>
-                <option value="portfolio-ux">Portfolio UX</option>
-                <option value="deployment-mismatch">Deployment mismatch</option>
-              </select>
+      <!-- Live Builder -->
+      <div class="builder-box">
+        <h3 class="builder-label" style="font-size: 1rem; margin-bottom: 1.5rem; text-shadow: 0 0 5px rgba(255, 0, 127, 0.4);">Pipeline custom compiler</h3>
+        <div class="builder-layout">
+          <div>
+            <label for="problem-selector" class="builder-label">Select Failure / Target Objective</label>
+            <select id="problem-selector" class="builder-select">
+              <option value="full-redesign">Full Redesign Audit</option>
+              <option value="mobile-opt">Broken Mobile Layouts</option>
+              <option value="broken-scroll">Stuttering Scroll animation</option>
+              <option value="image-fitting">Mixed Image Ratios</option>
+              <option value="page-transition">Generic page transition</option>
+              <option value="accessibility">Accessibility Compliance</option>
+              <option value="performance">Low page speed scores</option>
+              <option value="local-biz">Local booking conversions</option>
+              <option value="hospital-ux">Healthcare system security</option>
+              <option value="portfolio-ux">Developer Portfolio redesign</option>
+              <option value="deployment-mismatch">Local/Production mismatch</option>
+            </select>
+          </div>
+          <div>
+            <span class="builder-label">Recommended Routing Modules</span>
+            <div id="builder-flow-nodes" class="builder-flow-nodes">
+              <!-- JS rendered -->
             </div>
             
-            <div class="builder-result">
-              <div class="builder-prompt-card">
-                <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; color: var(--text-secondary);">Recommended Sequence</h4>
-                <div id="builder-flow-nodes" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
-                  <!-- Dynamic Nodes -->
-                </div>
-                
-                <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; color: var(--text-secondary);">Workflow Prompt</h4>
-                <div class="drawer-code-block" style="margin-bottom: 1rem;">
-                  <code id="builder-prompt-code" style="white-space: pre-wrap;">Select a problem to build a prompt.</code>
-                </div>
-                <button class="btn btn-primary" id="copy-workflow-btn">Copy Workflow Prompt</button>
-              </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="builder-label" style="margin-bottom: 0;">Instruction execution prompt</span>
+              <button class="btn-cyber" id="copy-workflow-btn" style="padding: 0.25rem 0.5rem; font-size: 0.7rem;">[COPY_PROMPT]</button>
             </div>
+            <pre class="drawer-code-block"><code id="builder-prompt-code">Loading compiler template...</code></pre>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Example Projects Case Studies -->
-    <section id="examples" class="examples-section">
-      <div class="container">
-        <h2 class="section-heading">Example Projects</h2>
-        <p class="body-text" style="max-width: 800px; margin-bottom: 3rem;">
-          These case studies demonstrate how specialist skills coordinate to solve specific architectural, design, and conversion problems on production sites.
-        </p>
-
-        <div class="examples-grid" id="examples-grid">
-          <!-- Dynamic Project Cards -->
-        </div>
+    <!-- Project Blueprints -->
+    <section class="examples-section" id="examples">
+      <h2 class="section-title">Project Blueprints</h2>
+      <div class="examples-grid" id="examples-grid">
+        <!-- Rendered by JS -->
       </div>
     </section>
 
-    <!-- How to Use a Skill -->
-    <section class="guide-section">
-      <div class="container">
-        <div class="guide-grid">
-          <div class="guide-column">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">How to use a skill</h2>
-            <p class="body-text" style="margin-bottom: 1.5rem;">
-              Copy the prompt template below when assigning website tasks to your AI coding agents. Replace the template markers with your project specifics.
-            </p>
-            <div class="drawer-code-block" style="margin-bottom: 1.5rem;">
-              <code id="use-template-code" style="white-space: pre-wrap;">Use the &lt;skill-name&gt; skill.
-
-PROJECT
-&lt;project name&gt;
-
-TARGET
-&lt;route, component, file, or URL&gt;
-
-CURRENT PROBLEM
-&lt;exact failure&gt;
-
-DESIRED RESULT
-&lt;observable behavior&gt;
-
-CONSTRAINTS
-- Do not modify:
-- Preserve:
-- Existing libraries:
-- Required breakpoints:
-
-REQUIRED TESTS
-- Breakpoints:
-- Input methods:
-- Routes:
-- Reduced motion:
-
-REQUIRED REPORT
-- Root cause
-- Files changed
-- Screenshots
-- Remaining limitations</code>
-            </div>
-            <button class="btn btn-primary" id="copy-use-template-btn">Copy Template</button>
-          </div>
-
-          <div class="guide-column" id="create-skill-col">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">How to create a new skill</h2>
-            <p class="body-text">
-              Expand the repository capabilities by adding custom specialist skills following this workflow:
-            </p>
-            <div class="guide-steps">
-              <div class="guide-step">
-                <span class="step-num">1</span>
-                <div>
-                  <h4 style="font-size: 1.05rem;">Copy template</h4>
-                  <p class="body-text">Copy the <a href="../templates/SKILL_TEMPLATE.md" style="color: var(--accent-wine); text-decoration: underline;">SKILL_TEMPLATE.md</a> from the templates folder.</p>
-                </div>
-              </div>
-              <div class="guide-step">
-                <span class="step-num">2</span>
-                <div>
-                  <h4 style="font-size: 1.05rem;">Create folder</h4>
-                  <p class="body-text">Create `agents/&lt;new-skill-name&gt;/` utilizing lowercase kebab-case naming.</p>
-                </div>
-              </div>
-              <div class="guide-step">
-                <span class="step-num">3</span>
-                <div>
-                  <h4 style="font-size: 1.05rem;">Add files</h4>
-                  <p class="body-text">Create `SKILL.md` (mission, guardrails, criteria), `metadata.json` (categories, use-cases), and `examples.md` files.</p>
-                </div>
-              </div>
-              <div class="guide-step">
-                <span class="step-num">4</span>
-                <div>
-                  <h4 style="font-size: 1.05rem;">Validate and build</h4>
-                  <p class="body-text">Update the manifest, run `npm run validate` to test schemas, and `npm run build:docs` to update this website.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div style="margin-top: 2rem; display: flex; gap: 1.5rem; font-size: 0.9rem;">
-              <a href="../CONTRIBUTING.md" style="color: var(--accent-wine); text-decoration: underline;">Contributing Guide</a>
-              <a href="../schemas/skill.schema.json" style="color: var(--accent-wine); text-decoration: underline;">Skill JSON Schema</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Expandable File Tree -->
-    <section id="structure" class="tree-section">
-      <div class="container">
-        <h2 class="section-heading">Repository structure</h2>
-        <p class="body-text" style="max-width: 800px; margin-bottom: 3rem;">
-          Click on any folder in the tree below to expand details about its contents and architectural purpose in the repository.
-        </p>
-
+    <!-- File Tree -->
+    <section class="structure-section" id="structure">
+      <h2 class="section-title">Repository Structure</h2>
+      <div class="builder-box">
         <ul class="tree-list" role="list">
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-agents">📁 agents/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-agents">📁 agents/</button>
             <div class="tree-details" id="desc-agents">
-              Contains the 24 specialized agent skills. Each subdirectory contains a `SKILL.md` file (defining trigger conditions, workflow, deliverables, and handoff recommendations), a `metadata.json` file (specifying when/avoid cases, inputs, and companion skills), and an `examples.md` file (with prompts).
+              Contains the 24 distinct skill folders (e.g. `agents/designer-mobile/SKILL.md`). Developers can review and copy individual folders to import individual skills.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-workflows">📁 workflows/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-workflows">📁 workflows/</button>
             <div class="tree-details" id="desc-workflows">
-              Holds multi-agent workflows including Full Website Audit, Mobile Reconstruction, and industry verticals. Includes the `workflow-index.json` which maps all steps and sequences.
+              Recommended routing sequences, pipelines, guides, and indices that coordinate complex cross-functional website sprints.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-checklists">📁 checklists/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-checklists">📁 checklists/</button>
             <div class="tree-details" id="desc-checklists">
-              Houses specific checklists for accessibility, animation, performance, SEO, mobile adaptation, and release gating criteria to guarantee visual and functional quality.
+              Focused verification guides for accessibility audits, mobile testing, SEO, performance, and release-gate checklists.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-templates">📁 templates/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-templates">📁 templates/</button>
             <div class="tree-details" id="desc-templates">
-              Reusable templates for agents, including new skill formats, request templates, website audits, and completion report templates.
+              Reusable input structures and markdown report templates for agent requests, code refactors, and audit summaries.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-schemas">📁 schemas/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-schemas">📁 schemas/</button>
             <div class="tree-details" id="desc-schemas">
-              Machine-readable JSON schemas ensuring that skills, workflows, audits, and completion reports conform to structured formats.
+              JSON schemas enforcing layout and format conventions on skill descriptions, audits, and completion logs.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-examples">📁 examples/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-examples">📁 examples/</button>
             <div class="tree-details" id="desc-examples">
-              Case study directories containing reference plans, primary risks, and prompts for real websites.
+              Context blueprints containing sample instructions, planning steps, and risk reviews for real websites.
             </div>
           </li>
           <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-docs">📁 docs/</button>
+            <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-docs">📁 docs/</button>
             <div class="tree-details" id="desc-docs">
-              The codebase for this interactive documentation portal, serving structured HTML, CSS, JavaScript, and generated JSON files offline and on GitHub Pages.
-            </div>
-          </li>
-          <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-scripts">📁 scripts/</button>
-            <div class="tree-details" id="desc-scripts">
-              Node.js scripts used to validate skill definitions against schemas, verify internal links, build documentation JSON data, and regenerate indices.
-            </div>
-          </li>
-          <li class="tree-node" role="listitem">
-            <button class="tree-toggle" aria-expanded="false" aria-controls="desc-github">📁 .github/</button>
-            <div class="tree-details" id="desc-github">
-              GitHub actions workflow definitions for running continuous integration validations and deploying static files to GitHub Pages, plus issue and pull request templates.
+              Interactive single-file offline cyber portal `index.html` allowing visual exploration and workflow compilations.
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Contribution & GitHub -->
-    <section class="github-section">
-      <div class="container">
-        <h2>Open Source Contribution</h2>
-        <p class="body-text">
-          Website Agent Skills is an open-source framework designed to elevate AI agent frontend capabilities. Feel free to submit issues, add new skills, refine workflows, or adapt schemas to fit your development pipelines.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 1rem;">
-          <a href="https://github.com/Gurtejhundal/agentSkill" class="btn btn-primary" target="_blank" rel="noopener" style="background-color: #fff; color: var(--dark-surface); border-color: #fff;">Star on GitHub</a>
-          <a href="../CONTRIBUTING.md" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: #fff;">Contribution Guidelines</a>
-        </div>
-      </div>
-    </section>
-
   </main>
+
+  <!-- Contributions Section -->
+  <section class="contributions-section">
+    <div class="container">
+      <h2 style="color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">CYBERNETIC_CONTRIBUTION_TUNNEL</h2>
+      <p style="max-width: 700px; margin: 0 auto 2rem; color: var(--text-main); font-size: 0.9rem;">
+        This archive is fully open-source and modular. Submit pull requests to expand capabilities, register new agent pipelines, or refine schemas.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://github.com/Gurtejhundal/agentSkill" target="_blank" rel="noopener noreferrer" class="btn-cyber">[GIT_CONNECT_REMOTE]</a>
+        <a href="../CONTRIBUTING.md" class="btn-cyber btn-cyber-pink">[CONTRIBUTING_GUIDELINES]</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; 2026 Website Agent Skills. Released under the MIT License.</p>
+      <p>&copy; 2026 Website Agent Skills. System Active. MIT license.</p>
     </div>
   </footer>
 
-  <!-- Toast Announcement (Aria-live) -->
-  <div class="toast-msg" id="toast-msg" role="status" aria-live="polite">Text Copied!</div>
+  <!-- Status Toast -->
+  <div class="toast-msg" id="toast-msg" role="status" aria-live="polite">SYSTEM: Text Copied!</div>
 
-  <!-- Interactive Logic Script -->
-  <script src="assets/js/generated-data.js"></script>
-  <script src="assets/js/app.js"></script>
+  <!-- Injection Data Script -->
+  <script>
+    // --- DATABASE_PLACEHOLDER ---
+    window.WEBSITE_AGENT_DATA = {
+  "skills": [
+    {
+      "name": "3d-animation",
+      "title": "Purposeful 3D Animation",
+      "version": "1.0.0",
+      "category": "motion",
+      "tags": [
+        "3d",
+        "webgl",
+        "animation",
+        "threejs"
+      ],
+      "useWhen": [
+        "A product needs spatial explanation",
+        "A car, object, or interface benefits from depth",
+        "A hero requires an interactive 3D reveal"
+      ],
+      "avoidWhen": [
+        "Simple hover effects",
+        "Decorative spinning logos",
+        "Sites without a performance budget"
+      ],
+      "inputs": [
+        "Brand assets",
+        "3D models",
+        "WebGL library configuration",
+        "Performance budgets"
+      ],
+      "outputs": [
+        "3D scene specification",
+        "Mobile fallback asset",
+        "Reduced-motion stylesheet",
+        "Performance metrics"
+      ],
+      "recommendedWith": [
+        "performance-optimizer",
+        "asset-optimizer",
+        "designer-mobile"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Designs restrained, performant 3D interactions with explicit mobile and reduced-motion fallbacks.",
+      "examplesMarkdown": "# Purposeful 3D Animation Examples\n\n## Simple Request\nUse `3d-animation` to use 3d-animation to render an interactive spinning logo using canvas.\n\n## Advanced Request\nUse `3d-animation` to use 3d-animation to build a headlight-to-car reveal with a fallback image for mobile and reduced-motion states.\n\n## Incorrect Use\nDo not use `3d-animation` to do not use 3d-animation to implement simple button hover animations.\n\n## Multi-Agent Workflow Example\n```text\nUse 3d-animation to create the WebGL hero scene, asset-optimizer to compress texture files, and performance-optimizer to limit frame loop lag.\n```\n"
+    },
+    {
+      "name": "accessibility-auditor",
+      "title": "Accessibility Auditing",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "accessibility",
+        "wcag",
+        "keyboard",
+        "focus"
+      ],
+      "useWhen": [
+        "Before every production release",
+        "For hospital websites",
+        "After adding drawers, menus, or modals"
+      ],
+      "avoidWhen": [
+        "Relying only on automated testing tools",
+        "Removing focus outlines to improve aesthetic look"
+      ],
+      "inputs": [
+        "Web page routes",
+        "Components list",
+        "Color codes",
+        "Tab index layouts"
+      ],
+      "outputs": [
+        "Keyboard tab matrix",
+        "Color contrast overrides",
+        "Focus trap code fixes",
+        "Reduced motion stylesheet"
+      ],
+      "recommendedWith": [
+        "interaction-qa-agent",
+        "healthcare-ux",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Audits keyboard, focus, semantics, contrast, motion, touch, and assistive-technology behavior.",
+      "examplesMarkdown": "# Accessibility Auditing Examples\n\n## Simple Request\nUse `accessibility-auditor` to use accessibility-auditor to audit page image alt attributes.\n\n## Advanced Request\nUse `accessibility-auditor` to use accessibility-auditor to verify dialog focus traps, contrast, Escape handling, and reduced-motion stylesheet mappings.\n\n## Incorrect Use\nDo not use `accessibility-auditor` to do not use accessibility-auditor to change visual typography font styles.\n\n## Multi-Agent Workflow Example\n```text\nUse accessibility-auditor to identify tab order problems, component-refactor to clean up markup, and interaction-qa-agent to double-check.\n```\n"
+    },
+    {
+      "name": "asset-optimizer",
+      "title": "Asset Optimization",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "assets",
+        "images",
+        "compression",
+        "fonts"
+      ],
+      "useWhen": [
+        "Project images are oversized",
+        "Portraits download at desktop sizes on phones",
+        "SVG logos are noisy"
+      ],
+      "avoidWhen": [
+        "Preloading every image",
+        "Compressing assets until they degrade or blur"
+      ],
+      "inputs": [
+        "Asset folder",
+        "Image files",
+        "Font files",
+        "SVG vector files"
+      ],
+      "outputs": [
+        "Compressed WebP/AVIF files",
+        "WOFF2 sub-setted fonts",
+        "Optimized clean SVGs",
+        "Responsive size set definitions"
+      ],
+      "recommendedWith": [
+        "media-fit-specialist",
+        "performance-optimizer"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Optimizes images, video, fonts, and visual assets for responsive delivery.",
+      "examplesMarkdown": "# Asset Optimization Examples\n\n## Simple Request\nUse `asset-optimizer` to use asset-optimizer to compress a folder of images to WebP.\n\n## Advanced Request\nUse `asset-optimizer` to use asset-optimizer to clean noisy vector SVGs, convert imagery to AVIF responsive variants, and subset Punjabi fonts.\n\n## Incorrect Use\nDo not use `asset-optimizer` to do not use asset-optimizer to change card aspect ratios in HTML/CSS.\n\n## Multi-Agent Workflow Example\n```text\nUse media-fit-specialist to define layouts, asset-optimizer to generate compressed source sets, and performance-optimizer to review load speeds.\n```\n"
+    },
+    {
+      "name": "automotive-ux",
+      "title": "Automotive UX Design",
+      "version": "1.0.0",
+      "category": "domain-ux",
+      "tags": [
+        "automotive",
+        "detailing",
+        "ceramic-coating",
+        "booking"
+      ],
+      "useWhen": [
+        "Designing automotive detailing studios",
+        "Structuring ceramic coating or PPF page layouts"
+      ],
+      "avoidWhen": [
+        "Applying generic gold luxury styling",
+        "Showing cars without local context or proof"
+      ],
+      "inputs": [
+        "Services list",
+        "Package prices",
+        "Studio location",
+        "Before/after media"
+      ],
+      "outputs": [
+        "Service comparison cards",
+        "Before/after gallery configs",
+        "WhatsApp booking integrations",
+        "Brand colors selection"
+      ],
+      "recommendedWith": [
+        "ux-conversion-strategist",
+        "designer-mobile",
+        "seo-local-search"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Designs premium automotive detailing websites around trust, craftsmanship, proof, and booking intent.",
+      "examplesMarkdown": "# Automotive UX Design Examples\n\n## Simple Request\nUse `automotive-ux` to use automotive-ux to lay out details of a detailing service description.\n\n## Advanced Request\nUse `automotive-ux` to use automotive-ux to build the detailing packages page, structuring paint correction, ceramic coating, and PPF grids with local proofs.\n\n## Incorrect Use\nDo not use `automotive-ux` to do not use automotive-ux to design generic automotive news sites.\n\n## Multi-Agent Workflow Example\n```text\nUse automotive-ux to shape pages, designer-mobile to align booking buttons, and seo-local-search to ensure address schemas are in place.\n```\n"
+    },
+    {
+      "name": "backend-admin-preserver",
+      "title": "Backend & Admin Preservation",
+      "version": "1.0.0",
+      "category": "architecture",
+      "tags": [
+        "backend",
+        "django",
+        "cms",
+        "database"
+      ],
+      "useWhen": [
+        "Doctors or timings come from admin",
+        "Redesign may hard-code existing data"
+      ],
+      "avoidWhen": [
+        "Replacing backend content with static arrays",
+        "Breaking old records",
+        "Changing fields without migrations"
+      ],
+      "inputs": [
+        "Backend schemas",
+        "Django settings",
+        "API consumption hooks",
+        "Form models"
+      ],
+      "outputs": [
+        "Database compatibility report",
+        "Model field mapping",
+        "Admin test verification",
+        "API integrations validation"
+      ],
+      "recommendedWith": [
+        "healthcare-ux",
+        "component-refactor",
+        "interaction-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Protects CMS, Django Admin, database, and editable content flows during redesigns.",
+      "examplesMarkdown": "# Backend & Admin Preservation Examples\n\n## Simple Request\nUse `backend-admin-preserver` to use backend-admin-preserver to view active database model fields.\n\n## Advanced Request\nUse `backend-admin-preserver` to use backend-admin-preserver to map OPD models and API hooks, ensuring admin changes propagate correctly to frontend sections.\n\n## Incorrect Use\nDo not use `backend-admin-preserver` to do not use backend-admin-preserver to write custom visual styling classes.\n\n## Multi-Agent Workflow Example\n```text\nUse backend-admin-preserver to map database routes, component-refactor to rewrite visual templates, and interaction-qa-agent to verify admin edits.\n```\n"
+    },
+    {
+      "name": "codebase-recon",
+      "title": "Codebase Reconnaissance",
+      "version": "1.0.0",
+      "category": "architecture",
+      "tags": [
+        "codebase",
+        "inspection",
+        "route-map",
+        "dependencies"
+      ],
+      "useWhen": [
+        "First time inspecting the codebase",
+        "Before beginning major component refactors",
+        "Understanding data flows and builds"
+      ],
+      "avoidWhen": [
+        "Modifying code during inspection unless explicitly requested"
+      ],
+      "inputs": [
+        "Repository path",
+        "Live domain",
+        "Vercel configuration"
+      ],
+      "outputs": [
+        "Route mapping table",
+        "CSS token list",
+        "Framework version audit",
+        "Risk assessment report"
+      ],
+      "recommendedWith": [
+        "component-refactor",
+        "visual-qa-agent",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Maps an unfamiliar website codebase before design or implementation begins.",
+      "examplesMarkdown": "# Codebase Reconnaissance Examples\n\n## Simple Request\nUse `codebase-recon` to use codebase-recon to list files in the project folder.\n\n## Advanced Request\nUse `codebase-recon` to use codebase-recon to map routing, global styles, animation loaders, and Django integration in an unfamiliar CMS workspace.\n\n## Incorrect Use\nDo not use `codebase-recon` to do not use codebase-recon to rewrite or debug source code files.\n\n## Multi-Agent Workflow Example\n```text\nUse codebase-recon to map out visual selectors, designer-mobile to make edits, and visual-qa-agent to confirm formatting.\n```\n"
+    },
+    {
+      "name": "component-refactor",
+      "title": "Component Refactoring",
+      "version": "1.0.0",
+      "category": "architecture",
+      "tags": [
+        "refactoring",
+        "components",
+        "css",
+        "clean-code"
+      ],
+      "useWhen": [
+        "One component controls the entire homepage",
+        "Project-specific CSS is scattered",
+        "Magic numbers exist"
+      ],
+      "avoidWhen": [
+        "Over-abstracting one-off editorial layouts",
+        "Refactoring unrelated backend code during visual fixes"
+      ],
+      "inputs": [
+        "Legacy component files",
+        "Markup structure",
+        "CSS rule locations",
+        "Component state data"
+      ],
+      "outputs": [
+        "Refactored component code",
+        "Props contract details",
+        "Cleaned styles",
+        "State separation map"
+      ],
+      "recommendedWith": [
+        "media-fit-specialist",
+        "visual-qa-agent",
+        "interaction-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Refactors brittle page code into reusable, testable, data-driven components.",
+      "examplesMarkdown": "# Component Refactoring Examples\n\n## Simple Request\nUse `component-refactor` to use component-refactor to extract a simple list item into its own component.\n\n## Advanced Request\nUse `component-refactor` to use component-refactor to split a giant home script into data-driven ProjectCards and a separate layout shell.\n\n## Incorrect Use\nDo not use `component-refactor` to do not use component-refactor to add unrelated backend logic to the UI.\n\n## Multi-Agent Workflow Example\n```text\nUse codebase-recon to identify brittle layouts, component-refactor to separate styling, and interaction-qa-agent to test click flows.\n```\n"
+    },
+    {
+      "name": "content-hierarchy",
+      "title": "Content Hierarchy Optimization",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "content",
+        "hierarchy",
+        "information-architecture",
+        "trust"
+      ],
+      "useWhen": [
+        "Homepage repeats project details",
+        "Pages feel long but say little",
+        "Critical content is buried"
+      ],
+      "avoidWhen": [
+        "Filling negative space with text",
+        "Removing credibility proof",
+        "Hiding emergency or operational info"
+      ],
+      "inputs": [
+        "Page text",
+        "User goal brief",
+        "Trust evidence",
+        "Call to action priority"
+      ],
+      "outputs": [
+        "Reorganize content table",
+        "Revised copy outline",
+        "CTA placement roadmap",
+        "Trust credentials structure"
+      ],
+      "recommendedWith": [
+        "design-me",
+        "portfolio-ux",
+        "automotive-ux",
+        "healthcare-ux"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Reduces repetition and reorganizes content around trust, evidence, understanding, and action.",
+      "examplesMarkdown": "# Content Hierarchy Optimization Examples\n\n## Simple Request\nUse `content-hierarchy` to use content-hierarchy to reduce duplicate text blocks in headers.\n\n## Advanced Request\nUse `content-hierarchy` to use content-hierarchy to create a clear layout structure mapping trust elements, services comparison, and CTA actions on the homepage.\n\n## Incorrect Use\nDo not use `content-hierarchy` to do not use content-hierarchy to write raw SEO-optimized copy for ranking.\n\n## Multi-Agent Workflow Example\n```text\nUse content-hierarchy to define section mapping, design-me to shape typography, and ux-conversion-strategist to position buttons.\n```\n"
+    },
+    {
+      "name": "deployment-verifier",
+      "title": "Deployment Verification",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "deployment",
+        "vercel",
+        "domain",
+        "production"
+      ],
+      "useWhen": [
+        "Live and local differ",
+        "Vercel preview and production differ",
+        "Build succeeded but behavior is wrong"
+      ],
+      "avoidWhen": [
+        "Assuming local build equals production",
+        "Trusting one stale fetch",
+        "Declaring fixed without checking live URL"
+      ],
+      "inputs": [
+        "Production domain",
+        "Expected commit ID",
+        "Git branch",
+        "Vercel preview link"
+      ],
+      "outputs": [
+        "Build and runtime logs audit",
+        "Production status report",
+        "Alias configuration check",
+        "Cache status check"
+      ],
+      "recommendedWith": [
+        "accessibility-auditor",
+        "interaction-qa-agent",
+        "visual-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Verifies Git branch, production deployment, domain alias, logs, cache, and live-site behavior.",
+      "examplesMarkdown": "# Deployment Verification Examples\n\n## Simple Request\nUse `deployment-verifier` to use deployment-verifier to check Vercel build status.\n\n## Advanced Request\nUse `deployment-verifier` to use deployment-verifier to inspect production aliases, env keys, error logs, and verify server responses on live routes.\n\n## Incorrect Use\nDo not use `deployment-verifier` to do not use deployment-verifier to design responsive desktop layouts.\n\n## Multi-Agent Workflow Example\n```text\nUse any design skill to make layout adjustments, run building tools, and deployment-verifier to verify correct commit changes are live.\n```\n"
+    },
+    {
+      "name": "design-me",
+      "title": "Creative Design Audit",
+      "description": "Audits and redesigns websites while preserving the strongest parts of their identity.",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "design",
+        "creative-direction",
+        "audit"
+      ],
+      "useWhen": [
+        "The entire page looks generic",
+        "The hierarchy feels wrong",
+        "The user wants a redesign",
+        "Several sections need coordinated improvement"
+      ],
+      "avoidWhen": [
+        "A single broken link",
+        "A deployment mismatch",
+        "A narrowly isolated image-crop problem"
+      ],
+      "inputs": [
+        "Live URL",
+        "Screenshots",
+        "Business goal",
+        "Desired personality",
+        "Reference websites"
+      ],
+      "outputs": [
+        "Design audit",
+        "Prioritized defects",
+        "Revised section architecture",
+        "Design tokens"
+      ],
+      "recommendedWith": [
+        "design-system-extractor",
+        "designer-mobile",
+        "content-hierarchy"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# Creative Design Audit Examples\n\n## Simple Request\nUse `design-me` to use design-me to audit the homepage layout and recommend section orders.\n\n## Advanced Request\nUse `design-me` to use design-me to review the layout, typography, contrast, and spacing, then define a new visual direction using an off-white and wine theme.\n\n## Incorrect Use\nDo not use `design-me` to do not use design-me to troubleshoot a failing build in production.\n\n## Multi-Agent Workflow Example\n```text\nUse codebase-recon to map components, design-me to audit visual layout, and designer-mobile to adapt the selected changes to mobile screens.\n```\n"
+    },
+    {
+      "name": "design-system-extractor",
+      "title": "Design System Extraction",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "tokens",
+        "design-system",
+        "analysis",
+        "spacing"
+      ],
+      "useWhen": [
+        "The user likes another website",
+        "Exact font or spacing needs inspection",
+        "A new website should borrow mechanics, not identity"
+      ],
+      "avoidWhen": [
+        "Copying private source code",
+        "Reusing project images",
+        "Copying written content"
+      ],
+      "inputs": [
+        "Reference URL",
+        "Reference screenshots",
+        "Target components"
+      ],
+      "outputs": [
+        "Design system tokens",
+        "Spacing scales",
+        "Typography scales",
+        "Originality safeguards"
+      ],
+      "recommendedWith": [
+        "design-me",
+        "typography-director",
+        "motion-architect"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Extracts reusable visual rules from references without blindly cloning them.",
+      "examplesMarkdown": "# Design System Extraction Examples\n\n## Simple Request\nUse `design-system-extractor` to use design-system-extractor to inspect spacing margins on a reference site.\n\n## Advanced Request\nUse `design-system-extractor` to use design-system-extractor to analyze karolinahess.com and extract spacing rhythm, typography ratios, and navbar layout ideas.\n\n## Incorrect Use\nDo not use `design-system-extractor` to do not use design-system-extractor to scrape copy or download images.\n\n## Multi-Agent Workflow Example\n```text\nUse design-system-extractor to map reference system properties, typography-director to pair free font alternatives, and component-refactor to implement tokens.\n```\n"
+    },
+    {
+      "name": "designer-mobile",
+      "title": "Mobile Design Reconstruction",
+      "description": "Reconstructs desktop experiences for mobile without cropping, shrinking, or deleting core behavior.",
+      "version": "1.0.0",
+      "category": "responsive",
+      "tags": [
+        "mobile",
+        "responsive",
+        "touch",
+        "layout"
+      ],
+      "useWhen": [
+        "Cards fill the mobile screen",
+        "Desktop animations disappear on mobile",
+        "Fixed controls overlap content"
+      ],
+      "avoidWhen": [
+        "The problem is only a broken production deployment"
+      ],
+      "inputs": [
+        "Repository",
+        "Live URL",
+        "Mobile screenshots",
+        "Target breakpoints"
+      ],
+      "outputs": [
+        "Mobile layout specification",
+        "Responsive type scale",
+        "Breakpoint behavior",
+        "QA screenshots"
+      ],
+      "recommendedWith": [
+        "typography-director",
+        "scroll-systems-engineer",
+        "visual-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# Mobile Design Reconstruction Examples\n\n## Simple Request\nUse `designer-mobile` to use designer-mobile to fix oversized project cards at 390px.\n\n## Advanced Request\nUse `designer-mobile` to use designer-mobile and scroll-systems-engineer to rebuild the homepage Recent Work pinned carousel for touch devices.\n\n## Incorrect Use\nDo not use `designer-mobile` to do not use designer-mobile to debug a stale Vercel deployment.\n\n## Multi-Agent Workflow Example\n```text\nUse designer-mobile to design the mobile grid, scroll-systems-engineer to implement responsive touch snap, and visual-qa-agent to verify.\n```\n"
+    },
+    {
+      "name": "healthcare-ux",
+      "title": "Healthcare UX Design",
+      "version": "1.0.0",
+      "category": "domain-ux",
+      "tags": [
+        "healthcare",
+        "hospital",
+        "opd",
+        "appointments"
+      ],
+      "useWhen": [
+        "Designing clinics, hospital websites, or medical directories"
+      ],
+      "avoidWhen": [
+        "Adding entertainment-style motion to critical tasks",
+        "Hard-coding admin content",
+        "Reducing text readability"
+      ],
+      "inputs": [
+        "OPD timings",
+        "Doctor listings",
+        "Departments info",
+        "Emergency call numbers"
+      ],
+      "outputs": [
+        "Emergency quick links",
+        "OPD schedules layout",
+        "Doctor search design",
+        "Bilingual Punjabi/English targets"
+      ],
+      "recommendedWith": [
+        "accessibility-auditor",
+        "backend-admin-preserver",
+        "designer-mobile"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Designs trustworthy hospital experiences with clear emergency, doctor, OPD, and appointment flows.",
+      "examplesMarkdown": "# Healthcare UX Design Examples\n\n## Simple Request\nUse `healthcare-ux` to use healthcare-ux to align hospital contact information.\n\n## Advanced Request\nUse `healthcare-ux` to use healthcare-ux to structure OPD timings, department categories, and doctors index, ensuring patient emergency details are reachable.\n\n## Incorrect Use\nDo not use `healthcare-ux` to do not use healthcare-ux to implement generic fitness tracker landing pages.\n\n## Multi-Agent Workflow Example\n```text\nUse healthcare-ux to layout medical views, backend-admin-preserver to map Django databases, and accessibility-auditor to test focus styles.\n```\n"
+    },
+    {
+      "name": "interaction-qa-agent",
+      "title": "Interaction QA Auditing",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "interaction-qa",
+        "gestures",
+        "clicks",
+        "modals"
+      ],
+      "useWhen": [
+        "After navigation changes",
+        "Route transitions",
+        "Bottom nav updates",
+        "Forms and lightboxes"
+      ],
+      "avoidWhen": [
+        "Assuming visible elements work",
+        "Letting swipes trigger accidental navigation",
+        "Ignoring browser back/forward"
+      ],
+      "inputs": [
+        "Nav link paths",
+        "Interactions list",
+        "Keyboard flow targets"
+      ],
+      "outputs": [
+        "Interaction matrix results",
+        "Browser back/forward report",
+        "Console logs audit"
+      ],
+      "recommendedWith": [
+        "accessibility-auditor",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Tests clicks, taps, keyboard actions, scrolling, drawers, modals, routes, and external links.",
+      "examplesMarkdown": "# Interaction QA Auditing Examples\n\n## Simple Request\nUse `interaction-qa-agent` to use interaction-qa-agent to click and check all links in a footer.\n\n## Advanced Request\nUse `interaction-qa-agent` to use interaction-qa-agent to build and check an interaction matrix for route morph transitions, touch swipes, and form validations.\n\n## Incorrect Use\nDo not use `interaction-qa-agent` to do not use interaction-qa-agent to audit font readability in paragraphs.\n\n## Multi-Agent Workflow Example\n```text\nUse route-transition-designer to code routing, interaction-qa-agent to test back/forward history, and deployment-verifier to check on Vercel.\n```\n"
+    },
+    {
+      "name": "media-fit-specialist",
+      "title": "Media Fit Specialization",
+      "version": "1.0.0",
+      "category": "responsive",
+      "tags": [
+        "images",
+        "cropping",
+        "aspect-ratio",
+        "cards"
+      ],
+      "useWhen": [
+        "Portrait assets are forced into landscape cards",
+        "Titles are cropped",
+        "Images stretch or blur"
+      ],
+      "avoidWhen": [
+        "Applying one global object-fit rule",
+        "Stretching artwork to fit a container"
+      ],
+      "inputs": [
+        "Asset list",
+        "Container aspect ratios",
+        "Image focal points",
+        "Card components"
+      ],
+      "outputs": [
+        "Object-fit properties",
+        "Object-position values",
+        "Responsive card media configs",
+        "Crop guidelines"
+      ],
+      "recommendedWith": [
+        "asset-optimizer",
+        "designer-mobile",
+        "visual-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Fits mixed-ratio artwork into cards without stretching, severe crop, or exposed artboards.",
+      "examplesMarkdown": "# Media Fit Specialization Examples\n\n## Simple Request\nUse `media-fit-specialist` to use media-fit-specialist to prevent layout stretching of image files.\n\n## Advanced Request\nUse `media-fit-specialist` to use media-fit-specialist to define per-project aspect ratio and object-position coordinates for mixed landscape, portrait, and square project cards.\n\n## Incorrect Use\nDo not use `media-fit-specialist` to do not use media-fit-specialist to compress or resize raw image assets.\n\n## Multi-Agent Workflow Example\n```text\nUse media-fit-specialist to set CSS presentation overrides, asset-optimizer to build responsive srcsets, and visual-qa-agent to verify.\n```\n"
+    },
+    {
+      "name": "motion-architect",
+      "title": "Motion Architecture",
+      "version": "1.0.0",
+      "category": "motion",
+      "tags": [
+        "motion",
+        "animation",
+        "gsap",
+        "transitions"
+      ],
+      "useWhen": [
+        "Animations feel random",
+        "Every section uses a different effect",
+        "Entrance order lacks hierarchy"
+      ],
+      "avoidWhen": [
+        "Hiding poor static composition",
+        "Animating every character on a page",
+        "Creating long artificial delays"
+      ],
+      "inputs": [
+        "Static designs",
+        "Easing tokens",
+        "Animation timelines",
+        "Responsive requirements"
+      ],
+      "outputs": [
+        "Motion guidelines",
+        "Animation duration tokens",
+        "Timeline selectors",
+        "Reduced-motion fallbacks"
+      ],
+      "recommendedWith": [
+        "scroll-systems-engineer",
+        "route-transition-designer",
+        "visual-qa-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Creates a coherent motion language for entrances, reveals, parallax, hover, and cinematic transitions.",
+      "examplesMarkdown": "# Motion Architecture Examples\n\n## Simple Request\nUse `motion-architect` to use motion-architect to adjust easing and duration variables on entrance animations.\n\n## Advanced Request\nUse `motion-architect` to use motion-architect to clean up conflicting timelines, unify entrance ease tokens, and implement reduced-motion media query gates.\n\n## Incorrect Use\nDo not use `motion-architect` to do not use motion-architect to animate text in general long paragraphs.\n\n## Multi-Agent Workflow Example\n```text\nUse design-me to set layout, motion-architect to coordinate entrances, and visual-qa-agent to capture layout transitions at all breakpoints.\n```\n"
+    },
+    {
+      "name": "performance-optimizer",
+      "title": "Performance Optimization",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "performance",
+        "speed",
+        "lighthouse",
+        "rendering"
+      ],
+      "useWhen": [
+        "Scroll stutters",
+        "Mobile feels delayed",
+        "Images are heavy",
+        "WebGL or blur operations are expensive"
+      ],
+      "avoidWhen": [
+        "Removing core design details without measuring",
+        "Optimizing only Lighthouse while ignoring interaction lag"
+      ],
+      "inputs": [
+        "Performance baseline metrics",
+        "Animation loops",
+        "Bundle asset sizes",
+        "Mobile target test devices"
+      ],
+      "outputs": [
+        "RAF loop cleanups",
+        "Filters and blur optimizations",
+        "Loading strategy",
+        "Before/after performance comparisons"
+      ],
+      "recommendedWith": [
+        "asset-optimizer",
+        "scroll-systems-engineer",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Improves loading, rendering, animation, and mobile runtime performance without degrading design.",
+      "examplesMarkdown": "# Performance Optimization Examples\n\n## Simple Request\nUse `performance-optimizer` to use performance-optimizer to audit heavy image downloads.\n\n## Advanced Request\nUse `performance-optimizer` to use performance-optimizer to debug GSAP scroll timeline lag, optimize CSS backdrop filters, and define loading priority.\n\n## Incorrect Use\nDo not use `performance-optimizer` to do not use performance-optimizer to write database migration scripts.\n\n## Multi-Agent Workflow Example\n```text\nUse performance-optimizer to measure runtime stutter, asset-optimizer to compress images, and deployment-verifier to verify production cache.\n```\n"
+    },
+    {
+      "name": "portfolio-ux",
+      "title": "Portfolio UX Design",
+      "version": "1.0.0",
+      "category": "domain-ux",
+      "tags": [
+        "portfolio",
+        "positioning",
+        "credentials",
+        "showcase"
+      ],
+      "useWhen": [
+        "A portfolio looks artistic but unclear",
+        "Projects repeat",
+        "Recruiters cannot identify the role"
+      ],
+      "avoidWhen": [
+        "Putting skill badges everywhere",
+        "Repeating all projects on every page",
+        "Making motion more important than work"
+      ],
+      "inputs": [
+        "Personal bio",
+        "Selected works data",
+        "Outcomes and case studies",
+        "Contact details"
+      ],
+      "outputs": [
+        "Positioning statements",
+        "Selected project grids",
+        "About page structure",
+        "Scannable credentials log"
+      ],
+      "recommendedWith": [
+        "design-me",
+        "motion-architect",
+        "route-transition-designer"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Optimizes portfolios for positioning, work credibility, scanning, and contact conversion.",
+      "examplesMarkdown": "# Portfolio UX Design Examples\n\n## Simple Request\nUse `portfolio-ux` to use portfolio-ux to simplify a developer bio paragraph.\n\n## Advanced Request\nUse `portfolio-ux` to use portfolio-ux to clarify professional positioning, display works, and outline credentials on the home layout.\n\n## Incorrect Use\nDo not use `portfolio-ux` to do not use portfolio-ux to build multi-author studio blogs.\n\n## Multi-Agent Workflow Example\n```text\nUse portfolio-ux to define content goals, design-me to layout grids, and route-transition-designer to construct page transition morphs.\n```\n"
+    },
+    {
+      "name": "route-transition-designer",
+      "title": "Route Transition Design",
+      "version": "1.0.0",
+      "category": "motion",
+      "tags": [
+        "routing",
+        "transitions",
+        "navigation",
+        "shared-elements"
+      ],
+      "useWhen": [
+        "The transition is only a fade",
+        "A generic curtain looks cheap",
+        "Navigation unmounts between pages"
+      ],
+      "avoidWhen": [
+        "Adding unrelated center lines",
+        "Fake loading percentages",
+        "Breaking modified clicks or external links"
+      ],
+      "inputs": [
+        "Route architecture",
+        "Persistent shared element selectors",
+        "Source and destination geometry"
+      ],
+      "outputs": [
+        "Route lifecycle config",
+        "Page transition styles",
+        "Morph geometry values",
+        "Back/Forward handler"
+      ],
+      "recommendedWith": [
+        "motion-architect",
+        "interaction-qa-agent",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Creates premium page transitions rooted in persistent navigation and shared elements.",
+      "examplesMarkdown": "# Route Transition Design Examples\n\n## Simple Request\nUse `route-transition-designer` to use route-transition-designer to transition with a cross-fade when navigating pages.\n\n## Advanced Request\nUse `route-transition-designer` to use route-transition-designer to morph a clicked grid card element into the hero image of the destination detail page.\n\n## Incorrect Use\nDo not use `route-transition-designer` to do not use route-transition-designer to route external social links.\n\n## Multi-Agent Workflow Example\n```text\nUse route-transition-designer to build shared-element morphing, interaction-qa-agent to test browser history flow, and deployment-verifier to check on production.\n```\n"
+    },
+    {
+      "name": "scroll-systems-engineer",
+      "title": "Scroll Systems Engineering",
+      "version": "1.0.0",
+      "category": "motion",
+      "tags": [
+        "scroll",
+        "scrolltrigger",
+        "lenis",
+        "pinning"
+      ],
+      "useWhen": [
+        "A pinned section skips content",
+        "Horizontal movement does not complete",
+        "Lenis and ScrollTrigger fight"
+      ],
+      "avoidWhen": [
+        "Adding global scroll-snap-type mandatorily",
+        "Debouncing normal scrolling",
+        "Forcing mobile users through desktop timing"
+      ],
+      "inputs": [
+        "Viewport layouts",
+        "Scroll track containers",
+        "Lenis configuration",
+        "Trigger timings"
+      ],
+      "outputs": [
+        "Scroll timeline code",
+        "Snap calculations",
+        "Breakpoint cleanup rules",
+        "Touch scroll fallbacks"
+      ],
+      "recommendedWith": [
+        "designer-mobile",
+        "motion-architect",
+        "performance-optimizer"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Builds and debugs pinned scenes, horizontal tracks, snap states, Lenis integration, and touch scrolling.",
+      "examplesMarkdown": "# Scroll Systems Engineering Examples\n\n## Simple Request\nUse `scroll-systems-engineer` to use scroll-systems-engineer to debug a pinned element trigger in a section.\n\n## Advanced Request\nUse `scroll-systems-engineer` to use scroll-systems-engineer to build a horizontal scroll track for the Recent Work layout with custom mobile snapping.\n\n## Incorrect Use\nDo not use `scroll-systems-engineer` to do not use scroll-systems-engineer to implement fixed layout headers.\n\n## Multi-Agent Workflow Example\n```text\nUse scroll-systems-engineer to implement a pinned hero section, performance-optimizer to check lag on scroll triggers, and designer-mobile to test on mobile touch.\n```\n"
+    },
+    {
+      "name": "seo-local-search",
+      "title": "SEO & Local Search",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "seo",
+        "metadata",
+        "schema",
+        "sitemap"
+      ],
+      "useWhen": [
+        "Before production",
+        "For hospitals and local businesses",
+        "Favicon or OG images are missing"
+      ],
+      "avoidWhen": [
+        "Fabricating reviews or ratings",
+        "Keyword stuffing",
+        "Using identical metadata everywhere"
+      ],
+      "inputs": [
+        "Business location",
+        "Services list",
+        "Contact numbers",
+        "Public routes"
+      ],
+      "outputs": [
+        "Schema markup files",
+        "Sitemap configuration",
+        "Robots.txt config",
+        "Route-specific meta tags"
+      ],
+      "recommendedWith": [
+        "automotive-ux",
+        "healthcare-ux",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Improves technical SEO, local search, metadata, schema, and social previews.",
+      "examplesMarkdown": "# SEO & Local Search Examples\n\n## Simple Request\nUse `seo-local-search` to use seo-local-search to audit meta description strings.\n\n## Advanced Request\nUse `seo-local-search` to use seo-local-search to generate sitemaps, check OG preview cards, and write MedicalOrganization schema matching doctor pages.\n\n## Incorrect Use\nDo not use `seo-local-search` to do not use seo-local-search to write fake customer review content.\n\n## Multi-Agent Workflow Example\n```text\nUse healthcare-ux to verify visible OP services, seo-local-search to write schema tags, and deployment-verifier to check sitemap headers.\n```\n"
+    },
+    {
+      "name": "typography-director",
+      "title": "Typography Direction",
+      "version": "1.0.0",
+      "category": "responsive",
+      "tags": [
+        "typography",
+        "fonts",
+        "fluid-type",
+        "multilingual"
+      ],
+      "useWhen": [
+        "Fonts feel cheap",
+        "Punjabi and English do not match",
+        "Headings overflow or wrap awkwardly"
+      ],
+      "avoidWhen": [
+        "Using multiple decorative fonts in one identity",
+        "Ignoring fallback layout shift"
+      ],
+      "inputs": [
+        "Font names",
+        "Screenshots",
+        "Multilingual text samples",
+        "Target breakpoints"
+      ],
+      "outputs": [
+        "Font pairings",
+        "Fluid sizing tokens",
+        "Tracking and leading specs",
+        "Font fallback overrides"
+      ],
+      "recommendedWith": [
+        "design-system-extractor",
+        "designer-mobile",
+        "performance-optimizer"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Builds responsive, multilingual typography systems with correct hierarchy and optical balance.",
+      "examplesMarkdown": "# Typography Direction Examples\n\n## Simple Request\nUse `typography-director` to use typography-director to select standard Google Font fallbacks.\n\n## Advanced Request\nUse `typography-director` to use typography-director to pair a Punjabi serif display font with a clean Latin sans-serif, matching visual widths and weights.\n\n## Incorrect Use\nDo not use `typography-director` to do not use typography-director to load 5 different web font files on the page.\n\n## Multi-Agent Workflow Example\n```text\nUse typography-director to structure fluid type, designer-mobile to review layout wrapping on 390px, and performance-optimizer to test font layout shift.\n```\n"
+    },
+    {
+      "name": "ux-conversion-strategist",
+      "title": "UX Conversion Strategy",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "conversion",
+        "cro",
+        "cta",
+        "trust"
+      ],
+      "useWhen": [
+        "The site looks good but users do not know what to do",
+        "Contact is buried",
+        "Too many CTAs compete"
+      ],
+      "avoidWhen": [
+        "Putting a CTA in every section",
+        "Asking for commitment before establishing trust"
+      ],
+      "inputs": [
+        "Conversion goals",
+        "Contact points",
+        "User concerns",
+        "Evidence assets"
+      ],
+      "outputs": [
+        "CTA layout rules",
+        "Trust placement specifications",
+        "Friction reduction plan",
+        "Mobile actions list"
+      ],
+      "recommendedWith": [
+        "automotive-ux",
+        "healthcare-ux",
+        "portfolio-ux"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Optimizes trust, evidence, CTA hierarchy, and conversion paths.",
+      "examplesMarkdown": "# UX Conversion Strategy Examples\n\n## Simple Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to adjust contact button visibility.\n\n## Advanced Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to position detailing packages, social proof, and a prominent WhatsApp CTA to optimize booking rates.\n\n## Incorrect Use\nDo not use `ux-conversion-strategist` to do not use ux-conversion-strategist to put multiple booking forms on the home hero banner.\n\n## Multi-Agent Workflow Example\n```text\nUse ux-conversion-strategist to specify CTA sequence, designer-mobile to format spacing on mobile viewports, and interaction-qa-agent to verify.\n```\n"
+    },
+    {
+      "name": "visual-qa-agent",
+      "title": "Visual QA Auditing",
+      "version": "1.0.0",
+      "category": "quality-delivery",
+      "tags": [
+        "visual-qa",
+        "screenshots",
+        "regression",
+        "breakpoints"
+      ],
+      "useWhen": [
+        "After any redesign",
+        "Mobile changes",
+        "Typography changes",
+        "Scroll animation updates"
+      ],
+      "avoidWhen": [
+        "Approve based on build success only",
+        "Testing only desktop screens",
+        "Capture only one screenshot of animation"
+      ],
+      "inputs": [
+        "Target breakpoints",
+        "Scroll states to capture",
+        "Baseline references"
+      ],
+      "outputs": [
+        "Viewport screenshot matrix",
+        "Layout regression report",
+        "State comparison charts"
+      ],
+      "recommendedWith": [
+        "designer-mobile",
+        "motion-architect",
+        "scroll-systems-engineer"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Performs screenshot-based visual regression testing across routes, breakpoints, and animation states.",
+      "examplesMarkdown": "# Visual QA Auditing Examples\n\n## Simple Request\nUse `visual-qa-agent` to use visual-qa-agent to capture screenshots at different breakpoints.\n\n## Advanced Request\nUse `visual-qa-agent` to use visual-qa-agent to record 1440px and 390px layouts during scroll triggers, checking project card scaling.\n\n## Incorrect Use\nDo not use `visual-qa-agent` to do not use visual-qa-agent to test backend form validation scripts.\n\n## Multi-Agent Workflow Example\n```text\nUse designer-mobile to modify layout, visual-qa-agent to capture screenshots across 5 viewports, and interaction-qa-agent to test click targets.\n```\n"
+    }
+  ],
+  "workflows": {
+    "automotive-workflow": {
+      "name": "Automotive Workflow",
+      "description": "Premium automotive detailing business layout and conversion path.",
+      "steps": [
+        "codebase-recon",
+        "automotive-ux",
+        "design-system-extractor",
+        "content-hierarchy",
+        "designer-mobile",
+        "media-fit-specialist",
+        "ux-conversion-strategist",
+        "seo-local-search",
+        "visual-qa-agent",
+        "deployment-verifier"
+      ],
+      "markdown": "# Automotive Workflow\n\nAutomotive detailing studio, ceramic coating, and PPF service workflow.\n\n## Sequence\n`codebase-recon → automotive-ux → design-system-extractor → content-hierarchy → designer-mobile → media-fit-specialist → ux-conversion-strategist → seo-local-search → visual-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Establish high-end craftsmanship without generic styling\n- Build strong WhatsApp and booking conversion paths\n- Structure package comparisons clearly\n- Verify image fitting of portrait and landscape project cards\n- Enable local SEO and search snippets\n"
+    },
+    "cinematic-motion": {
+      "name": "Cinematic Motion",
+      "description": "Creates a unified motion system and scroll experiences.",
+      "steps": [
+        "design-me",
+        "motion-architect",
+        "scroll-systems-engineer",
+        "performance-optimizer",
+        "designer-mobile",
+        "visual-qa-agent",
+        "interaction-qa-agent"
+      ],
+      "markdown": "# Cinematic Motion Workflow\n\nCreates a unified motion system and scroll experiences.\n\n## Sequence\n`design-me → motion-architect → scroll-systems-engineer → performance-optimizer → designer-mobile → visual-qa-agent → interaction-qa-agent`\n\n## Primary Focus\n- Establish a single, consistent motion language across sections\n- Separate time-based and scroll-based motion\n- Measure real viewport heights and track scroll triggers\n- Maintain performance budget, optimizing WebGL or blur\n- Capture start, middle, and end scroll-state screenshots\n"
+    },
+    "full-website-audit": {
+      "name": "Full Website Audit",
+      "description": "Comprehensive audit, redesign, testing, and production verification.",
+      "steps": [
+        "codebase-recon",
+        "design-system-extractor",
+        "ux-conversion-strategist",
+        "content-hierarchy",
+        "designer-mobile",
+        "motion-architect",
+        "scroll-systems-engineer",
+        "accessibility-auditor",
+        "performance-optimizer",
+        "visual-qa-agent",
+        "interaction-qa-agent",
+        "deployment-verifier"
+      ],
+      "markdown": "# Full Website Audit Workflow\n\nComprehensive audit, redesign, testing, and production verification.\n\n## Sequence\n`codebase-recon → design-system-extractor → ux-conversion-strategist → content-hierarchy → designer-mobile → motion-architect → scroll-systems-engineer → accessibility-auditor → performance-optimizer → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Map codebase and extract design system rules\n- Rationalize content placement and conversion goals\n- Reconstruct layout for mobile breakpoints\n- Implement coherent motion and scroll interactions\n- Execute full accessibility audit and performance tuning\n- Perform visual and interaction QA, and verify production deployment\n"
+    },
+    "healthcare-workflow": {
+      "name": "Healthcare Workflow",
+      "description": "Hospital and clinic website organization, accessibility, and CMS preservation.",
+      "steps": [
+        "codebase-recon",
+        "healthcare-ux",
+        "content-hierarchy",
+        "accessibility-auditor",
+        "backend-admin-preserver",
+        "designer-mobile",
+        "interaction-qa-agent",
+        "seo-local-search",
+        "deployment-verifier"
+      ],
+      "markdown": "# Healthcare Workflow\n\nHospital and clinic website design, accessibility, and content hierarchy workflow.\n\n## Sequence\n`codebase-recon → healthcare-ux → content-hierarchy → accessibility-auditor → backend-admin-preserver → designer-mobile → interaction-qa-agent → seo-local-search → deployment-verifier`\n\n## Primary Focus\n- Quick mobile access to Emergency calling and Ambulance\n- Visible OPD timings and department listings\n- Assistive technology and keyboard navigation checks\n- Protecting editability of operational content in the CMS\n- Verification of sitemap, metadata, and local search presence\n"
+    },
+    "mobile-reconstruction": {
+      "name": "Mobile Reconstruction",
+      "description": "Rebuilds desktop experiences for mobile screens and touch inputs.",
+      "steps": [
+        "codebase-recon",
+        "designer-mobile",
+        "typography-director",
+        "media-fit-specialist",
+        "scroll-systems-engineer",
+        "visual-qa-agent",
+        "interaction-qa-agent"
+      ],
+      "markdown": "# Mobile Reconstruction Workflow\n\nRebuilds desktop experiences for mobile screens and touch inputs.\n\n## Sequence\n`codebase-recon → designer-mobile → typography-director → media-fit-specialist → scroll-systems-engineer → visual-qa-agent → interaction-qa-agent`\n\n## Primary Focus\n- Adapt desktop compositions for mobile without cropping essential behavior\n- Set fluid typography scales and spacing parameters\n- Fix safe-area and fixed-control collisions\n- Build mobile-specific, lightweight animation timelines\n- Test touch interactions, reverse scroll, and orientation changes\n"
+    },
+    "portfolio-workflow": {
+      "name": "Portfolio Workflow",
+      "description": "Optimizes editorial developer portfolios for positioning and credentials.",
+      "steps": [
+        "codebase-recon",
+        "portfolio-ux",
+        "design-system-extractor",
+        "typography-director",
+        "motion-architect",
+        "scroll-systems-engineer",
+        "route-transition-designer",
+        "designer-mobile",
+        "media-fit-specialist",
+        "visual-qa-agent",
+        "interaction-qa-agent",
+        "deployment-verifier"
+      ],
+      "markdown": "# Portfolio Workflow\n\nEditorial developer and creative professional portfolio workflow.\n\n## Sequence\n`codebase-recon → portfolio-ux → design-system-extractor → typography-director → motion-architect → scroll-systems-engineer → route-transition-designer → designer-mobile → media-fit-specialist → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Clean, focused professional positioning\n- Seamless typography and spacing system\n- Coherent cinematic motion language (entrance reveals, scroll control)\n- Responsive mobile adaptation (Recent Work touch carousel)\n- Shared element route morphing transitions\n"
+    },
+    "release-gate": {
+      "name": "Release Gate",
+      "description": "Validates visual regression, interaction, SEO, and production deployment.",
+      "steps": [
+        "accessibility-auditor",
+        "performance-optimizer",
+        "visual-qa-agent",
+        "interaction-qa-agent",
+        "seo-local-search",
+        "deployment-verifier"
+      ],
+      "markdown": "# Release Gate Workflow\n\nValidates visual regression, interaction, SEO, and production deployment before final delivery.\n\n## Sequence\n`accessibility-auditor → performance-optimizer → visual-qa-agent → interaction-qa-agent → seo-local-search → deployment-verifier`\n\n## Primary Focus\n- Verify keyboard layout, semantic HTML, and text contrast\n- Check loading performance and asset budgets\n- Validate visual layout across all breakpoints (1440px down to 390px)\n- Perform full interaction gesture test\n- Verify sitemaps, robots.txt, metadata, and production deployment aliases\n"
+    },
+    "route-transition": {
+      "name": "Route Transition",
+      "description": "Premium page switching rooted in a real interface element.",
+      "steps": [
+        "codebase-recon",
+        "route-transition-designer",
+        "motion-architect",
+        "interaction-qa-agent",
+        "accessibility-auditor",
+        "deployment-verifier"
+      ],
+      "markdown": "# Route Transition Workflow\n\nPremium route transition implementation workflow.\n\n## Sequence\n`codebase-recon → route-transition-designer → motion-architect → interaction-qa-agent → accessibility-auditor → deployment-verifier`\n\n## Primary Focus\n- Establish route transitions rooted in real shared interface elements\n- Cover the page swap cleanly without visual jumps\n- Maintain persistent global navigation header/footer shell\n- Verify touch targets and keyboard focus trap/restoration after route transitions\n- Verify page back/forward actions\n"
+    }
+  },
+  "examples": [
+    {
+      "id": "bibi-kaulan-hospital",
+      "title": "Bibi Kaulan Hospital",
+      "readme": "# Bibi Kaulan Ji Hospital\n\nHospital website with emergency, doctors, departments, OPD timings, appointments, and admin-managed content.\n\n## Target Platform\nDatabase-driven web application with a backend (e.g. Django, headless CMS).\n\n## Recommended Agents\n- `healthcare-ux`\n- `accessibility-auditor`\n- `backend-admin-preserver`\n- `designer-mobile`\n- `seo-local-search`\n\n## Project Specific Risks\n- OPD timings hidden below blank space\n- Emergency actions buried\n- Doctor and department discovery friction\n- Motion interfering with patient tasks\n- Admin-editable data becoming hard-coded\n",
+      "plan": "# Bibi Kaulan Ji Hospital Agent Plan\n\n`codebase-recon → healthcare-ux → content-hierarchy → designer-mobile → accessibility-auditor → backend-admin-preserver → interaction-qa-agent → seo-local-search → deployment-verifier`\n\n## Primary risks\n\n- OPD timings hidden below blank space\n- Emergency actions buried\n- Doctor and department discovery friction\n- Motion interfering with patient tasks\n- Admin-editable data becoming hard-coded\n",
+      "prompts": "# Bibi Kaulan Ji Hospital Sample Prompts\n\n## Domain UX Prompt\n```text\nUse healthcare-ux for Bibi Kaulan Ji Hospital.\n\nMake OPD timings visible immediately.\nKeep emergency, ambulance, doctors, departments, appointment, and map accessible within minimal taps on mobile.\n```\n\n## Backend Preservation Prompt\n```text\nUse backend-admin-preserver.\n\nRedesign OPD timings and doctor cards while keeping all data editable through Django Admin. Test admin edit to frontend render.\n```\n"
+    },
+    {
+      "id": "gurtejbir-portfolio",
+      "title": "Gurtejbir Portfolio",
+      "readme": "# Gurtejbir Singh Portfolio\n\nEditorial portfolio with route morphs, pinned project scrolling, mixed-ratio project media, and complex mobile behavior.\n\n## Target Platform\nNext.js or Vite-based frontend project with GSAP, Lenis, and framer-motion.\n\n## Recommended Agents\n- `portfolio-ux`\n- `motion-architect`\n- `scroll-systems-engineer`\n- `route-transition-designer`\n- `designer-mobile`\n- `visual-qa-agent`\n\n## Project Specific Risks\n- Homepage and archive repeating the same spectacle\n- Mobile cards and fonts becoming oversized\n- Recent Work disabled below desktop breakpoint\n- Lenis and ScrollTrigger causing delayed touch\n- Artwork forced into one ratio\n- Completion claimed without animation-state screenshots\n",
+      "plan": "# Gurtejbir Singh Portfolio Agent Plan\n\n`codebase-recon → portfolio-ux → design-system-extractor → typography-director → motion-architect → scroll-systems-engineer → route-transition-designer → designer-mobile → media-fit-specialist → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary risks\n\n- Homepage and archive repeating the same spectacle\n- Mobile cards and fonts becoming oversized\n- Recent Work disabled below desktop breakpoint\n- Lenis and ScrollTrigger causing delayed touch\n- Artwork forced into one ratio\n- Completion claimed without animation-state screenshots\n",
+      "prompts": "# Gurtejbir Singh Portfolio Sample Prompts\n\n## Mobile Reconstruction Prompt\n```text\nUse designer-mobile and scroll-systems-engineer to rebuild the homepage Recent Work pinned carousel for touch devices.\n```\n\n## Route Transition Prompt\n```text\nUse route-transition-designer.\n\nThe clicked bottom-navigation pill should expand into the destination page.\nKeep signature, Contact, Quick Info, socials, and nav shell mounted.\n```\n"
+    },
+    {
+      "id": "house-of-details",
+      "title": "House Of Details",
+      "readme": "# House of Details\n\nPremium automotive detailing and protection website.\n\n## Target Platform\nStatic and framework-based modern web project.\n\n## Recommended Agents\n- `automotive-ux`\n- `designer-mobile`\n- `media-fit-specialist`\n- `ux-conversion-strategist`\n- `seo-local-search`\n\n## Project Specific Risks\n- Desktop composition cropped on mobile\n- Cinematic visuals overpower service clarity\n- Weak booking and WhatsApp flow\n- Generic luxury styling\n- Before/after proof not prioritized\n",
+      "plan": "# House of Details Agent Plan\n\n`codebase-recon → automotive-ux → design-system-extractor → designer-mobile → media-fit-specialist → ux-conversion-strategist → visual-qa-agent → interaction-qa-agent → seo-local-search → deployment-verifier`\n\n## Primary risks\n\n- Desktop composition cropped on mobile\n- Cinematic visuals overpower service clarity\n- Weak booking and WhatsApp flow\n- Generic luxury styling\n- Before/after proof not prioritized\n",
+      "prompts": "# House of Details Sample Prompts\n\n## Audit & Layout\n```text\nUse automotive-ux for House of Details.\n\nClarify ceramic coating, PPF, detailing, and correction.\nPrioritize before/after proof and WhatsApp booking.\nPreserve the black, graphite, silver, and steel-blue identity.\n```\n\n## Conversion Optimization\n```text\nUse ux-conversion-strategist for House of Details.\n\nPrimary conversion: WhatsApp inquiry.\nSecondary: call and map.\nPlace service proof and package clarity before the booking ask.\n```\n"
+    }
+  ]
+};
+    // --- DATABASE_PLACEHOLDER_END ---
+  </script>
+
+  <!-- Core App Logic -->
+  <script>
+    let skillsData = [];
+    let workflowsData = {};
+    let examplesData = [];
+
+    // DOM Elements
+    const skillsGrid = document.getElementById('skills-grid');
+    const searchInput = document.getElementById('search-input');
+    const categoriesList = document.getElementById('categories-list');
+    const resultsCount = document.getElementById('results-count');
+    const resetFilters = document.getElementById('reset-filters');
+
+    const drawer = document.getElementById('drawer');
+    const drawerTitle = document.getElementById('drawer-title');
+    const drawerContent = document.getElementById('drawer-content');
+    const drawerClose = document.getElementById('drawer-close');
+
+    const workflowsGrid = document.getElementById('workflows-grid');
+    const examplesGrid = document.getElementById('examples-grid');
+
+    const problemSelector = document.getElementById('problem-selector');
+    const builderFlowNodes = document.getElementById('builder-flow-nodes');
+    const builderPromptCode = document.getElementById('builder-prompt-code');
+    const copyWorkflowBtn = document.getElementById('copy-workflow-btn');
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    const copyStarterBtn = document.getElementById('copy-starter-btn');
+    const toastMsg = document.getElementById('toast-msg');
+
+    let lastActiveElement = null;
+
+    // Workflow Builder Configuration
+    const builderMap = {
+      "full-redesign": {
+        sequence: ["codebase-recon", "design-me", "design-system-extractor", "content-hierarchy", "designer-mobile", "motion-architect", "visual-qa-agent", "deployment-verifier"],
+        prompt: "Perform a full design and workflow audit.\nFollow the Full Website Audit sequence.\nVerify components on desktop and mobile viewports."
+      },
+      "mobile-opt": {
+        sequence: ["codebase-recon", "designer-mobile", "typography-director", "scroll-systems-engineer", "visual-qa-agent"],
+        prompt: "Responsive mobile check: Reconstruct layouts for mobile viewports using designer-mobile."
+      },
+      "broken-scroll": {
+        sequence: ["codebase-recon", "scroll-systems-engineer", "designer-mobile", "performance-optimizer", "visual-qa-agent"],
+        prompt: "Scroll stutters and snaps aggressively.\nUse scroll-systems-engineer to align and inspect scroll animations."
+      },
+      "image-fitting": {
+        sequence: ["codebase-recon", "media-fit-specialist", "asset-optimizer", "visual-qa-agent"],
+        prompt: "Grid elements stretch or crop mismatch: Use media-fit-specialist to adjust aspect-ratios."
+      },
+      "page-transition": {
+        sequence: ["codebase-recon", "route-transition-designer", "motion-architect", "interaction-qa-agent"],
+        prompt: "Page transitions need a morphing layout: Use route-transition-designer."
+      },
+      "accessibility": {
+        sequence: ["codebase-recon", "accessibility-auditor", "designer-mobile", "interaction-qa-agent"],
+        prompt: "Run complete WCAG audits, touch-targets checks, and keyboard tab focus diagnostics."
+      },
+      "performance": {
+        sequence: ["codebase-recon", "performance-optimizer", "asset-optimizer", "deployment-verifier"],
+        prompt: "Low pagespeed and loading scores: optimize assets, fonts, and scripts."
+      },
+      "local-biz": {
+        sequence: ["codebase-recon", "automotive-ux", "ux-conversion-strategist", "seo-local-search", "deployment-verifier"],
+        prompt: "Local business leads: Implement localized metadata, reviews trust, and booking widgets."
+      },
+      "hospital-ux": {
+        sequence: ["codebase-recon", "healthcare-ux", "accessibility-auditor", "backend-admin-preserver", "designer-mobile"],
+        prompt: "OPD and doctors lists security check: healthcare-ux layout paired with backend security preservation."
+      },
+      "portfolio-ux": {
+        sequence: ["codebase-recon", "portfolio-ux", "motion-architect", "route-transition-designer", "designer-mobile"],
+        prompt: "Portfolio reconstruction: coordinate editorial look, custom curves, and transitions."
+      },
+      "deployment-mismatch": {
+        sequence: ["codebase-recon", "deployment-verifier"],
+        prompt: "Production deployment shows style mismatch: Run deployment logs comparison."
+      }
+    };
+
+    function init() {
+      if (window.WEBSITE_AGENT_DATA) {
+        skillsData = window.WEBSITE_AGENT_DATA.skills || [];
+        workflowsData = window.WEBSITE_AGENT_DATA.workflows || {};
+        examplesData = window.WEBSITE_AGENT_DATA.examples || [];
+      }
+      renderSkills();
+      renderWorkflows();
+      renderExamples();
+      setupEventListeners();
+    }
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    function renderSkills() {
+      skillsGrid.innerHTML = '';
+      const filtered = skillsData.filter(s => {
+        const matchCat = activeCategory === 'all' || s.category === activeCategory;
+        const query = searchQuery.toLowerCase();
+        const matchSearch = !query || 
+          s.name.toLowerCase().includes(query) ||
+          s.title.toLowerCase().includes(query) ||
+          s.description.toLowerCase().includes(query) ||
+          s.tags.some(t => t.toLowerCase().includes(query)) ||
+          s.outputs.some(o => o.toLowerCase().includes(query));
+        return matchCat && matchSearch;
+      });
+
+      resultsCount.textContent = `${filtered.length} modules visible`;
+      resetFilters.style.display = (activeCategory !== 'all' || searchQuery) ? 'inline-block' : 'none';
+
+      if (filtered.length === 0) {
+        skillsGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">[SYS_MSG: MODULES_NOT_FOUND]</div>`;
+        return;
+      }
+
+      filtered.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'skill-card';
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `View details for ${s.title}`);
+
+        const categoryNames = {
+          'strategy': 'Strategy & Design',
+          'responsive': 'Responsive & Layouts',
+          'motion': 'Motion & Transitions',
+          'architecture': 'Architecture Systems',
+          'domain-ux': 'Domain UX Specialties',
+          'quality-delivery': 'QA & Verification'
+        };
+
+        const tagsHtml = s.tags.slice(0, 3).map(t => `<span class="tag-cyber">${t}</span>`).join('');
+
+        card.innerHTML = `
+          <div class="skill-card-header">
+            <span class="skill-category-tag">${categoryNames[s.category] || s.category}</span>
+            <h3 class="skill-title">${s.title}</h3>
+            <span class="skill-code-name">agents/${s.name}</span>
+          </div>
+          <p class="skill-description">${s.description}</p>
+          <div class="skill-tags">
+            ${tagsHtml}
+          </div>
+          <div class="skill-card-footer">
+            <span class="companion-count">${s.recommendedWith.length} companion module${s.recommendedWith.length !== 1 ? 's' : ''}</span>
+            <span class="card-link">[EXP_MORE] &rarr;</span>
+          </div>
+        `;
+
+        card.addEventListener('click', () => openSkillDetail(s.name));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openSkillDetail(s.name);
+          }
+        });
+        skillsGrid.appendChild(card);
+      });
+    }
+
+    function openSkillDetail(name) {
+      const s = skillsData.find(item => item.name === name);
+      if (!s) return;
+
+      lastActiveElement = document.activeElement;
+      drawerTitle.textContent = `MODULE // ${s.title.toUpperCase()}`;
+
+      const useWhenList = s.useWhen.map(u => `<li>${u}</li>`).join('');
+      const avoidWhenList = s.avoidWhen.map(a => `<li>${a}</li>`).join('');
+      const inputsList = s.inputs.map(i => `<li>${i}</li>`).join('');
+      const outputsList = s.outputs.map(o => `<li>${o}</li>`).join('');
+      const companionList = s.recommendedWith.map(rec => {
+        const companionObj = skillsData.find(item => item.name === rec);
+        const title = companionObj ? companionObj.title : rec;
+        return `<li><a href="#skill/${rec}" onclick="window.appOpenSkill('${rec}')">${title}</a></li>`;
+      }).join('');
+
+      const promptText = `Use the ${s.name} skill.\n\nPROJECT\n[Your Project Name]\n\nTARGET\n[Target Route/Component]\n\nCURRENT PROBLEM\n[Provide failure details]\n\nDESIRED RESULT\n[Explain expected behavior]`;
+
+      drawerContent.innerHTML = `
+        <div>
+          <span class="skill-category-tag" style="margin-bottom: 0.25rem;">agents/${s.name}</span>
+          <p style="font-size: 0.9rem;">${s.description}</p>
+        </div>
+
+        <div>
+          <h3 class="drawer-section-heading">When to use</h3>
+          <ul class="drawer-bullets">${useWhenList}</ul>
+        </div>
+
+        ${avoidWhenList ? `
+        <div>
+          <h3 class="drawer-section-heading">Avoid when</h3>
+          <ul class="drawer-bullets">${avoidWhenList}</ul>
+        </div>
+        ` : ''}
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <h3 class="drawer-section-heading">Primary Inputs</h3>
+            <ul class="drawer-bullets">${inputsList}</ul>
+          </div>
+          <div>
+            <h3 class="drawer-section-heading">Main Outputs</h3>
+            <ul class="drawer-bullets">${outputsList}</ul>
+          </div>
+        </div>
+
+        ${companionList ? `
+        <div>
+          <h3 class="drawer-section-heading">Recommended Companions</h3>
+          <ul class="drawer-bullets">${companionList}</ul>
+        </div>
+        ` : ''}
+
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 class="drawer-section-heading" style="margin-bottom: 0; border: none; padding: 0;">Sample Prompt Blueprint</h3>
+            <button class="btn-cyber" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;" onclick="window.appCopyPrompt(\`${promptText}\`, this)">[COPY_BLUEPRINT]</button>
+          </div>
+          <pre class="drawer-code-block"><code>${promptText}</code></pre>
+        </div>
+
+        <div style="margin-top: 1rem; border-top: 1px solid rgba(0,240,255,0.15); padding-top: 1.5rem;">
+          <a href="https://github.com/Gurtejhundal/agentSkill/blob/main/agents/${s.name}/SKILL.md" class="btn-cyber btn-cyber-pink" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center;">[OPEN_ORIGINAL_SKILL_SOURCE]</a>
+        </div>
+      `;
+
+      if (typeof drawer.showModal === 'function') {
+        drawer.showModal();
+      } else {
+        drawer.setAttribute('open', 'true');
+      }
+      document.body.style.overflow = 'hidden';
+      window.history.pushState(null, null, `#skill/${s.name}`);
+      drawerClose.focus();
+    }
+
+    window.appOpenSkill = function(name) {
+      openSkillDetail(name);
+    };
+
+    window.appCopyPrompt = function(text, btn) {
+      copyTextToClipboard(text, btn);
+    };
+
+    function closeDrawer() {
+      if (typeof drawer.close === 'function') {
+        drawer.close();
+      } else {
+        drawer.removeAttribute('open');
+        const closeEvent = new CustomEvent('close');
+        drawer.dispatchEvent(closeEvent);
+      }
+    }
+
+    function renderWorkflows() {
+      workflowsGrid.innerHTML = '';
+      Object.keys(workflowsData).forEach(key => {
+        const w = workflowsData[key];
+        const card = document.createElement('div');
+        card.className = 'workflow-card';
+
+        const nodesHtml = w.steps.map((step, idx) => {
+          const skillObj = skillsData.find(item => item.name === step);
+          const title = skillObj ? skillObj.title : step;
+          let arrow = (idx < w.steps.length - 1) ? `<div class="workflow-node-arrow">&darr;</div>` : '';
+          return `
+            <button class="workflow-node-btn" onclick="window.appOpenSkill('${step}')">${title}</button>
+            ${arrow}
+          `;
+        }).join('');
+
+        card.innerHTML = `
+          <h3 style="color: white; margin-bottom: 0.5rem; text-transform: uppercase;">${w.name}</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">${w.description}</p>
+          <div class="workflow-flow">${nodesHtml}</div>
+        `;
+        workflowsGrid.appendChild(card);
+      });
+    }
+
+    function renderExamples() {
+      examplesGrid.innerHTML = '';
+      examplesData.forEach(ex => {
+        const card = document.createElement('div');
+        card.className = 'example-card';
+        card.innerHTML = `
+          <div>
+            <h3 style="color: white; text-transform: uppercase; margin-bottom: 0.5rem;">${ex.title}</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Modular blueprint layout plan targeting conversion optimizations.</p>
+          </div>
+          <button class="btn-cyber btn-cyber-pink" style="width: 100%;" onclick="window.appOpenExample('${ex.id}')">[RUN_DECRYPT_PLAN]</button>
+        `;
+        examplesGrid.appendChild(card);
+      });
+    }
+
+    window.appOpenExample = function(id) {
+      const ex = examplesData.find(item => item.id === id);
+      if (!ex) return;
+
+      lastActiveElement = document.activeElement;
+      drawerTitle.textContent = `BLUEPRINT // ${ex.title.toUpperCase()}`;
+      drawerContent.innerHTML = `
+        <div>
+          <h3 class="drawer-section-heading">Plan Context</h3>
+          <pre class="drawer-code-block" style="white-space: pre-wrap; font-family: inherit;">${ex.readme}</pre>
+        </div>
+        <div>
+          <h3 class="drawer-section-heading">Skill Sequence Checklist</h3>
+          <pre class="drawer-code-block" style="color: white;">${ex.plan}</pre>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3 class="drawer-section-heading" style="margin-bottom: 0; border: none; padding: 0;">Sample Prompts</h3>
+            <button class="btn-cyber" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;" onclick="window.appCopyPrompt(\`${ex.prompts}\`, this)">[COPY_PROMPTS]</button>
+          </div>
+          <pre class="drawer-code-block"><code>${ex.prompts}</code></pre>
+        </div>
+      `;
+
+      if (typeof drawer.showModal === 'function') {
+        drawer.showModal();
+      } else {
+        drawer.setAttribute('open', 'true');
+      }
+      document.body.style.overflow = 'hidden';
+      drawerClose.focus();
+    };
+
+    function updateWorkflowBuilder() {
+      const selected = problemSelector.value;
+      const config = builderMap[selected];
+      if (!config) return;
+
+      builderFlowNodes.innerHTML = config.sequence.map(step => {
+        const skillObj = skillsData.find(item => item.name === step);
+        const title = skillObj ? skillObj.title : step;
+        return `<button class="workflow-node-btn" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;" onclick="window.appOpenSkill('${step}')">${title}</button>`;
+      }).join('<span style="color: var(--text-pink);">&rarr;</span>');
+
+      const sequenceStr = config.sequence.join(' → ');
+      const promptTemplate = `SELECTED OBJECTIVE:\n${selected.replace('-', ' ').toUpperCase()}\n\nMODULE ROUTING SEQUENCE:\n${sequenceStr}\n\nINSTRUCTIONS:\n${config.prompt}\n\nREQUIRED ARTIFACTS:\n- Files changed delta log\n- Viewport layout screenshots\n- Interaction logs`;
+      
+      builderPromptCode.textContent = promptTemplate;
+    }
+
+    function copyTextToClipboard(text, btnElement) {
+      function showFeedback(success) {
+        toastMsg.textContent = success ? "SYSTEM: Text Copied!" : "SYSTEM_ERR: Copy Failed";
+        toastMsg.classList.add('active');
+        setTimeout(() => toastMsg.classList.remove('active'), 1500);
+
+        if (btnElement) {
+          const original = btnElement.textContent;
+          btnElement.textContent = success ? "[COPIED!]" : "[FAILED]";
+          setTimeout(() => btnElement.textContent = original, 1500);
+        }
+      }
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => showFeedback(true)).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+
+      function fallbackCopy(textToCopy) {
+        const textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          const successful = document.execCommand('copy');
+          showFeedback(successful);
+        } catch {
+          showFeedback(false);
+        }
+        document.body.removeChild(textArea);
+      }
+    }
+
+    function setupEventListeners() {
+      // Search inputs
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        renderSkills();
+      });
+
+      // Categories
+      categoriesList.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-filter')) {
+          document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          activeCategory = e.target.getAttribute('data-category');
+          renderSkills();
+        }
+      });
+
+      // Reset
+      resetFilters.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        activeCategory = 'all';
+        document.querySelectorAll('.btn-filter').forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.getAttribute('data-category') === 'all') btn.classList.add('active');
+        });
+        renderSkills();
+      });
+
+      // '/' Hotkey
+      document.addEventListener('keydown', (e) => {
+        const active = document.activeElement;
+        const isInput = active.tagName === 'INPUT' || active.tagName === 'SELECT' || active.tagName === 'TEXTAREA' || active.isContentEditable;
+        if (e.key === '/' && !isInput) {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
+
+      // Dialog Events
+      drawerClose.addEventListener('click', closeDrawer);
+      drawer.addEventListener('click', (e) => {
+        const rect = drawer.getBoundingClientRect();
+        if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+          closeDrawer();
+        }
+      });
+      drawer.addEventListener('close', () => {
+        document.body.style.overflow = '';
+        window.history.pushState(null, null, '#skills');
+        if (lastActiveElement) lastActiveElement.focus();
+      });
+
+      // Focus wrap
+      drawer.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+          const focusable = Array.from(drawer.querySelectorAll('button, [href], select, textarea, [tabindex="0"]'))
+            .filter(el => !el.hasAttribute('disabled') && el.getAttribute('tabindex') !== '-1');
+          if (focusable.length === 0) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+
+          if (e.shiftKey) {
+            if (document.activeElement === first) {
+              last.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === last) {
+              first.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      });
+
+      // Mobile toggles
+      menuToggle.addEventListener('click', () => {
+        const active = navMenu.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', active);
+        document.body.style.overflow = active ? 'hidden' : '';
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // File tree toggles
+      document.querySelectorAll('.tree-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const controls = btn.getAttribute('aria-controls');
+          const details = document.getElementById(controls);
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', !isExpanded);
+          details.classList.toggle('active', !isExpanded);
+        });
+      });
+
+      // Header actions
+      copyStarterBtn.addEventListener('click', () => {
+        const starter = `Assigning a website engineering task.\n\nPROJECT: [Name]\nTARGET: [Route/File]\nPROBLEM: [Details]\nAcceptance criteria:\n- Must inspect layout structure and dependencies.\n- Must provide screenshots of responsive widths.\n- Must verify final compilation compiles successfully.`;
+        copyTextToClipboard(starter, copyStarterBtn);
+      });
+
+      copyWorkflowBtn.addEventListener('click', () => {
+        const text = document.getElementById('builder-prompt-code').textContent;
+        copyTextToClipboard(text, copyWorkflowBtn);
+      });
+
+      problemSelector.addEventListener('change', updateWorkflowBuilder);
+      updateWorkflowBuilder();
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
 </body>
 </html>

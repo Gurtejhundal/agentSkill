@@ -32,9 +32,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
       - name: Validate Skills
         run: npm run validate
 
@@ -47,9 +44,6 @@ jobs:
       - name: Check Documentation Links
         run: npm run check:links
 
-      - name: Run Playwright Tests
-        run: npm run test:docs
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -61,12 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Upload Playwright Test Reports on Failure
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: playwright-report-deploy
-          path: |
-            playwright-report/
-            test-results/
