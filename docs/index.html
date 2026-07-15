@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Skills Archive // Cybernetic Portal</title>
+  <title>VibeMaxing — Agent Skill Directory</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="description" content="Specialist agent skills, workflows, and blueprints database styled with cybertech aesthetics.">
+  <meta name="description" content="VibeMaxing is a searchable directory of specialist agent skills, workflow routes, and design references.">
   <style>
     /* Cyberpunk Design Tokens */
     :root {
@@ -916,6 +916,151 @@
         text-shadow: none !important;
       }
     }
+
+    /* VibeMaxing — deliberate brutalist system */
+    :root {
+      --bg-cyber: #f6f3ec;
+      --bg-surface: #ffffff;
+      --border-neon: #171717;
+      --border-pink: #e93f2e;
+      --text-glow: #171717;
+      --text-pink: #e93f2e;
+      --text-green: #1d7f4e;
+      --text-muted: #5f5b54;
+      --text-main: #171717;
+      --transition-cyber: 120ms ease;
+      --font-code: Arial, Helvetica, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: #f6f3ec;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: none;
+      letter-spacing: 0;
+    }
+    body::after { display: none; }
+    a { color: #171717; font-weight: 800; }
+    a:hover { color: #e93f2e; text-shadow: none; }
+    code { background: #ffe600; color: #171717; padding: .08rem .25rem; font-weight: 800; }
+    .container { max-width: 1280px; padding-inline: 1.25rem; }
+    .cyber-header {
+      background: #ffe600;
+      border-bottom: 3px solid #171717;
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+    .header-inner { min-height: 72px; padding-block: .7rem; gap: 1rem; }
+    .logo-glow {
+      color: #171717;
+      font-family: Impact, "Arial Black", Arial, sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: -.02em;
+      text-shadow: none;
+    }
+    .nav-menu { gap: .25rem; }
+    .nav-link, .menu-toggle {
+      border: 2px solid transparent;
+      color: #171717;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .03em;
+      padding: .55rem .65rem;
+      text-transform: uppercase;
+    }
+    .nav-link:hover, .nav-link:focus-visible { background: #fff; border-color: #171717; color: #171717; }
+    .menu-toggle { background: #fff; border-color: #171717; }
+    .btn-cyber, .btn-cyber-pink {
+      background: #fff;
+      border: 3px solid #171717;
+      border-radius: 0;
+      box-shadow: 4px 4px 0 #171717;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      letter-spacing: .02em;
+      text-shadow: none;
+      transition: transform var(--transition-cyber), box-shadow var(--transition-cyber), background var(--transition-cyber);
+    }
+    .btn-cyber:hover, .btn-cyber:focus-visible { background: #e93f2e; color: #fff; box-shadow: 1px 1px 0 #171717; transform: translate(3px, 3px); }
+    .hero { border-bottom: 3px solid #171717; padding-block: 4.5rem 3.25rem; }
+    .hero-glitch-title {
+      color: #171717;
+      font-family: Impact, "Arial Black", Arial, sans-serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: .78;
+      max-width: 11ch;
+      text-shadow: none;
+    }
+    .hero-glitch-title::before, .hero-glitch-title::after { display: none; }
+    .hero-tagline { color: #171717; font-family: Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.38; max-width: 65ch; margin-top: 1.75rem; }
+    .hero-stats { gap: 0; margin-top: 3rem; }
+    .stat-box { background: #fff; border: 3px solid #171717; border-radius: 0; box-shadow: none; padding: 1.1rem; }
+    .stat-box:nth-child(2n) { background: #ffe600; }
+    .stat-num { color: #171717; font-family: Impact, "Arial Black", Arial, sans-serif; text-shadow: none; }
+    .stat-label { color: #171717; font-weight: 800; }
+    section { border-bottom: 3px solid #171717 !important; }
+    .section-title, .story-step h3, .skill-title, .workflow-title, .builder-label, .drawer-title, .tree-toggle-btn {
+      color: #171717;
+      font-family: Impact, "Arial Black", Arial, sans-serif;
+      text-shadow: none;
+    }
+    .section-title { font-size: clamp(2.2rem, 4vw, 4.2rem); letter-spacing: -.035em; }
+    .story-intro, .vibe-maxing-copy, .skill-description, .workflow-desc, .drawer-content, .tree-details { color: #33302c; }
+    .story-rail { gap: 0; }
+    .story-step { background: #fff; border: 3px solid #171717; border-radius: 0; box-shadow: none; padding: 1.35rem; }
+    .story-step:nth-child(2n) { background: #a9e6d1; }
+    .story-step:nth-child(3n) { background: #ffe600; }
+    .story-step:not(:last-child)::after { color: #171717; text-shadow: none; }
+    .vibe-maxing-card { background: #e93f2e; border: 3px solid #171717; border-radius: 0; box-shadow: 8px 8px 0 #171717; }
+    .vibe-maxing-card h2, .vibe-maxing-kicker, .vibe-maxing-copy, .vibe-maxing-fact strong, .vibe-maxing-fact span { color: #171717; text-shadow: none; }
+    .vibe-maxing-kicker { font-weight: 900; letter-spacing: .05em; }
+    .vibe-maxing-fact { border-color: #171717; }
+    .vibe-maxing-action .btn-cyber { background: #ffe600; }
+    .filter-panel, .skill-card, .workflow-card, .builder-box, .tree-list, dialog.drawer, .example-card {
+      background: #fff;
+      border: 3px solid #171717;
+      border-radius: 0;
+      box-shadow: 5px 5px 0 #171717;
+    }
+    .filter-panel { box-shadow: none; }
+    .search-input, .builder-select {
+      background: #fff;
+      border: 2px solid #171717;
+      border-radius: 0;
+      box-shadow: none;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .search-input:focus, .builder-select:focus { border-color: #e93f2e; box-shadow: 3px 3px 0 #e93f2e; }
+    .search-icon, .search-hint, .results-stats { color: #5f5b54; text-shadow: none; }
+    .btn-filter { background: #fff; border: 2px solid #171717; border-radius: 0; color: #171717; font-weight: 800; }
+    .btn-filter.active, .btn-filter:hover { background: #ffe600; border-color: #171717; box-shadow: none; color: #171717; }
+    .skill-card:hover, .workflow-card:hover, .example-card:hover { border-color: #171717; box-shadow: 8px 8px 0 #e93f2e; transform: translate(-2px, -2px); }
+    .skill-category, .workflow-step, .skill-tag { background: #a9e6d1; border: 1px solid #171717; border-radius: 0; color: #171717; text-shadow: none; }
+    .skill-card:nth-child(3n) .skill-category { background: #ffe600; }
+    .workflow-step { background: #ffe600; }
+    .builder-flow-node { background: #a9e6d1; border: 2px solid #171717; border-radius: 0; color: #171717; text-shadow: none; }
+    .builder-flow-node::after { color: #171717; text-shadow: none; }
+    .drawer-close, .tree-toggle-btn { color: #171717; text-shadow: none; }
+    .drawer-close:hover { color: #e93f2e; }
+    .drawer-code-block { background: #171717; border-radius: 0; border: 2px solid #171717; color: #fff; }
+    .toast-msg { background: #171717; border: 2px solid #ffe600; border-radius: 0; color: #fff; }
+    footer { border-color: #171717; color: #5f5b54; }
+    :focus-visible { outline: 3px solid #e93f2e; outline-offset: 3px; }
+    @media (max-width: 768px) {
+      .container { padding-inline: 1rem; }
+      .header-inner { min-height: 62px; }
+      .logo-glow { font-size: 1.2rem; }
+      .nav-menu { background: #ffe600; border-top: 3px solid #171717; }
+      .nav-link { font-size: 1rem; padding: .85rem; }
+      .hero { padding-block: 3.25rem 2.5rem; }
+      .hero-glitch-title { font-size: clamp(3.5rem, 18vw, 5.2rem); }
+      .vibe-maxing-card { box-shadow: 5px 5px 0 #171717; }
+    }
   </style>
 </head>
 <body>
@@ -926,23 +1071,23 @@
   <!-- Header -->
   <header class="cyber-header" role="banner">
     <div class="container header-inner">
-      <a href="#" class="logo-glow">AGENT_SKILLS_SYSTEM // ACTIVE</a>
+      <a href="#overview" class="logo-glow">VIBEMAXING</a>
       
       <nav role="navigation" aria-label="Main navigation">
         <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-          [MENU_EXE]
+          MENU
         </button>
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#overview" class="nav-link">Overview</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#workflows" class="nav-link">Workflows</a></li>
           <li><a href="#structure" class="nav-link">Structure</a></li>
-          <li><a href="design-maxing.html" class="nav-link" style="color: #ff007f; text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);">[VIBE_MAXING_LAB]</a></li>
+          <li><a href="design-maxing.html" class="nav-link">DesignMaxing</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button class="btn-cyber" id="copy-starter-btn">[COPY_STARTER_PRMPT]</button>
+        <button class="btn-cyber" id="copy-starter-btn">Copy starter prompt</button>
       </div>
     </div>
   </header>
@@ -952,7 +1097,7 @@
     
     <!-- Hero / Info -->
     <section class="hero" id="overview">
-      <h1 class="hero-glitch-title">FIND THE RIGHT AGENT</h1>
+      <h1 class="hero-glitch-title">VIBE MAX YOUR BUILD</h1>
       <p class="hero-tagline">
         A field guide for turning an unclear website problem into an accountable delivery route. Start with the job to be done; leave with the right specialist, prompt, and proof loop.
       </p>
@@ -991,7 +1136,7 @@
     <section class="vibe-maxing-section" id="vibe-maxing" aria-labelledby="vibe-maxing-title">
       <div class="vibe-maxing-card">
         <div>
-          <p class="vibe-maxing-kicker">VIBE MAXING // DESIGNMAXING LAB</p>
+          <p class="vibe-maxing-kicker">DESIGNMAXING / THE DESIGN REFERENCE MODULE</p>
           <h2 id="vibe-maxing-title">The visual decision room, not a random style picker.</h2>
           <p class="vibe-maxing-copy">Search the style, palette, and typography reference data by product need. Use the result alongside Designer‑Me: the lab gives you options and implementation signals; Designer‑Me decides which route fits the product and protects usability.</p>
           <div class="vibe-maxing-facts" aria-label="DesignMaxing library counts">
@@ -1000,13 +1145,13 @@
             <div class="vibe-maxing-fact"><strong>74</strong><span>font pairs</span></div>
           </div>
         </div>
-        <div class="vibe-maxing-action"><a href="design-maxing.html" class="btn-cyber btn-cyber-pink">[OPEN_VIBE_MAXING_LAB]</a></div>
+        <div class="vibe-maxing-action"><a href="design-maxing.html" class="btn-cyber btn-cyber-pink">Open DesignMaxing</a></div>
       </div>
     </section>
 
     <!-- Explorer -->
     <section class="explorer-section" id="skills">
-      <h2 class="section-title">Module Explorer</h2>
+      <h2 class="section-title">Find your specialist</h2>
 
       <div class="filter-panel">
         <div class="search-row">
