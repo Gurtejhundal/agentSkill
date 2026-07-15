@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Website Agent Skills animated system banner</title>
+  <desc id="desc">An animated cybernetic terminal showing 24 specialist agents moving through inspection, design, implementation, testing, and deployment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050508"/>
+      <stop offset="0.55" stop-color="#090a12"/>
+      <stop offset="1" stop-color="#120711"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#00f0ff"/>
+      <stop offset="0.6" stop-color="#ff2f88"/>
+      <stop offset="1" stop-color="#ff2f88" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.25" stop-color="#00f0ff"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pinkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#202335" stroke-width="1" opacity="0.55"/>
+    </pattern>
+    <style>
+      text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .scan { animation: scan 6s linear infinite; }
+      .flow { stroke-dasharray: 18 24; animation: flow 2.6s linear infinite; }
+      .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-in-out infinite; }
+      .pulse-2 { animation-delay: .6s; }
+      .pulse-3 { animation-delay: 1.2s; }
+      .pulse-4 { animation-delay: 1.8s; }
+      .blink { animation: blink 1s steps(1,end) infinite; }
+      .type-mask { animation: type 5.6s steps(52,end) infinite; }
+      .status { animation: status 3.2s ease-in-out infinite; }
+      .float-a { animation: floatA 7s ease-in-out infinite; }
+      .float-b { animation: floatB 8s ease-in-out infinite reverse; }
+      @keyframes scan { from { transform: translateY(-80px); } to { transform: translateY(440px); } }
+      @keyframes flow { to { stroke-dashoffset: -84; } }
+      @keyframes pulse { 0%,100% { opacity:.45; transform:scale(.75); } 50% { opacity:1; transform:scale(1.12); } }
+      @keyframes blink { 0%,48% { opacity:1; } 49%,100% { opacity:0; } }
+      @keyframes type { 0%,8% { width:0; } 65%,86% { width:760px; } 100% { width:0; } }
+      @keyframes status { 0%,100% { opacity:.55; } 50% { opacity:1; } }
+      @keyframes floatA { 0%,100% { transform:translate(0,0); } 50% { transform:translate(16px,-10px); } }
+      @keyframes floatB { 0%,100% { transform:translate(0,0); } 50% { transform:translate(-18px,12px); } }
+      @media (prefers-reduced-motion: reduce) {
+        .scan,.flow,.pulse,.blink,.type-mask,.status,.float-a,.float-b { animation:none !important; }
+        .type-mask { width:760px; }
+      }
+    </style>
+    <clipPath id="typingClip"><rect class="type-mask" x="220" y="265" width="0" height="34"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="360" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="358" rx="23" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <rect width="1200" height="360" rx="24" fill="url(#grid)" opacity="0.72"/>
+
+  <g opacity="0.45" class="float-a">
+    <circle cx="104" cy="84" r="42" fill="none" stroke="#00f0ff" stroke-width="1"/>
+    <circle cx="104" cy="84" r="25" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="5 8"/>
+    <path d="M62 84h84M104 42v84" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
+  </g>
+  <g opacity="0.4" class="float-b">
+    <path d="M1070 55l54 31v62l-54 31-54-31V86z" fill="none" stroke="#ff2f88"/>
+    <path d="M1070 79l33 19v38l-33 19-33-19V98z" fill="none" stroke="#ff2f88" stroke-dasharray="4 7"/>
+  </g>
+
+  <text x="42" y="44" fill="#8a91a8" font-size="14" letter-spacing="2">AGENTSKILL // SYSTEM OVERVIEW</text>
+  <g transform="translate(925 27)">
+    <circle cx="0" cy="0" r="6" fill="#39ff14" filter="url(#cyanGlow)" class="status"/>
+    <text x="16" y="5" fill="#9cfb8b" font-size="13" letter-spacing="1.5">24 MODULES ONLINE</text>
+  </g>
+
+  <text x="600" y="132" text-anchor="middle" fill="#f4f6ff" font-size="54" font-weight="700" letter-spacing="4">WEBSITE AGENT SKILLS</text>
+  <text x="600" y="170" text-anchor="middle" fill="#ff4b9a" font-size="18" letter-spacing="3" filter="url(#pinkGlow)">SPECIALIST AGENTS FOR SERIOUS WEBSITE WORK</text>
+
+  <path d="M210 220 H990" stroke="#1a2030" stroke-width="8" stroke-linecap="round"/>
+  <path class="flow" d="M210 220 H990" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+
+  <g>
+    <circle cx="260" cy="220" r="22" fill="#08131a" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="260" cy="220" r="13" fill="url(#nodeGlow)" class="pulse"/>
+    <text x="260" y="252" text-anchor="middle" fill="#8fa1ad" font-size="12">INSPECT</text>
+  </g>
+  <g>
+    <circle cx="430" cy="220" r="22" fill="#08131a" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="430" cy="220" r="13" fill="url(#nodeGlow)" class="pulse pulse-2"/>
+    <text x="430" y="252" text-anchor="middle" fill="#8fa1ad" font-size="12">DESIGN</text>
+  </g>
+  <g>
+    <circle cx="600" cy="220" r="22" fill="#160b16" stroke="#ff2f88" stroke-width="2"/>
+    <circle cx="600" cy="220" r="13" fill="#ff2f88" opacity=".7" class="pulse pulse-3" filter="url(#pinkGlow)"/>
+    <text x="600" y="252" text-anchor="middle" fill="#d1a1b8" font-size="12">IMPLEMENT</text>
+  </g>
+  <g>
+    <circle cx="770" cy="220" r="22" fill="#08131a" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="770" cy="220" r="13" fill="url(#nodeGlow)" class="pulse pulse-4"/>
+    <text x="770" y="252" text-anchor="middle" fill="#8fa1ad" font-size="12">VERIFY</text>
+  </g>
+  <g>
+    <circle cx="940" cy="220" r="22" fill="#08130c" stroke="#39ff14" stroke-width="2"/>
+    <circle cx="940" cy="220" r="8" fill="#39ff14" class="status"/>
+    <text x="940" y="252" text-anchor="middle" fill="#96d98b" font-size="12">DEPLOY</text>
+  </g>
+
+  <g clip-path="url(#typingClip)">
+    <text x="220" y="291" fill="#8eff84" font-size="15">&gt; inspect → diagnose → implement → test → verify production</text>
+  </g>
+  <rect x="985" y="276" width="10" height="18" rx="1" fill="#39ff14" class="blink"/>
+
+  <rect class="scan" x="0" y="-90" width="1200" height="70" fill="url(#line)" opacity="0.05"/>
+</svg>
