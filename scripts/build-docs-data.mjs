@@ -36,6 +36,16 @@ function makeExternalLinksSecure(html) {
   });
 }
 
+// Helper to strip the main '# Title' heading from markdown content
+function stripMainHeading(markdown) {
+  const lines = markdown.split('\n');
+  const index = lines.findIndex(line => line.trim().startsWith('# '));
+  if (index !== -1) {
+    lines.splice(index, 1);
+  }
+  return lines.join('\n');
+}
+
 // Helper to parse markdown section headers manually
 function parseSkillMdHeaders(content) {
   const sections = {};
@@ -106,8 +116,12 @@ if (fs.existsSync(agentsDir)) {
           }
         }
 
+        // Strip the main "# Title" heading from markdown to enforce single <h1> per page SEO rule
+        cleanSkillMd = stripMainHeading(cleanSkillMd);
+        const cleanExamplesContent = stripMainHeading(examplesContent);
+
         let skillHtml = makeExternalLinksSecure(md.render(cleanSkillMd));
-        let examplesHtml = makeExternalLinksSecure(md.render(examplesContent));
+        let examplesHtml = makeExternalLinksSecure(md.render(cleanExamplesContent));
 
         // Generate docs/skills/<skill-name>/index.html
         const skillHtmlPath = path.join(docsSkillsDir, folder);
