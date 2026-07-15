@@ -141,10 +141,10 @@ if (fs.existsSync(indexPath)) {
   process.exit(1);
 }
 
-// 5. Build and Inject VibeMaxing databases into docs/vibemaxing.html
-const vibemaxingPath = path.join(docsDir, 'vibemaxing.html');
-if (fs.existsSync(vibemaxingPath)) {
-  console.log('Building VibeMaxing databases from CSV source...');
+// 5. Build and inject DesignMaxing databases into the Vibe Maxing Lab.
+const designMaxingPath = path.join(docsDir, 'design-maxing.html');
+if (fs.existsSync(designMaxingPath)) {
+  console.log('Building DesignMaxing databases from CSV source...');
   
   function parseCSVLine(line) {
     const result = [];
@@ -195,16 +195,16 @@ if (fs.existsSync(vibemaxingPath)) {
     return results;
   }
 
-  const styles = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'styles.csv'));
-  const colors = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'colors.csv'));
-  const typography = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'typography.csv'));
+  const styles = parseCSV(path.join(agentsDir, 'design-maxing', 'data', 'styles.csv'));
+  const colors = parseCSV(path.join(agentsDir, 'design-maxing', 'data', 'colors.csv'));
+  const typography = parseCSV(path.join(agentsDir, 'design-maxing', 'data', 'typography.csv'));
 
-  let vibemaxingHtml = fs.readFileSync(vibemaxingPath, 'utf8');
-  const startTagVm = '// --- VIBEMAXING_DATABASE_PLACEHOLDER ---';
-  const endTagVm = '// --- VIBEMAXING_DATABASE_PLACEHOLDER_END ---';
+  let designMaxingHtml = fs.readFileSync(designMaxingPath, 'utf8');
+  const startTagVm = '// --- DESIGN_MAXING_DATABASE_PLACEHOLDER ---';
+  const endTagVm = '// --- DESIGN_MAXING_DATABASE_PLACEHOLDER_END ---';
 
-  const startIdxVm = vibemaxingHtml.indexOf(startTagVm);
-  const endIdxVm = vibemaxingHtml.indexOf(endTagVm);
+  const startIdxVm = designMaxingHtml.indexOf(startTagVm);
+  const endIdxVm = designMaxingHtml.indexOf(endTagVm);
 
   if (startIdxVm !== -1 && endIdxVm !== -1) {
     const dbPayloadVm = { styles, colors, typography };
@@ -212,17 +212,17 @@ if (fs.existsSync(vibemaxingPath)) {
       .replace(/\u2028/g, '\\u2028')
       .replace(/\u2029/g, '\\u2029');
 
-    const injectionVm = `${startTagVm}\n    window.VIBEMAXING_DATA = ${serializedDataVm};\n    ${endTagVm}`;
-    vibemaxingHtml = vibemaxingHtml.substring(0, startIdxVm) + injectionVm + vibemaxingHtml.substring(endIdxVm + endTagVm.length);
+    const injectionVm = `${startTagVm}\n    window.DESIGN_MAXING_DATA = ${serializedDataVm};\n    ${endTagVm}`;
+    designMaxingHtml = designMaxingHtml.substring(0, startIdxVm) + injectionVm + designMaxingHtml.substring(endIdxVm + endTagVm.length);
     
-    fs.writeFileSync(vibemaxingPath, vibemaxingHtml, 'utf8');
-    console.log('Successfully injected database payload directly into docs/vibemaxing.html.');
+    fs.writeFileSync(designMaxingPath, designMaxingHtml, 'utf8');
+    console.log('Successfully injected database payload directly into docs/design-maxing.html.');
   } else {
     console.error('Error: Could not locate database injection placeholders in docs/vibemaxing.html.');
     process.exit(1);
   }
 } else {
-  console.log('Info: docs/vibemaxing.html not found, skipping VibeMaxing build.');
+  console.log('Info: docs/design-maxing.html not found, skipping DesignMaxing build.');
 }
 
 console.log('Compile database complete.');

@@ -69,7 +69,7 @@ Inspect → Diagnose → Prioritize → Implement → Build → Test → Capture
 
 | Skill | What it does |
 |---|---|
-| [`design-me`](agents/design-me) | Leads full visual audits and redesigns while preserving the strongest parts of the existing identity. It separates structural defects from decorative ones and produces implementation-ready direction. |
+| [`designer-me`](agents/designer-me) | Leads full visual audits and redesigns while preserving the strongest parts of the existing identity. It separates structural defects from decorative ones and produces implementation-ready direction. |
 | [`design-system-extractor`](agents/design-system-extractor) | Studies an existing site or reference and converts typography, spacing, colour roles, components, and motion mechanics into reusable rules without cloning assets or identity. |
 | [`content-hierarchy`](agents/content-hierarchy) | Decides what belongs on each route, removes repetition, protects credibility content, and reorganizes sections around trust, evidence, understanding, and action. |
 | [`ux-conversion-strategist`](agents/ux-conversion-strategist) | Defines primary and secondary conversions, CTA hierarchy, proof placement, friction reduction, and mobile action paths for commercial websites. |
@@ -105,9 +105,7 @@ Inspect → Diagnose → Prioritize → Implement → Build → Test → Capture
 
 | Skill | What it does |
 |---|---|
-| [`automotive-ux`](agents/automotive-ux) | Structures premium detailing, ceramic coating, PPF, paint correction, package comparison, before-and-after proof, booking, WhatsApp, location, and local trust. |
-| [`healthcare-ux`](agents/healthcare-ux) | Prioritizes emergency access, ambulance, OPD timings, doctors, departments, appointments, maps, bilingual readability, accessibility, and admin-managed hospital information. |
-| [`portfolio-ux`](agents/portfolio-ux) | Optimizes professional positioning, selected work, archive density, project credibility, About evidence, recruiter/client scanning, motion restraint, and contact conversion. |
+| [`domain-agent`](agents/domain-agent) | Establishes verified domain language, user tasks, trust requirements, and risk boundaries before design or implementation begins. |
 | [`seo-local-search`](agents/seo-local-search) | Implements route-specific metadata, canonicals, social previews, sitemaps, robots, structured data, local entity consistency, and service or department discoverability. |
 
 ### Quality and delivery
@@ -127,13 +125,11 @@ Inspect → Diagnose → Prioritize → Implement → Build → Test → Capture
 
 | Workflow | Recommended sequence | Use it for |
 |---|---|---|
-| [Full Website Audit](workflows/full-website-audit.md) | `codebase-recon → design-me → domain specialist → designer-mobile → QA → deployment-verifier` | Repository-wide design and production audits |
+| [Full Website Audit](workflows/full-website-audit.md) | `codebase-recon → design-system-extractor → designer-mobile → QA → deployment-verifier` | Repository-wide design and production audits |
+| [Full Website Build](workflows/full-website-build.md) | `codebase-recon → design-system-extractor → domain-agent → implementation-agent → QA → deployment-verifier` | Turning a brief or prototype into a validated website |
 | [Mobile Reconstruction](workflows/mobile-reconstruction.md) | `codebase-recon → designer-mobile → typography-director → media-fit-specialist → visual-qa-agent` | Oversized cards, broken mobile layout, lost animations |
-| [Cinematic Motion](workflows/cinematic-motion.md) | `design-me → motion-architect → scroll-systems-engineer → performance-optimizer → QA` | Hero reveals, pinned stories, parallax, section takeovers |
+| [Cinematic Motion](workflows/cinematic-motion.md) | `designer-me → motion-architect → scroll-systems-engineer → performance-optimizer → QA` | Hero reveals, pinned stories, parallax, section takeovers |
 | [Route Transition](workflows/route-transition.md) | `codebase-recon → route-transition-designer → interaction-qa-agent → deployment-verifier` | Shared-element navigation and persistent page chrome |
-| [Automotive Website](workflows/automotive-workflow.md) | `automotive-ux → designer-mobile → ux-conversion-strategist → seo-local-search` | Detailing and premium automotive service businesses |
-| [Healthcare Website](workflows/healthcare-workflow.md) | `healthcare-ux → accessibility-auditor → backend-admin-preserver → designer-mobile` | Hospitals, clinics, doctors, OPD, appointments, emergency |
-| [Portfolio Website](workflows/portfolio-workflow.md) | `portfolio-ux → design-system-extractor → motion-architect → designer-mobile → QA` | Creative developer and designer portfolios |
 | [Release Gate](workflows/release-gate.md) | `visual-qa-agent → interaction-qa-agent → accessibility-auditor → deployment-verifier` | Final evidence before production approval |
 
 ---

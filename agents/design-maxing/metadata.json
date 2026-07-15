@@ -1,7 +1,7 @@
 {
-  "name": "vibemaxing",
-  "title": "VibeMaxing Design Intelligence",
-  "description": "AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.",
+  "name": "design-maxing",
+  "title": "DesignMaxing Design Intelligence",
+  "description": "AI-powered design intelligence providing 84 UI styles, 192 color palettes, 74 font pairings, and stack-specific design systems.",
   "version": "1.0.0",
   "category": "strategy",
   "tags": [
@@ -9,7 +9,7 @@
     "styling",
     "color-palettes",
     "typography",
-    "vibemaxing"
+    "designmaxing"
   ],
   "useWhen": [
     "You need custom color palettes, font combinations, or UI styles for an industry",

@@ -1,0 +1,15 @@
+{
+  "name": "implementation-agent",
+  "title": "Implementation Agent",
+  "description": "Builds approved website and product changes using the existing architecture, then verifies the relevant behavior.",
+  "version": "1.0.0",
+  "category": "architecture",
+  "tags": ["implementation", "frontend", "integration", "testing", "delivery"],
+  "useWhen": ["The design and acceptance criteria are ready to build", "A feature crosses UI and existing product behavior", "A scoped change needs production-safe implementation"],
+  "avoidWhen": ["The root problem is not understood", "Requirements require a stakeholder decision", "You only need an audit or visual recommendation"],
+  "inputs": ["Repository and target routes", "Approved requirements", "Existing tests and architecture"],
+  "outputs": ["Implemented feature or fix", "Preserved integration boundaries", "Validation evidence", "Clear QA handoff"],
+  "recommendedWith": ["codebase-recon", "visual-qa-agent", "interaction-qa-agent", "deployment-verifier"],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md"
+}

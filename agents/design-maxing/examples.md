@@ -1,6 +1,6 @@
-# 🎨 VibeMaxing Design Systems Examples
+# 🎨 DesignMaxing Design Systems Examples
 
-Here are reference setups for translating the VibeMaxing intelligence engine output into code.
+Here are reference setups for translating the DesignMaxing intelligence engine output into code.
 
 ---
 

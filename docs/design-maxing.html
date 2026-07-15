@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VibeMaxing Design Intelligence // Catalog</title>
+  <title>DesignMaxing // Design Reference Catalog</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,7 +141,7 @@
       display: block;
     }
 
-    /* Controls: Search & Category filters */
+    /* Controls */
     .controls-row {
       display: flex;
       gap: 1rem;
@@ -257,6 +257,28 @@
       overflow-x: auto;
       white-space: pre-wrap;
       word-break: break-all;
+    }
+
+    .image-preview-container {
+      width: 100%;
+      height: 180px;
+      background: #111;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .image-preview-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s;
+    }
+
+    .style-card:hover .image-preview-container img {
+      transform: scale(1.05);
     }
 
     /* Colors Section */
@@ -501,7 +523,7 @@
     
     <header>
       <a href="index.html" class="back-link">&larr; Back to Main Portal</a><br>
-      <h1>VibeMaxing // Design Reference Catalog</h1>
+      <h1>DesignMaxing // Design Reference Catalog</h1>
       <p class="subtitle">Visual reference database of UI styles, color palettes, and typography</p>
     </header>
 
@@ -568,8 +590,8 @@
   <div id="toast" class="toast">COPIED: #HEX</div>
 
   <script>
-    // --- VIBEMAXING_DATABASE_PLACEHOLDER ---
-    window.VIBEMAXING_DATA = {
+    // --- DESIGN_MAXING_DATABASE_PLACEHOLDER ---
+    window.DESIGN_MAXING_DATA = {
   "styles": [
     {
       "No": "1",
@@ -7587,7 +7609,7 @@
     }
   ]
 };
-    // --- VIBEMAXING_DATABASE_PLACEHOLDER_END ---
+    // --- DESIGN_MAXING_DATABASE_PLACEHOLDER_END ---
 
     let stylesData = [];
     let colorsData = [];
@@ -7598,10 +7620,10 @@
 
     // Initialize databases
     function init() {
-      if (window.VIBEMAXING_DATA) {
-        stylesData = window.VIBEMAXING_DATA.styles || [];
-        colorsData = window.VIBEMAXING_DATA.colors || [];
-        typoData = window.VIBEMAXING_DATA.typography || [];
+      if (window.DESIGN_MAXING_DATA) {
+        stylesData = window.DESIGN_MAXING_DATA.styles || [];
+        colorsData = window.DESIGN_MAXING_DATA.colors || [];
+        typoData = window.DESIGN_MAXING_DATA.typography || [];
       }
       
       renderStyles();
@@ -7644,11 +7666,11 @@
         let imageTag = '';
         const nameLower = s["Style Category"].toLowerCase();
         if (nameLower.includes('cyberpunk')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/vibemaxing_cyberpunk_ui.jpg" alt="Cyberpunk UI reference mockup"></div>`;
+          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_cyberpunk_ui.jpg" alt="Cyberpunk UI reference mockup"></div>`;
         } else if (nameLower.includes('glassmorphism')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/vibemaxing_glassmorphism_ui.jpg" alt="Glassmorphism UI reference mockup"></div>`;
+          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_glassmorphism_ui.jpg" alt="Glassmorphism UI reference mockup"></div>`;
         } else if (nameLower.includes('bento box grid') || nameLower.includes('bento grids')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/vibemaxing_bento_grid_ui.jpg" alt="Bento Grid UI reference mockup"></div>`;
+          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_bento_grid_ui.jpg" alt="Bento Grid UI reference mockup"></div>`;
         }
 
         card.innerHTML = `
@@ -7799,10 +7821,6 @@
         <div><strong>Body CSS:</strong> font-family: "${t["Body Font"]}", sans-serif;</div>
         <div style="margin-top:0.5rem; color:var(--text-muted);"><strong>Tailwind Config:</strong> ${t["Tailwind Config"]}</div>
       `;
-    }
-
-    function filterTypo() {
-      renderTypography();
     }
 
     // Copy to clipboard

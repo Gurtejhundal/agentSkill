@@ -12,6 +12,14 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Main outputs:** Reorganize content table, Revised copy outline, CTA placement roadmap, Trust credentials structure
 - **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md)
 
+### [DesignMaxing Design Intelligence (agents/design-maxing/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-maxing/SKILL.md)
+
+- **Purpose:** AI-powered design intelligence providing 84 UI styles, 192 color palettes, 74 font pairings, and stack-specific design systems.
+- **When to use:** You need custom color palettes, font combinations, or UI styles for an industry, You are building a design system from scratch, You want to align styling with professional UI/UX rules, You want to generate a structured MASTER.md design system file
+- **Primary inputs:** Product or business name, Query or target vibe description, Technology stack, Design dials (variance, motion, density)
+- **Main outputs:** Color palette tokens, Typography pairings (Google Fonts), Recommended layout pattern, Pre-delivery checklist, GSAP motion snippets, Generated design-system/MASTER.md file
+- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md), [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
+
 ### [Design System Extraction (agents/design-system-extractor/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md)
 
 - **Purpose:** Extracts reusable visual rules from references without blindly cloning them.
@@ -28,6 +36,14 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Main outputs:** Design audit, Prioritized defects, Revised section architecture, Design tokens
 - **Recommended companion skills:** [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [designer-mobile](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
 
+### [Domain Context Agent (agents/domain-agent/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/domain-agent/SKILL.md)
+
+- **Purpose:** Turns product-specific language, users, constraints, and trust requirements into a verified brief before design or implementation.
+- **When to use:** The product operates in a specific industry, Requirements include domain terminology or trust constraints, A brief is too vague to design safely
+- **Primary inputs:** Product brief, Repository or live URL, Domain documents and stated constraints
+- **Main outputs:** Verified domain brief, Audience and task map, Risk and trust constraints, Implementation acceptance criteria
+- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md), [design-maxing](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-maxing/SKILL.md), [implementation-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/implementation-agent/SKILL.md)
+
 ### [UX Conversion Strategy (agents/ux-conversion-strategist/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/ux-conversion-strategist/SKILL.md)
 
 - **Purpose:** Optimizes trust, evidence, CTA hierarchy, and conversion paths.
@@ -35,14 +51,6 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Primary inputs:** Conversion goals, Contact points, User concerns, Evidence assets
 - **Main outputs:** CTA layout rules, Trust placement specifications, Friction reduction plan, Mobile actions list
 - **Recommended companion skills:** 
-
-### [VibeMaxing Design Intelligence (agents/vibemaxing/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/vibemaxing/SKILL.md)
-
-- **Purpose:** AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.
-- **When to use:** You need custom color palettes, font combinations, or UI styles for an industry, You are building a design system from scratch, You want to align styling with professional UI/UX rules, You want to generate a structured MASTER.md design system file
-- **Primary inputs:** Product or business name, Query or target vibe description, Technology stack, Design dials (variance, motion, density)
-- **Main outputs:** Color palette tokens, Typography pairings (Google Fonts), Recommended layout pattern, Pre-delivery checklist, GSAP motion snippets, Generated design-system/MASTER.md file
-- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md), [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
 
 ## Responsive and Typography
 
@@ -129,6 +137,14 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Primary inputs:** Legacy component files, Markup structure, CSS rule locations, Component state data
 - **Main outputs:** Refactored component code, Props contract details, Cleaned styles, State separation map
 - **Recommended companion skills:** [media-fit-specialist](file:///e:/Code/models/AgentWorkload/agentSkill/agents/media-fit-specialist/SKILL.md), [visual-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/visual-qa-agent/SKILL.md), [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md)
+
+### [Implementation Agent (agents/implementation-agent/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/implementation-agent/SKILL.md)
+
+- **Purpose:** Builds approved website and product changes using the existing architecture, then verifies the relevant behavior.
+- **When to use:** The design and acceptance criteria are ready to build, A feature crosses UI and existing product behavior, A scoped change needs production-safe implementation
+- **Primary inputs:** Repository and target routes, Approved requirements, Existing tests and architecture
+- **Main outputs:** Implemented feature or fix, Preserved integration boundaries, Validation evidence, Clear QA handoff
+- **Recommended companion skills:** [codebase-recon](file:///e:/Code/models/AgentWorkload/agentSkill/agents/codebase-recon/SKILL.md), [visual-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/visual-qa-agent/SKILL.md), [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md), [deployment-verifier](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md)
 
 ## Quality and Delivery
 

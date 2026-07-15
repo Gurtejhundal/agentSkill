@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agent Skills Archive // Cybernetic Portal</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="description" content="Specialist agent skills, workflows, and blueprints database styled with cybertech aesthetics.">
   <style>
     /* Cyberpunk Design Tokens */
@@ -230,6 +231,94 @@
       color: var(--text-muted);
       margin-top: 0.25rem;
     }
+
+    .story-section, .vibe-maxing-section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .story-intro {
+      max-width: 720px;
+      color: var(--text-muted);
+      margin: -0.75rem 0 2rem;
+    }
+
+    .story-rail {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      counter-reset: story;
+    }
+
+    .story-step {
+      position: relative;
+      min-height: 180px;
+      padding: 1.25rem;
+      background: linear-gradient(145deg, rgba(12, 13, 20, 0.96), rgba(5, 5, 8, 0.9));
+      border: 1px solid rgba(0, 240, 255, 0.24);
+    }
+
+    .story-step::before {
+      counter-increment: story;
+      content: "0" counter(story);
+      display: block;
+      color: var(--border-pink);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.75rem;
+    }
+
+    .story-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -0.85rem;
+      top: 50%;
+      z-index: 2;
+      color: var(--border-neon);
+      background: var(--bg-cyber);
+      padding: 0.2rem;
+    }
+
+    .story-step h3, .vibe-maxing-card h3 {
+      color: #fff;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.65rem;
+    }
+
+    .story-step p { color: var(--text-muted); font-size: 0.85rem; }
+
+    .vibe-maxing-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: 2rem;
+      padding: 2rem;
+      border: 1px solid var(--border-pink);
+      background: radial-gradient(circle at right top, rgba(255, 0, 127, 0.15), transparent 45%), var(--bg-surface);
+      box-shadow: 0 0 28px rgba(255, 0, 127, 0.11);
+    }
+
+    .vibe-maxing-kicker {
+      color: var(--border-pink);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.85rem;
+    }
+
+    .vibe-maxing-copy { color: var(--text-main); max-width: 650px; margin-bottom: 1.25rem; }
+
+    .vibe-maxing-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+    }
+
+    .vibe-maxing-fact { border-left: 2px solid var(--border-neon); padding-left: 0.7rem; }
+    .vibe-maxing-fact strong { color: var(--border-neon); display: block; font-size: 1.35rem; }
+    .vibe-maxing-fact span { color: var(--text-muted); font-size: 0.72rem; text-transform: uppercase; }
+
+    .vibe-maxing-action { align-self: center; }
 
     /* Section Headers */
     .section-title {
@@ -536,6 +625,27 @@
       font-size: 0.75rem;
     }
 
+    .drawer-data-grid, .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .comparison-card {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid rgba(0, 240, 255, 0.22);
+      background: rgba(5, 5, 8, 0.62);
+      color: var(--text-main);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .comparison-card:hover { border-color: var(--border-neon); background: rgba(0, 240, 255, 0.07); }
+    .comparison-card strong { display: block; color: #fff; font-size: 0.8rem; margin-bottom: 0.4rem; }
+    .comparison-card span { display: block; color: var(--text-muted); font-size: 0.77rem; line-height: 1.45; }
+
     .drawer-code-block {
       background-color: var(--bg-cyber);
       border: 1px solid rgba(0, 240, 255, 0.25);
@@ -709,6 +819,10 @@
       text-align: center;
     }
 
+    .contributions-section h2 {
+      overflow-wrap: anywhere;
+    }
+
     .footer {
       padding: 2rem 0;
       text-align: center;
@@ -744,12 +858,24 @@
       .skills-grid, .examples-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      .logo-glow { font-size: 1.1rem; letter-spacing: 1px; }
+      .nav-menu { gap: 0.5rem; }
+      .nav-link { padding-inline: 0.25rem; }
     }
 
     @media (max-width: 768px) {
-      .skills-grid, .examples-grid, .workflows-grid, .builder-layout, .hero-stats {
+      .header-inner { padding: 0.75rem 0; }
+      .logo-glow { font-size: 0.9rem; letter-spacing: 1px; }
+      .header-actions { display: none; }
+
+      .skills-grid, .examples-grid, .workflows-grid, .builder-layout, .hero-stats, .story-rail, .vibe-maxing-card {
         grid-template-columns: 1fr;
       }
+
+      .drawer-data-grid, .comparison-grid { grid-template-columns: 1fr; }
+
+      .story-step:not(:last-child)::after { content: "↓"; top: auto; bottom: -0.85rem; right: 50%; }
       
       .nav-menu {
         display: none;
@@ -780,9 +906,10 @@
 
     /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
-      body {
+      body, body::after {
         background-image: none;
       }
+      body::after { display: none; }
       *, *::before, *::after {
         transition: none !important;
         box-shadow: none !important;
@@ -810,7 +937,7 @@
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#workflows" class="nav-link">Workflows</a></li>
           <li><a href="#structure" class="nav-link">Structure</a></li>
-          <li><a href="vibemaxing.html" class="nav-link" style="color: #ff007f; text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);">[VIBEMAXING]</a></li>
+          <li><a href="design-maxing.html" class="nav-link" style="color: #ff007f; text-shadow: 0 0 5px rgba(255, 0, 127, 0.5);">[VIBE_MAXING_LAB]</a></li>
         </ul>
       </nav>
 
@@ -825,9 +952,9 @@
     
     <!-- Hero / Info -->
     <section class="hero" id="overview">
-      <h1 class="hero-glitch-title">CYBER_INDEX_SYSTEM</h1>
+      <h1 class="hero-glitch-title">FIND THE RIGHT AGENT</h1>
       <p class="hero-tagline">
-        Specialist agent skills, checklists, and pipeline routing models. Curated, validated, and optimized to enable high-concurrency coding and zero-drift deployments.
+        A field guide for turning an unclear website problem into an accountable delivery route. Start with the job to be done; leave with the right specialist, prompt, and proof loop.
       </p>
 
       <div class="hero-stats">
@@ -836,17 +963,44 @@
           <div class="stat-label">Agent modules</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">8</div>
+          <div class="stat-num">6</div>
           <div class="stat-label">Routing pipelines</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Cyberpunk Theme</div>
+          <div class="stat-num">84</div>
+          <div class="stat-label">UI styles in the lab</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Offline self-contained</div>
+          <div class="stat-num">192</div>
+          <div class="stat-label">Palette references</div>
         </div>
+      </div>
+    </section>
+
+    <section class="story-section" aria-labelledby="story-title">
+      <h2 class="section-title" id="story-title">From vague brief to shipped proof</h2>
+      <p class="story-intro">This is not a list you need to memorize. Follow the narrative of your work; each stage names the specialist that protects the next decision.</p>
+      <div class="story-rail">
+        <article class="story-step"><h3>See the system</h3><p>Use <code>codebase-recon</code> to identify the routes, data, constraints, and current failure before changing a single line.</p></article>
+        <article class="story-step"><h3>Choose the direction</h3><p>Use <code>domain-agent</code>, <code>designer-me</code>, and <code>design-maxing</code> to turn audience context into a usable visual and content direction.</p></article>
+        <article class="story-step"><h3>Build the real thing</h3><p>Use <code>implementation-agent</code> when the intent is clear and the change must preserve existing product behavior.</p></article>
+        <article class="story-step"><h3>Prove it survives</h3><p>Use visual, interaction, accessibility, and deployment verification skills to confirm the result beyond one desktop screenshot.</p></article>
+      </div>
+    </section>
+
+    <section class="vibe-maxing-section" id="vibe-maxing" aria-labelledby="vibe-maxing-title">
+      <div class="vibe-maxing-card">
+        <div>
+          <p class="vibe-maxing-kicker">VIBE MAXING // DESIGNMAXING LAB</p>
+          <h2 id="vibe-maxing-title">The visual decision room, not a random style picker.</h2>
+          <p class="vibe-maxing-copy">Search the style, palette, and typography reference data by product need. Use the result alongside Designer‑Me: the lab gives you options and implementation signals; Designer‑Me decides which route fits the product and protects usability.</p>
+          <div class="vibe-maxing-facts" aria-label="DesignMaxing library counts">
+            <div class="vibe-maxing-fact"><strong>84</strong><span>UI styles</span></div>
+            <div class="vibe-maxing-fact"><strong>192</strong><span>palettes</span></div>
+            <div class="vibe-maxing-fact"><strong>74</strong><span>font pairs</span></div>
+          </div>
+        </div>
+        <div class="vibe-maxing-action"><a href="design-maxing.html" class="btn-cyber btn-cyber-pink">[OPEN_VIBE_MAXING_LAB]</a></div>
       </div>
     </section>
 
@@ -872,7 +1026,7 @@
           </div>
           
           <div class="results-stats">
-            <span id="results-count">22 modules active</span>
+            <span id="results-count">24 modules active</span>
             <span id="reset-filters" class="btn-reset" style="display: none;">[RESET_FILTERS]</span>
           </div>
         </div>
@@ -911,6 +1065,7 @@
             <label for="problem-selector" class="builder-label">Select Failure / Target Objective</label>
             <select id="problem-selector" class="builder-select">
               <option value="full-redesign">Full Redesign Audit</option>
+              <option value="design-intelligence">Find a visual direction</option>
               <option value="mobile-opt">Broken Mobile Layouts</option>
               <option value="broken-scroll">Stuttering Scroll animation</option>
               <option value="image-fitting">Mixed Image Ratios</option>
@@ -944,7 +1099,7 @@
           <li class="tree-node" role="listitem">
             <button class="tree-toggle-btn" aria-expanded="false" aria-controls="desc-agents">📁 agents/</button>
             <div class="tree-details" id="desc-agents">
-              Contains the 24 distinct skill folders (e.g. `agents/designer-mobile/SKILL.md`). Developers can review and copy individual folders to import individual skills.
+              Contains the 24 distinct skill folders (for example, `agents/designer-mobile/SKILL.md`). Each entry has a scope, boundary, inputs, outputs, companion skills, and prompt reference.
             </div>
           </li>
           <li class="tree-node" role="listitem">
@@ -1360,6 +1515,53 @@
       "examplesMarkdown": "# Deployment Verification Examples\n\n## Simple Request\nUse `deployment-verifier` to use deployment-verifier to check Vercel build status.\n\n## Advanced Request\nUse `deployment-verifier` to use deployment-verifier to inspect production aliases, env keys, error logs, and verify server responses on live routes.\n\n## Incorrect Use\nDo not use `deployment-verifier` to do not use deployment-verifier to design responsive desktop layouts.\n\n## Multi-Agent Workflow Example\n```text\nUse any design skill to make layout adjustments, run building tools, and deployment-verifier to verify correct commit changes are live.\n```\n"
     },
     {
+      "name": "design-maxing",
+      "title": "DesignMaxing Design Intelligence",
+      "description": "AI-powered design intelligence providing 84 UI styles, 192 color palettes, 74 font pairings, and stack-specific design systems.",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "design-system",
+        "styling",
+        "color-palettes",
+        "typography",
+        "designmaxing"
+      ],
+      "useWhen": [
+        "You need custom color palettes, font combinations, or UI styles for an industry",
+        "You are building a design system from scratch",
+        "You want to align styling with professional UI/UX rules",
+        "You want to generate a structured MASTER.md design system file"
+      ],
+      "avoidWhen": [
+        "You are debugging a backend database issue",
+        "You are writing unit tests that do not involve styling",
+        "You are doing a simple text modification with no styling implications"
+      ],
+      "inputs": [
+        "Product or business name",
+        "Query or target vibe description",
+        "Technology stack",
+        "Design dials (variance, motion, density)"
+      ],
+      "outputs": [
+        "Color palette tokens",
+        "Typography pairings (Google Fonts)",
+        "Recommended layout pattern",
+        "Pre-delivery checklist",
+        "GSAP motion snippets",
+        "Generated design-system/MASTER.md file"
+      ],
+      "recommendedWith": [
+        "designer-me",
+        "design-system-extractor",
+        "content-hierarchy"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# 🎨 DesignMaxing Design Systems Examples\n\nHere are reference setups for translating the DesignMaxing intelligence engine output into code.\n\n---\n\n## ⚡ Example A: Cyberpunk Neon Web UI\n\nThis layout uses a dark dashboard layout with high-intensity neon accent highlights.\n\n### 1. Generated Tokens\n* **Primary**: `#00FFCC` (Cyan)\n* **Secondary**: `#FF007F` (Neon Pink)\n* **Accent**: `#9D4EDD` (Tech Purple)\n* **Background**: `#0A0E17` (Deep Cyber Black)\n* **Foreground**: `#E2E8F0` (Off-White)\n\n### 2. Stylesheet (`index.css`)\n```css\n@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Rajdhani:wght@500;700&display=swap');\n\n:root {\n  --color-primary: #00ffcc;\n  --color-secondary: #ff007f;\n  --color-accent: #9d4edd;\n  --color-background: #0a0e17;\n  --color-foreground: #e2e8f0;\n  \n  --font-heading: 'Rajdhani', sans-serif;\n  --font-body: 'Fira Code', monospace;\n}\n\nbody {\n  background-color: var(--color-background);\n  color: var(--color-foreground);\n  font-family: var(--font-body);\n}\n\n.cyber-card {\n  border: 1px solid var(--color-accent);\n  background: rgba(10, 14, 23, 0.8);\n  box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);\n  border-radius: 4px;\n  position: relative;\n  overflow: hidden;\n}\n\n.cyber-card::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));\n}\n\n.btn-cyber {\n  background: transparent;\n  border: 1px solid var(--color-primary);\n  color: var(--color-primary);\n  padding: 0.5rem 1.5rem;\n  font-family: var(--font-heading);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  transition: all 0.2s ease-in-out;\n  cursor: pointer;\n}\n\n.btn-cyber:hover {\n  background: var(--color-primary);\n  color: var(--color-background);\n  box-shadow: 0 0 10px var(--color-primary);\n}\n```\n\n---\n\n## ❄️ Example B: Glassmorphism SaaS Card (Tailwind CSS)\n\nThis layout uses a clean, modern frosted glass layout with subtle backdrop blurs and gradients.\n\n### 1. Generated Tokens\n* **Primary**: `#6366F1` (Indigo)\n* **Secondary**: `#EC4899` (Pink)\n* **Background**: `#F8FAFC` (Slate 50)\n* **Frosted Layer**: `rgba(255, 255, 255, 0.7)`\n\n### 2. Component Code (HTML/Tailwind)\n```html\n<div class=\"relative min-h-screen bg-slate-50 flex items-center justify-center overflow-hidden\">\n  <!-- Decorative gradient background blobs -->\n  <div class=\"absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob\"></div>\n  <div class=\"absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000\"></div>\n\n  <!-- Frosted Glass Card -->\n  <div class=\"relative w-full max-w-md p-8 bg-white/70 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl\">\n    <div class=\"flex items-center space-x-4 mb-6\">\n      <span class=\"p-3 bg-indigo-100 text-indigo-600 rounded-xl\">\n        <!-- SVG Icon -->\n        <svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"/></svg>\n      </span>\n      <h3 class=\"text-xl font-bold text-slate-800\">VibeMaxing Pro</h3>\n    </div>\n    \n    <p class=\"text-slate-600 mb-6 leading-relaxed\">\n      Frosted layers, soft shadows, and backdrop-blurs create high visual quality design.\n    </p>\n    \n    <button class=\"w-full py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:brightness-110 active:scale-95 transition-all cursor-pointer\">\n      Start Designing\n    </button>\n  </div>\n</div>\n```\n"
+    },
+    {
       "name": "design-system-extractor",
       "title": "Design System Extraction",
       "version": "1.0.0",
@@ -1485,6 +1687,93 @@
       "skillPath": "./SKILL.md",
       "examplesPath": "./examples.md",
       "examplesMarkdown": "# Mobile Design Reconstruction Examples\n\n## Simple Request\nUse `designer-mobile` to use designer-mobile to fix oversized project cards at 390px.\n\n## Advanced Request\nUse `designer-mobile` to use designer-mobile and scroll-systems-engineer to rebuild the homepage Recent Work pinned carousel for touch devices.\n\n## Incorrect Use\nDo not use `designer-mobile` to do not use designer-mobile to debug a stale Vercel deployment.\n\n## Multi-Agent Workflow Example\n```text\nUse designer-mobile to design the mobile grid, scroll-systems-engineer to implement responsive touch snap, and visual-qa-agent to verify.\n```\n"
+    },
+    {
+      "name": "domain-agent",
+      "title": "Domain Context Agent",
+      "description": "Turns product-specific language, users, constraints, and trust requirements into a verified brief before design or implementation.",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "domain",
+        "discovery",
+        "constraints",
+        "audience",
+        "trust"
+      ],
+      "useWhen": [
+        "The product operates in a specific industry",
+        "Requirements include domain terminology or trust constraints",
+        "A brief is too vague to design safely"
+      ],
+      "avoidWhen": [
+        "You need legal, medical, or financial advice",
+        "The domain facts have not been supplied",
+        "A narrow CSS fix needs no product discovery"
+      ],
+      "inputs": [
+        "Product brief",
+        "Repository or live URL",
+        "Domain documents and stated constraints"
+      ],
+      "outputs": [
+        "Verified domain brief",
+        "Audience and task map",
+        "Risk and trust constraints",
+        "Implementation acceptance criteria"
+      ],
+      "recommendedWith": [
+        "designer-me",
+        "design-maxing",
+        "implementation-agent"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# Domain Context Agent Examples\n\n## Simple Request\n\nUse `domain-agent` to identify the audience, trust signals, and prohibited claims for a local clinic homepage.\n\n## Advanced Request\n\nUse `domain-agent` before a marketplace redesign to map buyer and seller tasks, data needed at each decision point, and claims that must remain evidence-backed.\n\n## Incorrect Use\n\nDo not use `domain-agent` to invent regulatory requirements or replace qualified expert review.\n\n## Workflow Example\n\n```text\nUse domain-agent to establish verified product constraints, designer-me to define the experience, and implementation-agent to ship the approved flow.\n```\n"
+    },
+    {
+      "name": "implementation-agent",
+      "title": "Implementation Agent",
+      "description": "Builds approved website and product changes using the existing architecture, then verifies the relevant behavior.",
+      "version": "1.0.0",
+      "category": "architecture",
+      "tags": [
+        "implementation",
+        "frontend",
+        "integration",
+        "testing",
+        "delivery"
+      ],
+      "useWhen": [
+        "The design and acceptance criteria are ready to build",
+        "A feature crosses UI and existing product behavior",
+        "A scoped change needs production-safe implementation"
+      ],
+      "avoidWhen": [
+        "The root problem is not understood",
+        "Requirements require a stakeholder decision",
+        "You only need an audit or visual recommendation"
+      ],
+      "inputs": [
+        "Repository and target routes",
+        "Approved requirements",
+        "Existing tests and architecture"
+      ],
+      "outputs": [
+        "Implemented feature or fix",
+        "Preserved integration boundaries",
+        "Validation evidence",
+        "Clear QA handoff"
+      ],
+      "recommendedWith": [
+        "codebase-recon",
+        "visual-qa-agent",
+        "interaction-qa-agent",
+        "deployment-verifier"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# Implementation Agent Examples\n\n## Simple Request\n\nUse `implementation-agent` to build an approved responsive navigation update without changing unrelated routes.\n\n## Advanced Request\n\nUse `implementation-agent` to convert an approved marketplace listing flow into production components while preserving API contracts and then run focused validation.\n\n## Incorrect Use\n\nDo not use `implementation-agent` to choose a product strategy or invent an unapproved visual system.\n\n## Workflow Example\n\n```text\nUse codebase-recon to map the system, designer-me to direct the interface, implementation-agent to build it, and visual-qa-agent to verify the result.\n```\n"
     },
     {
       "name": "interaction-qa-agent",
@@ -1862,53 +2151,6 @@
       "examplesMarkdown": "# UX Conversion Strategy Examples\n\n## Simple Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to adjust contact button visibility.\n\n## Advanced Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to position detailing packages, social proof, and a prominent WhatsApp CTA to optimize booking rates.\n\n## Incorrect Use\nDo not use `ux-conversion-strategist` to do not use ux-conversion-strategist to put multiple booking forms on the home hero banner.\n\n## Multi-Agent Workflow Example\n```text\nUse ux-conversion-strategist to specify CTA sequence, designer-mobile to format spacing on mobile viewports, and interaction-qa-agent to verify.\n```\n"
     },
     {
-      "name": "vibemaxing",
-      "title": "VibeMaxing Design Intelligence",
-      "description": "AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.",
-      "version": "1.0.0",
-      "category": "strategy",
-      "tags": [
-        "design-system",
-        "styling",
-        "color-palettes",
-        "typography",
-        "vibemaxing"
-      ],
-      "useWhen": [
-        "You need custom color palettes, font combinations, or UI styles for an industry",
-        "You are building a design system from scratch",
-        "You want to align styling with professional UI/UX rules",
-        "You want to generate a structured MASTER.md design system file"
-      ],
-      "avoidWhen": [
-        "You are debugging a backend database issue",
-        "You are writing unit tests that do not involve styling",
-        "You are doing a simple text modification with no styling implications"
-      ],
-      "inputs": [
-        "Product or business name",
-        "Query or target vibe description",
-        "Technology stack",
-        "Design dials (variance, motion, density)"
-      ],
-      "outputs": [
-        "Color palette tokens",
-        "Typography pairings (Google Fonts)",
-        "Recommended layout pattern",
-        "Pre-delivery checklist",
-        "GSAP motion snippets",
-        "Generated design-system/MASTER.md file"
-      ],
-      "recommendedWith": [
-        "designer-me",
-        "design-system-extractor",
-        "content-hierarchy"
-      ],
-      "skillPath": "./SKILL.md",
-      "examplesPath": "./examples.md",
-      "examplesMarkdown": "# 🎨 VibeMaxing Design Systems Examples\n\nHere are reference setups for translating the VibeMaxing intelligence engine output into code.\n\n---\n\n## ⚡ Example A: Cyberpunk Neon Web UI\n\nThis layout uses a dark dashboard layout with high-intensity neon accent highlights.\n\n### 1. Generated Tokens\n* **Primary**: `#00FFCC` (Cyan)\n* **Secondary**: `#FF007F` (Neon Pink)\n* **Accent**: `#9D4EDD` (Tech Purple)\n* **Background**: `#0A0E17` (Deep Cyber Black)\n* **Foreground**: `#E2E8F0` (Off-White)\n\n### 2. Stylesheet (`index.css`)\n```css\n@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Rajdhani:wght@500;700&display=swap');\n\n:root {\n  --color-primary: #00ffcc;\n  --color-secondary: #ff007f;\n  --color-accent: #9d4edd;\n  --color-background: #0a0e17;\n  --color-foreground: #e2e8f0;\n  \n  --font-heading: 'Rajdhani', sans-serif;\n  --font-body: 'Fira Code', monospace;\n}\n\nbody {\n  background-color: var(--color-background);\n  color: var(--color-foreground);\n  font-family: var(--font-body);\n}\n\n.cyber-card {\n  border: 1px solid var(--color-accent);\n  background: rgba(10, 14, 23, 0.8);\n  box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);\n  border-radius: 4px;\n  position: relative;\n  overflow: hidden;\n}\n\n.cyber-card::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));\n}\n\n.btn-cyber {\n  background: transparent;\n  border: 1px solid var(--color-primary);\n  color: var(--color-primary);\n  padding: 0.5rem 1.5rem;\n  font-family: var(--font-heading);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  transition: all 0.2s ease-in-out;\n  cursor: pointer;\n}\n\n.btn-cyber:hover {\n  background: var(--color-primary);\n  color: var(--color-background);\n  box-shadow: 0 0 10px var(--color-primary);\n}\n```\n\n---\n\n## ❄️ Example B: Glassmorphism SaaS Card (Tailwind CSS)\n\nThis layout uses a clean, modern frosted glass layout with subtle backdrop blurs and gradients.\n\n### 1. Generated Tokens\n* **Primary**: `#6366F1` (Indigo)\n* **Secondary**: `#EC4899` (Pink)\n* **Background**: `#F8FAFC` (Slate 50)\n* **Frosted Layer**: `rgba(255, 255, 255, 0.7)`\n\n### 2. Component Code (HTML/Tailwind)\n```html\n<div class=\"relative min-h-screen bg-slate-50 flex items-center justify-center overflow-hidden\">\n  <!-- Decorative gradient background blobs -->\n  <div class=\"absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob\"></div>\n  <div class=\"absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000\"></div>\n\n  <!-- Frosted Glass Card -->\n  <div class=\"relative w-full max-w-md p-8 bg-white/70 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl\">\n    <div class=\"flex items-center space-x-4 mb-6\">\n      <span class=\"p-3 bg-indigo-100 text-indigo-600 rounded-xl\">\n        <!-- SVG Icon -->\n        <svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"/></svg>\n      </span>\n      <h3 class=\"text-xl font-bold text-slate-800\">VibeMaxing Pro</h3>\n    </div>\n    \n    <p class=\"text-slate-600 mb-6 leading-relaxed\">\n      Frosted layers, soft shadows, and backdrop-blurs create high visual quality design.\n    </p>\n    \n    <button class=\"w-full py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:brightness-110 active:scale-95 transition-all cursor-pointer\">\n      Start Designing\n    </button>\n  </div>\n</div>\n```\n"
-    },
-    {
       "name": "visual-qa-agent",
       "title": "Visual QA Auditing",
       "version": "1.0.0",
@@ -1984,6 +2226,20 @@
         "deployment-verifier"
       ],
       "markdown": "# Full Website Audit Workflow\n\nComprehensive audit, redesign, testing, and production verification.\n\n## Sequence\n`codebase-recon → design-system-extractor → ux-conversion-strategist → content-hierarchy → designer-mobile → motion-architect → scroll-systems-engineer → accessibility-auditor → performance-optimizer → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Map codebase and extract design system rules\n- Rationalize content placement and conversion goals\n- Reconstruct layout for mobile breakpoints\n- Implement coherent motion and scroll interactions\n- Execute full accessibility audit and performance tuning\n- Perform visual and interaction QA, and verify production deployment\n"
+    },
+    "full-website-build": {
+      "name": "Full Website Build",
+      "description": "Turns an existing prototype or brief into a validated website without losing domain constraints.",
+      "steps": [
+        "codebase-recon",
+        "design-system-extractor",
+        "domain-agent",
+        "implementation-agent",
+        "visual-qa-agent",
+        "interaction-qa-agent",
+        "deployment-verifier"
+      ],
+      "markdown": "# Full Website Build Workflow\n\nBuilds a site from evidence through production verification.\n\n## Sequence\n\n`codebase-recon → design-system-extractor → domain-agent → implementation-agent → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Use It When\n\n- A simple document or prototype needs to become a usable website.\n- The product has domain constraints that must survive design and implementation.\n- The team needs one accountable route from discovery to release.\n\n## Required Evidence\n\n- Current architecture and route map\n- Domain constraints and acceptance criteria\n- Responsive and interaction screenshots\n- Build and deployment verification\n"
     },
     "mobile-reconstruction": {
       "name": "Mobile Reconstruction",
@@ -2088,8 +2344,12 @@
     // Workflow Builder Configuration
     const builderMap = {
       "full-redesign": {
-        sequence: ["codebase-recon", "designer-me", "design-system-extractor", "content-hierarchy", "designer-mobile", "motion-architect", "visual-qa-agent", "deployment-verifier"],
-        prompt: "Perform a full design and workflow audit.\nFollow the Full Website Audit sequence.\nVerify components on desktop and mobile viewports."
+        sequence: ["codebase-recon", "domain-agent", "designer-me", "design-maxing", "implementation-agent", "visual-qa-agent", "interaction-qa-agent", "deployment-verifier"],
+        prompt: "Perform a full website build. Establish verified domain constraints, choose the design direction, implement the approved change, and verify it at desktop and mobile viewports."
+      },
+      "design-intelligence": {
+        sequence: ["domain-agent", "design-maxing", "designer-me", "implementation-agent", "visual-qa-agent"],
+        prompt: "Choose a visual direction from product context. Use DesignMaxing for candidate systems, Designer-Me to select and constrain the route, then implement and visually verify it."
       },
       "mobile-opt": {
         sequence: ["codebase-recon", "designer-mobile", "typography-director", "scroll-systems-engineer", "visual-qa-agent"],
@@ -2129,6 +2389,7 @@
       renderSkills();
       renderWorkflows();
       setupEventListeners();
+      syncDrawerWithHash();
     }
 
     let activeCategory = 'all';
@@ -2200,7 +2461,7 @@
       });
     }
 
-    function openSkillDetail(name) {
+    function openSkillDetail(name, { updateHash = true } = {}) {
       const s = skillsData.find(item => item.name === name);
       if (!s) return;
 
@@ -2215,6 +2476,12 @@
         const companionObj = skillsData.find(item => item.name === rec);
         const title = companionObj ? companionObj.title : rec;
         return `<li><a href="#skill/${rec}" onclick="window.appOpenSkill('${rec}')">${title}</a></li>`;
+      }).join('');
+      const comparisonCards = s.recommendedWith.map(rec => {
+        const companion = skillsData.find(item => item.name === rec);
+        if (!companion) return '';
+        const distinction = companion.useWhen && companion.useWhen.length ? companion.useWhen[0] : companion.description;
+        return `<button class="comparison-card" onclick="window.appOpenSkill('${rec}')"><strong>${companion.title}</strong><span>Choose this instead when ${distinction}</span></button>`;
       }).join('');
 
       const promptText = `Use the ${s.name} skill.\n\nPROJECT\n[Your Project Name]\n\nTARGET\n[Target Route/Component]\n\nCURRENT PROBLEM\n[Provide failure details]\n\nDESIRED RESULT\n[Explain expected behavior]`;
@@ -2237,7 +2504,7 @@
         </div>
         ` : ''}
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="drawer-data-grid">
           <div>
             <h3 class="drawer-section-heading">Primary Inputs</h3>
             <ul class="drawer-bullets">${inputsList}</ul>
@@ -2255,6 +2522,13 @@
         </div>
         ` : ''}
 
+        ${comparisonCards ? `
+        <div>
+          <h3 class="drawer-section-heading">How it differs</h3>
+          <div class="comparison-grid">${comparisonCards}</div>
+        </div>
+        ` : ''}
+
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
             <h3 class="drawer-section-heading" style="margin-bottom: 0; border: none; padding: 0;">Sample Prompt Blueprint</h3>
@@ -2268,13 +2542,15 @@
         </div>
       `;
 
-      if (typeof drawer.showModal === 'function') {
+      if (!drawer.open && typeof drawer.showModal === 'function') {
         drawer.showModal();
-      } else {
+      } else if (!drawer.open) {
         drawer.setAttribute('open', 'true');
       }
       document.body.style.overflow = 'hidden';
-      window.history.pushState(null, null, `#skill/${s.name}`);
+      if (updateHash && window.location.hash !== `#skill/${s.name}`) {
+        window.history.pushState(null, null, `#skill/${s.name}`);
+      }
       drawerClose.focus();
     }
 
@@ -2286,7 +2562,10 @@
       copyTextToClipboard(text, btn);
     };
 
-    function closeDrawer() {
+    let updateHashOnDrawerClose = true;
+
+    function closeDrawer({ updateHash = true } = {}) {
+      updateHashOnDrawerClose = updateHash;
       if (typeof drawer.close === 'function') {
         drawer.close();
       } else {
@@ -2427,9 +2706,14 @@
       });
       drawer.addEventListener('close', () => {
         document.body.style.overflow = '';
-        window.history.pushState(null, null, '#skills');
+        if (updateHashOnDrawerClose && window.location.hash.startsWith('#skill/')) {
+          window.history.pushState(null, null, '#skills');
+        }
+        updateHashOnDrawerClose = true;
         if (lastActiveElement) lastActiveElement.focus();
       });
+
+      window.addEventListener('popstate', syncDrawerWithHash);
 
       // Focus wrap
       drawer.addEventListener('keydown', (e) => {
@@ -2493,6 +2777,16 @@
 
       problemSelector.addEventListener('change', updateWorkflowBuilder);
       updateWorkflowBuilder();
+    }
+
+    function syncDrawerWithHash() {
+      const match = window.location.hash.match(/^#skill\/([^/]+)$/);
+      const skillName = match ? decodeURIComponent(match[1]) : '';
+      if (skillName && skillsData.some(skill => skill.name === skillName)) {
+        openSkillDetail(skillName, { updateHash: false });
+      } else if (drawer.open) {
+        closeDrawer({ updateHash: false });
+      }
     }
 
     document.addEventListener('DOMContentLoaded', init);

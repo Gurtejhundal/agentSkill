@@ -17,6 +17,19 @@
       "deployment-verifier"
     ]
   },
+  "full-website-build": {
+    "name": "Full Website Build",
+    "description": "Turns an existing prototype or brief into a validated website without losing domain constraints.",
+    "steps": [
+      "codebase-recon",
+      "design-system-extractor",
+      "domain-agent",
+      "implementation-agent",
+      "visual-qa-agent",
+      "interaction-qa-agent",
+      "deployment-verifier"
+    ]
+  },
   "mobile-reconstruction": {
     "name": "Mobile Reconstruction",
     "description": "Rebuilds desktop experiences for mobile screens and touch inputs.",

@@ -1,0 +1,15 @@
+{
+  "name": "domain-agent",
+  "title": "Domain Context Agent",
+  "description": "Turns product-specific language, users, constraints, and trust requirements into a verified brief before design or implementation.",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": ["domain", "discovery", "constraints", "audience", "trust"],
+  "useWhen": ["The product operates in a specific industry", "Requirements include domain terminology or trust constraints", "A brief is too vague to design safely"],
+  "avoidWhen": ["You need legal, medical, or financial advice", "The domain facts have not been supplied", "A narrow CSS fix needs no product discovery"],
+  "inputs": ["Product brief", "Repository or live URL", "Domain documents and stated constraints"],
+  "outputs": ["Verified domain brief", "Audience and task map", "Risk and trust constraints", "Implementation acceptance criteria"],
+  "recommendedWith": ["designer-me", "design-maxing", "implementation-agent"],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md"
+}
