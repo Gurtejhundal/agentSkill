@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeMaxing Design Intelligence // Portal</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Rajdhani:wght@500;700&family=Outfit:wght@400;600;800&family=Inter:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #07070c;
+      --bg-card: rgba(13, 13, 23, 0.7);
+      --border-cyber: #ff007f;
+      --neon-cyan: #00f0ff;
+      --neon-magenta: #ff007f;
+      --neon-purple: #9d4edd;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 127, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.05) 0%, transparent 40%);
+      color: var(--text-main);
+      font-family: 'Fira Code', monospace;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    /* Cyberpunk Scanlines overlay */
+    body::after {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 9999;
+      background-size: 100% 4px, 6px 100%;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--neon-magenta);
+      padding-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .back-link {
+      color: var(--neon-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+    }
+
+    .back-link:hover {
+      text-shadow: 0 0 8px var(--neon-cyan);
+      transform: translateX(-3px);
+    }
+
+    h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255, 0, 127, 0.5), 0 0 20px rgba(0, 240, 255, 0.3);
+      display: inline-block;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .grid-styles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .style-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .style-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--neon-cyan);
+    }
+
+    .style-card:hover {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .style-card.alt::before {
+      background: var(--neon-magenta);
+    }
+
+    .style-card.alt:hover {
+      border-color: var(--neon-magenta);
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+    }
+
+    .style-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .style-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .style-tag {
+      font-size: 0.7rem;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--neon-cyan);
+      padding: 0.2rem 0.5rem;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .style-card.alt .style-tag {
+      background: rgba(255, 0, 127, 0.1);
+      color: var(--neon-magenta);
+      border-color: rgba(255, 0, 127, 0.3);
+    }
+
+    .style-description {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .image-preview-container {
+      width: 100%;
+      height: 180px;
+      background: #111;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .image-preview-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s;
+    }
+
+    .style-card:hover .image-preview-container img {
+      transform: scale(1.05);
+    }
+
+    .section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--neon-magenta);
+      padding-left: 0.75rem;
+      color: #fff;
+    }
+
+    /* Colors Section */
+    .color-section {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 0, 127, 0.15);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .color-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .color-group-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      color: var(--neon-cyan);
+    }
+
+    .swatches {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .swatch-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.4rem;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .swatch-row:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(0, 240, 255, 0.2);
+    }
+
+    .swatch-color {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .swatch-info {
+      font-size: 0.75rem;
+    }
+
+    .swatch-hex {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .swatch-label {
+      color: var(--text-muted);
+    }
+
+    /* Typography Section */
+    .typo-section {
+      background: var(--bg-card);
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .typo-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .typo-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .typo-selectors {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .typo-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .typo-btn:hover {
+      background: rgba(0, 240, 255, 0.05);
+      border-color: var(--neon-cyan);
+    }
+
+    .typo-btn.active {
+      background: rgba(0, 240, 255, 0.1);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+    }
+
+    .typo-preview {
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .preview-heading {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .preview-body {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Creator Profile Section */
+    footer {
+      border-top: 1px solid rgba(255, 0, 127, 0.2);
+      padding-top: 3rem;
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+    .creator-box {
+      display: inline-block;
+      border: 1px solid var(--neon-magenta);
+      background: rgba(255, 0, 127, 0.03);
+      border-radius: 8px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.08);
+      animation: pulse-border 3s infinite alternate;
+    }
+
+    @keyframes pulse-border {
+      0% { border-color: rgba(255, 0, 127, 0.4); box-shadow: 0 0 10px rgba(255, 0, 127, 0.05); }
+      100% { border-color: rgba(255, 0, 127, 1); box-shadow: 0 0 20px rgba(255, 0, 127, 0.2); }
+    }
+
+    .creator-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.85rem;
+      color: var(--neon-magenta);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 0.5rem;
+    }
+
+    .creator-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .btn-vercel {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.6rem 1.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-vercel:hover {
+      background: var(--neon-cyan);
+      color: var(--bg-dark);
+      box-shadow: 0 0 12px var(--neon-cyan);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0a0e17;
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <header>
+      <a href="index.html" class="back-link">&larr; Back to Main Portal</a><br>
+      <h1>VibeMaxing // Design Reference</h1>
+      <p class="subtitle">Visualizing 84 styles, 192 color palettes, and typography setups</p>
+    </header>
+
+    <!-- Section 1: UI Styles Catalog -->
+    <section>
+      <h2 class="section-title">UI Design Styles</h2>
+      <div class="grid-styles">
+        
+        <!-- Style 1: Cyberpunk -->
+        <div class="style-card">
+          <div class="style-header">
+            <h3 class="style-title">Cyberpunk UI</h3>
+            <span class="style-tag">Style #23</span>
+          </div>
+          <div class="image-preview-container">
+            <img src="screenshots/vibemaxing_cyberpunk_ui.jpg" alt="Cyberpunk UI reference mockup">
+          </div>
+          <p class="style-description">
+            Futuristic styling featuring dark OLED canvas bounds, bright neon magenta and cyan accent triggers, scanline grids, glowing typography, and monospace details.
+          </p>
+        </div>
+
+        <!-- Style 2: Glassmorphism -->
+        <div class="style-card alt">
+          <div class="style-header">
+            <h3 class="style-title">Glassmorphism</h3>
+            <span class="style-tag">Style #3</span>
+          </div>
+          <div class="image-preview-container">
+            <img src="screenshots/vibemaxing_glassmorphism_ui.jpg" alt="Glassmorphism UI reference mockup">
+          </div>
+          <p class="style-description">
+            Modern layered layout using semi-transparent frosted card containers, high backdrop blur effects, soft outline highlights, and deep gradient background reflections.
+          </p>
+        </div>
+
+        <!-- Style 3: Bento Grid -->
+        <div class="style-card">
+          <div class="style-header">
+            <h3 class="style-title">Bento Grid</h3>
+            <span class="style-tag">Style #21</span>
+          </div>
+          <div class="image-preview-container">
+            <img src="screenshots/vibemaxing_bento_grid_ui.jpg" alt="Bento Grid UI reference mockup">
+          </div>
+          <p class="style-description">
+            High visual density grid arrays dividing content blocks into modular card sections. Perfect for displaying rich feature cards, dashboards, or tech specs.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Color Swatches Explorer -->
+    <section class="color-section">
+      <h2 class="section-title">Color Palettes Explorer</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">Click any color block below to instantly copy its Hex code to your clipboard.</p>
+      
+      <div class="color-groups">
+        
+        <!-- Group 1: Cyberpunk Neon -->
+        <div>
+          <h3 class="color-group-title">Cyberpunk Neon</h3>
+          <div class="swatches">
+            <div class="swatch-row" onclick="copyColor('#00ffcc', 'Cyber Cyan')">
+              <div class="swatch-color" style="background-color: #00ffcc;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#00FFCC</div>
+                <div class="swatch-label">Primary Cyan</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#ff007f', 'Neon Pink')">
+              <div class="swatch-color" style="background-color: #ff007f;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#FF007F</div>
+                <div class="swatch-label">Accent Magenta</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#0a0e17', 'Cyber Black')">
+              <div class="swatch-color" style="background-color: #0a0e17;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#0A0E17</div>
+                <div class="swatch-label">Background</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: Modern Slate/Indigo -->
+        <div>
+          <h3 class="color-group-title">Slate & Indigo</h3>
+          <div class="swatches">
+            <div class="swatch-row" onclick="copyColor('#6366f1', 'Indigo')">
+              <div class="swatch-color" style="background-color: #6366f1;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#6366F1</div>
+                <div class="swatch-label">Primary Indigo</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#ec4899', 'Pink Accent')">
+              <div class="swatch-color" style="background-color: #ec4899;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#EC4899</div>
+                <div class="swatch-label">Accent Pink</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#1e293b', 'Slate Background')">
+              <div class="swatch-color" style="background-color: #1e293b;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#1E293B</div>
+                <div class="swatch-label">Slate 800</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: Emerald Bio-Organic -->
+        <div>
+          <h3 class="color-group-title">Bio Organic</h3>
+          <div class="swatches">
+            <div class="swatch-row" onclick="copyColor('#10b981', 'Emerald')">
+              <div class="swatch-color" style="background-color: #10b981;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#10B981</div>
+                <div class="swatch-label">Primary Green</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#047857', 'Deep Emerald')">
+              <div class="swatch-color" style="background-color: #047857;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#047857</div>
+                <div class="swatch-label">Secondary Forest</div>
+              </div>
+            </div>
+            <div class="swatch-row" onclick="copyColor('#064e3b', 'Dark Organic')">
+              <div class="swatch-color" style="background-color: #064e3b;"></div>
+              <div class="swatch-info">
+                <div class="swatch-hex">#064E3B</div>
+                <div class="swatch-label">Green 900</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Typography Pairings -->
+    <section class="typo-section">
+      <h2 class="section-title">Typography Pairings</h2>
+      
+      <div class="typo-layout">
+        
+        <div class="typo-selectors">
+          <button class="typo-btn active" onclick="selectFonts(this, 'Rajdhani', 'Fira Code', 'Technical & Cyber')">
+            1. Rajdhani / Fira Code
+          </button>
+          <button class="typo-btn" onclick="selectFonts(this, 'Outfit', 'Inter', 'Clean Modern SaaS')">
+            2. Outfit / Inter
+          </button>
+          <button class="typo-btn" onclick="selectFonts(this, 'Cormorant Garamond', 'Montserrat', 'Luxury Serif')">
+            3. Cormorant / Montserrat
+          </button>
+          <button class="typo-btn" onclick="selectFonts(this, 'Playfair Display', 'Source Sans Pro', 'Editorial Grid')">
+            4. Playfair / Source Sans
+          </button>
+        </div>
+
+        <div class="typo-preview">
+          <div id="preview-heading" class="preview-heading" style="font-family: 'Rajdhani', sans-serif;">Technical & Cyber</div>
+          <div id="preview-body" class="preview-body" style="font-family: 'Fira Code', monospace;">
+            The quick brown fox jumps over the lazy dog. A glyph selection of alphanumeric sequences demonstrates spacing, kerning heights, and line weights. Adjusting typography pairings can immediately alter user conversions and brand trust.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Creator Branding -->
+    <footer>
+      <div class="creator-box">
+        <div class="creator-title">System Designer // Developer</div>
+        <div class="creator-name">Gurtejbir Singh</div>
+        <a href="https://gurtejbirsingh.vercel.app/" class="btn-vercel" target="_blank">View Portfolio</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast overlay -->
+  <div id="toast" class="toast">COPIED: #HEX</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    const previewHeading = document.getElementById('preview-heading');
+    const previewBody = document.getElementById('preview-body');
+
+    function copyColor(hex, name) {
+      navigator.clipboard.writeText(hex).then(() => {
+        toast.textContent = `COPIED: ${hex} // ${name.toUpperCase()}`;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      });
+    }
+
+    function selectFonts(btn, headingFont, bodyFont, name) {
+      // Toggle active states
+      document.querySelectorAll('.typo-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update fonts
+      previewHeading.style.fontFamily = `"${headingFont}", sans-serif`;
+      previewHeading.textContent = name;
+      previewBody.style.fontFamily = `"${bodyFont}", sans-serif`;
+    }
+  </script>
+</body>
+</html>
