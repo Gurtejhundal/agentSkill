@@ -141,4 +141,88 @@ if (fs.existsSync(indexPath)) {
   process.exit(1);
 }
 
+// 5. Build and Inject VibeMaxing databases into docs/vibemaxing.html
+const vibemaxingPath = path.join(docsDir, 'vibemaxing.html');
+if (fs.existsSync(vibemaxingPath)) {
+  console.log('Building VibeMaxing databases from CSV source...');
+  
+  function parseCSVLine(line) {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"') {
+        if (inQuotes && line[i + 1] === '"') {
+          current += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result;
+  }
+
+  function parseCSV(filePath) {
+    if (!fs.existsSync(filePath)) {
+      console.warn(`Warning: CSV file not found: ${filePath}`);
+      return [];
+    }
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lines = content.split(/\r?\n/);
+    if (lines.length === 0) return [];
+    
+    const headers = parseCSVLine(lines[0]);
+    const results = [];
+    
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (!line) continue;
+      const values = parseCSVLine(line);
+      const row = {};
+      headers.forEach((header, index) => {
+        row[header] = values[index] || '';
+      });
+      results.push(row);
+    }
+    return results;
+  }
+
+  const styles = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'styles.csv'));
+  const colors = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'colors.csv'));
+  const typography = parseCSV(path.join(agentsDir, 'vibemaxing', 'data', 'typography.csv'));
+
+  let vibemaxingHtml = fs.readFileSync(vibemaxingPath, 'utf8');
+  const startTagVm = '// --- VIBEMAXING_DATABASE_PLACEHOLDER ---';
+  const endTagVm = '// --- VIBEMAXING_DATABASE_PLACEHOLDER_END ---';
+
+  const startIdxVm = vibemaxingHtml.indexOf(startTagVm);
+  const endIdxVm = vibemaxingHtml.indexOf(endTagVm);
+
+  if (startIdxVm !== -1 && endIdxVm !== -1) {
+    const dbPayloadVm = { styles, colors, typography };
+    const serializedDataVm = JSON.stringify(dbPayloadVm, null, 2)
+      .replace(/\u2028/g, '\\u2028')
+      .replace(/\u2029/g, '\\u2029');
+
+    const injectionVm = `${startTagVm}\n    window.VIBEMAXING_DATA = ${serializedDataVm};\n    ${endTagVm}`;
+    vibemaxingHtml = vibemaxingHtml.substring(0, startIdxVm) + injectionVm + vibemaxingHtml.substring(endIdxVm + endTagVm.length);
+    
+    fs.writeFileSync(vibemaxingPath, vibemaxingHtml, 'utf8');
+    console.log('Successfully injected database payload directly into docs/vibemaxing.html.');
+  } else {
+    console.error('Error: Could not locate database injection placeholders in docs/vibemaxing.html.');
+    process.exit(1);
+  }
+} else {
+  console.log('Info: docs/vibemaxing.html not found, skipping VibeMaxing build.');
+}
+
 console.log('Compile database complete.');
