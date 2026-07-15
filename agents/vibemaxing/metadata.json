@@ -1,0 +1,46 @@
+{
+  "name": "vibemaxing",
+  "title": "VibeMaxing Design Intelligence",
+  "description": "AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.",
+  "version": "1.0.0",
+  "category": "strategy",
+  "tags": [
+    "design-system",
+    "styling",
+    "color-palettes",
+    "typography",
+    "vibemaxing"
+  ],
+  "useWhen": [
+    "You need custom color palettes, font combinations, or UI styles for an industry",
+    "You are building a design system from scratch",
+    "You want to align styling with professional UI/UX rules",
+    "You want to generate a structured MASTER.md design system file"
+  ],
+  "avoidWhen": [
+    "You are debugging a backend database issue",
+    "You are writing unit tests that do not involve styling",
+    "You are doing a simple text modification with no styling implications"
+  ],
+  "inputs": [
+    "Product or business name",
+    "Query or target vibe description",
+    "Technology stack",
+    "Design dials (variance, motion, density)"
+  ],
+  "outputs": [
+    "Color palette tokens",
+    "Typography pairings (Google Fonts)",
+    "Recommended layout pattern",
+    "Pre-delivery checklist",
+    "GSAP motion snippets",
+    "Generated design-system/MASTER.md file"
+  ],
+  "recommendedWith": [
+    "designer-me",
+    "design-system-extractor",
+    "content-hierarchy"
+  ],
+  "skillPath": "./SKILL.md",
+  "examplesPath": "./examples.md"
+}

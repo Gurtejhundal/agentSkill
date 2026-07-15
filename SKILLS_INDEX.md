@@ -36,6 +36,14 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Main outputs:** CTA layout rules, Trust placement specifications, Friction reduction plan, Mobile actions list
 - **Recommended companion skills:** 
 
+### [VibeMaxing Design Intelligence (agents/vibemaxing/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/vibemaxing/SKILL.md)
+
+- **Purpose:** AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.
+- **When to use:** You need custom color palettes, font combinations, or UI styles for an industry, You are building a design system from scratch, You want to align styling with professional UI/UX rules, You want to generate a structured MASTER.md design system file
+- **Primary inputs:** Product or business name, Query or target vibe description, Technology stack, Design dials (variance, motion, density)
+- **Main outputs:** Color palette tokens, Typography pairings (Google Fonts), Recommended layout pattern, Pre-delivery checklist, GSAP motion snippets, Generated design-system/MASTER.md file
+- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md), [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
+
 ## Responsive and Typography
 
 ### [Mobile Design Reconstruction (agents/designer-mobile/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md)

@@ -11,7 +11,7 @@ Explore modules, view details, compile custom instruction prompts, and decrypt c
 ## ⚡ The Project Mission
 Generic coding assistants fail at complex web design tasks because they start modifying code before inspecting structures, treat mobile viewports as cropped desktops, break scroll timelines, ignore accessibility gates, and mark sprints complete without live deployment verification.
 
-This repository hosts **21 specialized agent skills** (checklists, triggers, context templates, and prompt interfaces) that elevate AI coding agents into specialist roles:
+This repository hosts **22 specialized agent skills** (checklists, triggers, context templates, and prompt interfaces) that elevate AI coding agents into specialist roles:
 - **Reconstruct** responsive layouts dynamically without deleting visual features.
 - **Engineer** robust cinematic scroll animations and transitions.
 - **Audit** keyboard interactions, semantic accessibility, and visual QA differences.
@@ -40,10 +40,10 @@ To make a skill available to agents working on a specific project repository:
 ## 🖥️ Directory Structure
 ```text
 website-agent-skills-repo/
-├── agents/             # The 21 independent, self-contained agent skill folders
+├── agents/             # The 22 independent, self-contained agent skill folders
 │   ├── designer-mobile/
 │   ├── motion-architect/
-│   └── ...all 19 other skills
+│   └── ...all 20 other skills
 │
 ├── workflows/          # Coordinated routing pipelines & index.json
 ├── checklists/         # Verification protocols (mobile, performance, WCAG)
@@ -56,13 +56,14 @@ website-agent-skills-repo/
 
 ---
 
-## 🧬 System Modules (21 Active Skills)
+## 🧬 System Modules (22 Active Skills)
 
 ### 📊 Strategy & Design
 * [designer-me](agents/designer-me) - **Creative Cyber Designer**: Audits layouts and redesigns websites while preserving brand identity.
 * [design-system-extractor](agents/design-system-extractor) - **Design System Extractor**: Extracts color tokens, variables, margins, and type rules.
 * [content-hierarchy](agents/content-hierarchy) - **Content Hierarchy Specialist**: Coordinates text content layout, heading hierarchy, and reading flows.
 * [ux-conversion-strategist](agents/ux-conversion-strategist) - **UX Conversion Strategist**: Guides user layouts to drive booking, actions, and leads.
+* [vibemaxing](agents/vibemaxing) - **VibeMaxing Design Intelligence**: AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.
 
 ### 📱 Responsive & Layouts
 * [designer-mobile](agents/designer-mobile) - **Mobile Design Reconstruction**: Reconstructs layouts for small widths without shrinking or deleting elements.

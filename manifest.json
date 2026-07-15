@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Specialist AI-agent skills for website design, frontend implementation, responsive optimization, motion engineering, quality assurance, accessibility, SEO, backend preservation, and deployment verification.",
   "documentation": "docs/index.html",
-  "skillsCount": 21,
+  "skillsCount": 22,
   "categories": [
     "strategy",
     "responsive",
@@ -32,6 +32,7 @@
     "seo-local-search",
     "typography-director",
     "ux-conversion-strategist",
+    "vibemaxing",
     "visual-qa-agent"
   ],
   "workflows": [

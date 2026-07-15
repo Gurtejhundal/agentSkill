@@ -871,7 +871,7 @@
           </div>
           
           <div class="results-stats">
-            <span id="results-count">24 modules active</span>
+            <span id="results-count">22 modules active</span>
             <span id="reset-filters" class="btn-reset" style="display: none;">[RESET_FILTERS]</span>
           </div>
         </div>
@@ -1859,6 +1859,53 @@
       "examplesPath": "./examples.md",
       "description": "Optimizes trust, evidence, CTA hierarchy, and conversion paths.",
       "examplesMarkdown": "# UX Conversion Strategy Examples\n\n## Simple Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to adjust contact button visibility.\n\n## Advanced Request\nUse `ux-conversion-strategist` to use ux-conversion-strategist to position detailing packages, social proof, and a prominent WhatsApp CTA to optimize booking rates.\n\n## Incorrect Use\nDo not use `ux-conversion-strategist` to do not use ux-conversion-strategist to put multiple booking forms on the home hero banner.\n\n## Multi-Agent Workflow Example\n```text\nUse ux-conversion-strategist to specify CTA sequence, designer-mobile to format spacing on mobile viewports, and interaction-qa-agent to verify.\n```\n"
+    },
+    {
+      "name": "vibemaxing",
+      "title": "VibeMaxing Design Intelligence",
+      "description": "AI-powered design intelligence providing 84 UI styles, 161 color palettes, 73 font pairings, and stack-specific design systems.",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "design-system",
+        "styling",
+        "color-palettes",
+        "typography",
+        "vibemaxing"
+      ],
+      "useWhen": [
+        "You need custom color palettes, font combinations, or UI styles for an industry",
+        "You are building a design system from scratch",
+        "You want to align styling with professional UI/UX rules",
+        "You want to generate a structured MASTER.md design system file"
+      ],
+      "avoidWhen": [
+        "You are debugging a backend database issue",
+        "You are writing unit tests that do not involve styling",
+        "You are doing a simple text modification with no styling implications"
+      ],
+      "inputs": [
+        "Product or business name",
+        "Query or target vibe description",
+        "Technology stack",
+        "Design dials (variance, motion, density)"
+      ],
+      "outputs": [
+        "Color palette tokens",
+        "Typography pairings (Google Fonts)",
+        "Recommended layout pattern",
+        "Pre-delivery checklist",
+        "GSAP motion snippets",
+        "Generated design-system/MASTER.md file"
+      ],
+      "recommendedWith": [
+        "designer-me",
+        "design-system-extractor",
+        "content-hierarchy"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "examplesMarkdown": "# 🎨 VibeMaxing Design Systems Examples\n\nHere are reference setups for translating the VibeMaxing intelligence engine output into code.\n\n---\n\n## ⚡ Example A: Cyberpunk Neon Web UI\n\nThis layout uses a dark dashboard layout with high-intensity neon accent highlights.\n\n### 1. Generated Tokens\n* **Primary**: `#00FFCC` (Cyan)\n* **Secondary**: `#FF007F` (Neon Pink)\n* **Accent**: `#9D4EDD` (Tech Purple)\n* **Background**: `#0A0E17` (Deep Cyber Black)\n* **Foreground**: `#E2E8F0` (Off-White)\n\n### 2. Stylesheet (`index.css`)\n```css\n@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Rajdhani:wght@500;700&display=swap');\n\n:root {\n  --color-primary: #00ffcc;\n  --color-secondary: #ff007f;\n  --color-accent: #9d4edd;\n  --color-background: #0a0e17;\n  --color-foreground: #e2e8f0;\n  \n  --font-heading: 'Rajdhani', sans-serif;\n  --font-body: 'Fira Code', monospace;\n}\n\nbody {\n  background-color: var(--color-background);\n  color: var(--color-foreground);\n  font-family: var(--font-body);\n}\n\n.cyber-card {\n  border: 1px solid var(--color-accent);\n  background: rgba(10, 14, 23, 0.8);\n  box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);\n  border-radius: 4px;\n  position: relative;\n  overflow: hidden;\n}\n\n.cyber-card::before {\n  content: '';\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));\n}\n\n.btn-cyber {\n  background: transparent;\n  border: 1px solid var(--color-primary);\n  color: var(--color-primary);\n  padding: 0.5rem 1.5rem;\n  font-family: var(--font-heading);\n  text-transform: uppercase;\n  letter-spacing: 0.1em;\n  transition: all 0.2s ease-in-out;\n  cursor: pointer;\n}\n\n.btn-cyber:hover {\n  background: var(--color-primary);\n  color: var(--color-background);\n  box-shadow: 0 0 10px var(--color-primary);\n}\n```\n\n---\n\n## ❄️ Example B: Glassmorphism SaaS Card (Tailwind CSS)\n\nThis layout uses a clean, modern frosted glass layout with subtle backdrop blurs and gradients.\n\n### 1. Generated Tokens\n* **Primary**: `#6366F1` (Indigo)\n* **Secondary**: `#EC4899` (Pink)\n* **Background**: `#F8FAFC` (Slate 50)\n* **Frosted Layer**: `rgba(255, 255, 255, 0.7)`\n\n### 2. Component Code (HTML/Tailwind)\n```html\n<div class=\"relative min-h-screen bg-slate-50 flex items-center justify-center overflow-hidden\">\n  <!-- Decorative gradient background blobs -->\n  <div class=\"absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob\"></div>\n  <div class=\"absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl opacity-50 mix-blend-multiply animate-blob animation-delay-2000\"></div>\n\n  <!-- Frosted Glass Card -->\n  <div class=\"relative w-full max-w-md p-8 bg-white/70 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl\">\n    <div class=\"flex items-center space-x-4 mb-6\">\n      <span class=\"p-3 bg-indigo-100 text-indigo-600 rounded-xl\">\n        <!-- SVG Icon -->\n        <svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 10V3L4 14h7v7l9-11h-7z\"/></svg>\n      </span>\n      <h3 class=\"text-xl font-bold text-slate-800\">VibeMaxing Pro</h3>\n    </div>\n    \n    <p class=\"text-slate-600 mb-6 leading-relaxed\">\n      Frosted layers, soft shadows, and backdrop-blurs create high visual quality design.\n    </p>\n    \n    <button class=\"w-full py-3 bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 hover:brightness-110 active:scale-95 transition-all cursor-pointer\">\n      Start Designing\n    </button>\n  </div>\n</div>\n```\n"
     },
     {
       "name": "visual-qa-agent",
