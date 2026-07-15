@@ -809,7 +809,6 @@
           <li><a href="#overview" class="nav-link">Overview</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#workflows" class="nav-link">Workflows</a></li>
-          <li><a href="#examples" class="nav-link">Examples</a></li>
           <li><a href="#structure" class="nav-link">Structure</a></li>
         </ul>
       </nav>
@@ -840,8 +839,8 @@
           <div class="stat-label">Routing pipelines</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Project Blueprints</div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Cyberpunk Theme</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">100%</div>
@@ -940,16 +939,8 @@
       </div>
     </section>
 
-    <!-- Project Blueprints -->
-    <section class="examples-section" id="examples">
-      <h2 class="section-title">Project Blueprints</h2>
-      <div class="examples-grid" id="examples-grid">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
     <!-- File Tree -->
-    <section class="structure-section" id="structure">
+    <section class="structure-section" id="structure" style="border-bottom: none;">
       <h2 class="section-title">Repository Structure</h2>
       <div class="builder-box">
         <ul class="tree-list" role="list">
@@ -997,6 +988,15 @@
           </li>
         </ul>
       </div>
+    </section>
+
+    <!-- Creator Section -->
+    <section class="creator-section" style="padding: 4rem 0; border-top: 1px solid rgba(0, 240, 255, 0.15); text-align: center;">
+      <h2 class="section-title" style="border-left: 4px solid var(--border-pink); padding-left: 1rem; display: inline-block; margin-bottom: 1.5rem;">SYSTEM_CREATOR</h2>
+      <p style="font-size: 1rem; color: var(--text-main); margin-bottom: 2rem;">
+        Designed and compiled by <strong>Gurtejbirsingh</strong>.
+      </p>
+      <a href="https://gurtejbirsingh.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-cyber-pink" style="display: inline-block;">[VISIT_CREATOR_PORTFOLIO]</a>
     </section>
 
   </main>
@@ -2201,7 +2201,6 @@
   <script>
     let skillsData = [];
     let workflowsData = {};
-    let examplesData = [];
 
     // DOM Elements
     const skillsGrid = document.getElementById('skills-grid');
@@ -2216,7 +2215,6 @@
     const drawerClose = document.getElementById('drawer-close');
 
     const workflowsGrid = document.getElementById('workflows-grid');
-    const examplesGrid = document.getElementById('examples-grid');
 
     const problemSelector = document.getElementById('problem-selector');
     const builderFlowNodes = document.getElementById('builder-flow-nodes');
@@ -2283,11 +2281,9 @@
       if (window.WEBSITE_AGENT_DATA) {
         skillsData = window.WEBSITE_AGENT_DATA.skills || [];
         workflowsData = window.WEBSITE_AGENT_DATA.workflows || {};
-        examplesData = window.WEBSITE_AGENT_DATA.examples || [];
       }
       renderSkills();
       renderWorkflows();
-      renderExamples();
       setupEventListeners();
     }
 
@@ -2483,54 +2479,7 @@
       });
     }
 
-    function renderExamples() {
-      examplesGrid.innerHTML = '';
-      examplesData.forEach(ex => {
-        const card = document.createElement('div');
-        card.className = 'example-card';
-        card.innerHTML = `
-          <div>
-            <h3 style="color: white; text-transform: uppercase; margin-bottom: 0.5rem;">${ex.title}</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Modular blueprint layout plan targeting conversion optimizations.</p>
-          </div>
-          <button class="btn-cyber btn-cyber-pink" style="width: 100%;" onclick="window.appOpenExample('${ex.id}')">[RUN_DECRYPT_PLAN]</button>
-        `;
-        examplesGrid.appendChild(card);
-      });
-    }
-
-    window.appOpenExample = function(id) {
-      const ex = examplesData.find(item => item.id === id);
-      if (!ex) return;
-
-      lastActiveElement = document.activeElement;
-      drawerTitle.textContent = `BLUEPRINT // ${ex.title.toUpperCase()}`;
-      drawerContent.innerHTML = `
-        <div>
-          <h3 class="drawer-section-heading">Plan Context</h3>
-          <pre class="drawer-code-block" style="white-space: pre-wrap; font-family: inherit;">${ex.readme}</pre>
-        </div>
-        <div>
-          <h3 class="drawer-section-heading">Skill Sequence Checklist</h3>
-          <pre class="drawer-code-block" style="color: white;">${ex.plan}</pre>
-        </div>
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-            <h3 class="drawer-section-heading" style="margin-bottom: 0; border: none; padding: 0;">Sample Prompts</h3>
-            <button class="btn-cyber" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;" onclick="window.appCopyPrompt(\`${ex.prompts}\`, this)">[COPY_PROMPTS]</button>
-          </div>
-          <pre class="drawer-code-block"><code>${ex.prompts}</code></pre>
-        </div>
-      `;
-
-      if (typeof drawer.showModal === 'function') {
-        drawer.showModal();
-      } else {
-        drawer.setAttribute('open', 'true');
-      }
-      document.body.style.overflow = 'hidden';
-      drawerClose.focus();
-    };
+    // Removed Project Blueprints Rendering
 
     function updateWorkflowBuilder() {
       const selected = problemSelector.value;

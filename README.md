@@ -126,3 +126,10 @@ npm run validate
 
 ## 🔓 License
 This project is licensed under the MIT License. System active.
+
+---
+
+## 👤 Creator
+Designed and compiled by **Gurtejbirsingh**. Check out my work and portfolio:
+👉 **[https://gurtejbirsingh.vercel.app/](https://gurtejbirsingh.vercel.app/)**
+
