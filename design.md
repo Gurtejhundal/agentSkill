@@ -1,69 +1,45 @@
-# Design System — Agent Skills Portal
+# VibeMaxing Design System
 
 ## Product Context
 
-- Product: interactive catalog for reusable website-agent skills and workflows
-- Primary users: builders who know their website problem but not the right specialist or sequence
-- Primary tasks: find a skill, understand its scope, compare companion skills, copy a prompt, and follow a workflow
-- Business goal: make the skill library memorable and immediately actionable
-- Device priority: mobile first, then desktop research sessions
-- Trust level: high; users must see honest boundaries and real repository references
+- Product: VibeMaxing, a searchable directory of reusable agent skills and workflow routes.
+- Primary users: builders who know the website problem but need the right specialist, sequence, and proof loop.
+- Primary tasks: find a skill, understand when to use it, compare companions, copy an actionable prompt, and browse design references.
+- Device priority: mobile first for discovery; desktop for deeper reference research.
 
 ## Chosen Direction
 
-- Primary UI style: Cyberpunk / Acid Graphic
-- Secondary influence: Flat Design 2.0 for discovery and dense content
-- Style ratio: 70 / 30
-- Reason: the cyberpunk layer makes the catalog memorable; restrained utility patterns keep search, comparisons, and reading usable
-- Main risks: glow, scanlines, and stylized type can reduce readability or mobile performance
-- Strongest areas: hero, story rail, Vibe Maxing Lab, workflow status visuals
-- Restrained areas: filters, skill details, prompts, and long-form reference data
+- VibeMaxing portal: Brutalism.
+- DesignMaxing module: Semi-flat design (Flat 2.0).
+- Reason: the portal needs an unmistakable, memorable index; the reference module needs calm, dense, scannable comparison tools.
+- Boundary: Brutalism is reserved for VibeMaxing navigation, hierarchy, and agent discovery. Semi-flat cards, segmentation, and previews are reserved for DesignMaxing.
 
-## Visual Principles
+## Visual Rules
 
-1. Start from the user’s job, not a wall of skills.
-2. Use neon accents as wayfinding, never as body-text decoration.
-3. Give every skill a clear use boundary and companion comparison.
-4. Turn the collection into a narrative from discovery to verification.
-5. Keep all interactive controls readable, focusable, and touch-safe.
+### VibeMaxing
 
-## Tokens
+- Off-white canvas, black 3px borders, acid yellow and signal-red accents.
+- Use hard offset shadows, square corners, oversized display headings, and plain-language labels.
+- Never use glow, scanlines, glass effects, or decorative gradients in the portal.
+- Search, filters, workflow routes, and drawers remain functional-first and legible.
 
-- Background: `#050508`; surface: `#0c0d14`; elevated surface: `#121421`
-- Text: `#d1d5db`; muted text: `#6f7587`; border: `rgba(0,240,255,.24)`
-- Primary: `#00f0ff`; secondary: `#ff007f`; success: `#39ff14`
-- Interface font: Consolas, Courier New, monospace; body line-height: 1.5
-- Base spacing: 4px; section spacing: 64px desktop / 40px mobile; card padding: 20px
-- Max content width: 1200px; breakpoints: 360px, 768px, 1024px, 1440px
-- Radius: 0–4px only; no soft cards or pill-heavy UI
-- Motion: 150ms interactions, 250ms panels; respect `prefers-reduced-motion`
+### DesignMaxing
 
-## Component Rules
-
-- Search and filters use flat high-contrast surfaces, clear labels, and a visible reset state.
-- Skill cards show category, purpose, tags, and companion count; details expose use, avoid, inputs, outputs, companions, and a source link.
-- The story rail must collapse into an ordered vertical flow below 768px.
-- Vibe Maxing is a dedicated comparison lab, not a decorative marketing detour.
-- Buttons remain at least 44px tall on touch layouts and show a cyan focus ring.
+- Light blue-gray canvas, white panels, indigo interaction color, restrained soft elevation, and 10–18px radii.
+- Show the selected style through its card treatment. For example, Neumorphism uses paired soft shadows; Brutalism uses hard borders; Glass uses translucent layers; Clay uses soft rounded material.
+- Separate General and Mobile UI references before filtering. Mobile cards must communicate compact, touch-oriented patterns.
+- Keep palette swatches copyable and typography previews readable; styling must never obscure the source data.
 
 ## Accessibility and Responsive Rules
 
-- Maintain WCAG AA contrast; do not use color as the only category signal.
-- Keyboard-accessible cards and dialogs need visible focus and Escape close behavior.
-- At mobile widths, stack story, stats, Vibe Maxing content, and cards; never force horizontal scrolling.
-- Disable nonessential animation and scanline distraction for reduced-motion users.
-
-## Forbidden Patterns
-
-- Fake counters, testimonials, metrics, or progress indicators
-- Full-screen blur, decorative gradients with no informational role, or low-contrast neon body text
-- Decorative motion that delays search, prompt copying, or navigation
-- Generic cards that omit when to use and when not to use a skill
+- Maintain WCAG AA contrast and visible focus states.
+- Buttons and filters are keyboard-operable and at least 44px high on touch layouts.
+- At 360px, every grid collapses without horizontal scrolling. The DesignMaxing General/Mobile selector remains full-width and readable.
+- Respect `prefers-reduced-motion`; interactions are short and never delay search or navigation.
 
 ## QA Checklist
 
-- [x] 360px, 768px, 1024px, and 1440px tested
-- [x] Search, filters, drawer, workflow builder, and Vibe Maxing link tested
-- [x] Keyboard focus and Escape tested; reduced-motion behavior is defined in CSS
-- [ ] All repository links and generated data verified
-- [ ] No horizontal overflow or console errors
+- [x] VibeMaxing hero and DesignMaxing route tested.
+- [x] General and Mobile DesignMaxing filters tested with correct 67 / 17 counts.
+- [x] 360px, 768px, 1024px, and 1440px tested without horizontal overflow.
+- [x] Dead DesignMaxing preview assets removed; browser console stayed clean during QA.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DesignMaxing // Design Reference Catalog</title>
+  <title>DesignMaxing — UI Style, Color, and Type Lab</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -512,6 +512,138 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    /* DesignMaxing — Semi-flat educational design system */
+    :root {
+      --bg-dark: #f3f6fb;
+      --bg-card: #ffffff;
+      --border-cyber: #d7dfed;
+      --neon-cyan: #335cff;
+      --neon-magenta: #6d4aff;
+      --neon-purple: #5c4ac7;
+      --text-main: #17213a;
+      --text-muted: #64718a;
+    }
+    body {
+      background: #f3f6fb;
+      background-image: none;
+      color: #17213a;
+      font-family: Inter, Arial, sans-serif;
+      padding: 2.5rem 1rem;
+    }
+    body::after { display: none; }
+    .container { max-width: 1280px; }
+    header {
+      background: #fff;
+      border: 1px solid #dce4f2;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(40, 61, 100, .07);
+      padding: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .back-link { color: #335cff; font-family: Inter, Arial, sans-serif; font-weight: 700; letter-spacing: 0; text-transform: none; }
+    .back-link:hover { color: #203fa9; text-shadow: none; transform: none; }
+    .lab-kicker { color: #6d4aff; font-size: .72rem; font-weight: 800; letter-spacing: .1em; margin-bottom: .4rem; text-transform: uppercase; }
+    h1 { color: #17213a; font-family: Outfit, Inter, sans-serif; font-size: clamp(2.3rem, 5vw, 4.5rem); letter-spacing: -.055em; line-height: .95; text-shadow: none; text-transform: none; }
+    .subtitle { color: #51607b; font-family: Inter, Arial, sans-serif; font-size: 1rem; letter-spacing: 0; line-height: 1.55; max-width: 68ch; text-transform: none; }
+    .lab-steps { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.25rem; }
+    .lab-step { background: #edf1ff; border: 1px solid #d6defc; border-radius: 9px; color: #31436e; font-size: .78rem; font-weight: 700; padding: .5rem .7rem; }
+    .tabs { border: 0; gap: .55rem; margin-bottom: 1.25rem; padding: 0; }
+    .tab-btn {
+      background: #e8edf6;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: #53617c;
+      font-family: Inter, Arial, sans-serif;
+      font-size: .85rem;
+      letter-spacing: 0;
+      padding: .72rem 1rem;
+      text-transform: none;
+    }
+    .tab-btn:hover, .tab-btn.active { background: #335cff; border-color: #335cff; box-shadow: 0 3px 8px rgba(51,92,255,.2); color: #fff; }
+    .style-type-switch { align-items: stretch; background: #e8edf6; border-radius: 12px; display: inline-flex; gap: .25rem; padding: .3rem; }
+    .style-type-btn { background: transparent; border: 1px solid transparent; border-radius: 9px; color: #53617c; cursor: pointer; font: 700 .84rem Inter, Arial, sans-serif; padding: .6rem .8rem; }
+    .style-type-btn.active { background: #fff; border-color: #dbe3f1; box-shadow: 0 2px 6px rgba(29,48,87,.08); color: #17213a; }
+    .style-type-btn span { color: #6d4aff; font-size: .72rem; margin-left: .28rem; }
+    .style-type-btn.active span { color: #335cff; }
+    .style-context { color: #64718a; font-size: .86rem; margin: .7rem 0 1.1rem; }
+    .controls-row { gap: .8rem; margin-bottom: 1rem; }
+    .search-input { background: #fff; border: 1px solid #d7dfed; border-radius: 10px; box-shadow: 0 2px 5px rgba(41,61,97,.04); color: #17213a; font-family: Inter, Arial, sans-serif; min-width: min(100%, 280px); }
+    .search-input:focus { border-color: #335cff; box-shadow: 0 0 0 3px rgba(51,92,255,.12); }
+    .grid-styles { gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+    .style-card {
+      background: #fff;
+      border: 1px solid #dce4f2;
+      border-radius: 16px;
+      box-shadow: 0 5px 14px rgba(32,52,91,.06);
+      color: #17213a;
+      padding: 1.15rem;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .style-card::before { background: #335cff; border-radius: 10px 0 0 10px; width: 3px; }
+    .style-card:hover { border-color: #bbc8e0; box-shadow: 0 11px 22px rgba(32,52,91,.11); transform: translateY(-3px); }
+    .style-header { margin-bottom: .75rem; }
+    .style-title { color: inherit; font-family: Outfit, Inter, sans-serif; font-size: 1.2rem; letter-spacing: -.02em; line-height: 1.05; text-transform: none; }
+    .style-badge { background: #eef2ff; border: 1px solid #d6defc; border-radius: 999px; color: #3851b5; font-weight: 700; padding: .22rem .5rem; }
+    .style-demo { align-items: center; background: #edf2fb; border: 1px solid #dbe4f3; border-radius: 10px; display: flex; gap: .5rem; height: 72px; margin-bottom: 1rem; overflow: hidden; padding: .75rem; }
+    .style-demo span { background: #335cff; border-radius: 6px; display: block; height: 100%; width: 30%; }
+    .style-demo span:nth-child(2) { background: #9bb0ff; flex: 1; }
+    .style-demo span:nth-child(3) { background: #fff; border: 1px solid #ced9ea; width: 18%; }
+    .style-body { color: #53617c; font-size: .82rem; margin-bottom: 0; }
+    .style-meta-label { color: #3953be; font-size: .69rem; }
+    .style-code-block { background: #f4f7fb; border: 1px solid #e0e7f2; border-radius: 7px; color: #40506b; }
+    .style-card.is-mobile .style-demo { max-width: 160px; border-radius: 13px; margin-inline: auto; }
+    .style-card.is-mobile .style-badge { background: #e3faf4; border-color: #bdebdc; color: #18745f; }
+    .style-card.style-demo-neumorphism { background: #e8edf3; border-color: #e8edf3; box-shadow: 8px 8px 16px #cbd2dc, -8px -8px 16px #fff; }
+    .style-card.style-demo-neumorphism::before { display: none; }
+    .style-card.style-demo-neumorphism .style-demo { background: #e8edf3; border: 0; box-shadow: inset 4px 4px 8px #cbd2dc, inset -4px -4px 8px #fff; }
+    .style-card.style-demo-neumorphism .style-demo span { background: #e8edf3; box-shadow: 4px 4px 8px #cbd2dc, -4px -4px 8px #fff; }
+    .style-card.style-demo-glass { background: linear-gradient(135deg, #dbe7ff, #f1dfff); border-color: rgba(255,255,255,.8); }
+    .style-card.style-demo-glass .style-demo { background: rgba(255,255,255,.45); backdrop-filter: blur(9px); }
+    .style-card.style-demo-brutalism { background: #ffe600; border: 3px solid #151515; border-radius: 0; box-shadow: 5px 5px 0 #151515; }
+    .style-card.style-demo-brutalism::before { display: none; }
+    .style-card.style-demo-brutalism .style-demo { background: #fff; border: 2px solid #151515; border-radius: 0; }
+    .style-card.style-demo-brutalism .style-demo span { background: #e93f2e; border: 2px solid #151515; border-radius: 0; }
+    .style-card.style-demo-clay { background: #f5e3d9; border-color: #edd0c0; border-radius: 24px; }
+    .style-card.style-demo-clay .style-demo { background: #edb9a2; border: 0; border-radius: 18px; box-shadow: inset 0 2px 4px rgba(100,55,40,.13); }
+    .style-card.style-demo-clay .style-demo span { background: #fff4ed; border-radius: 16px; }
+    .style-card.style-demo-cyber { background: #151935; border-color: #4f5eff; color: #f1f5ff; }
+    .style-card.style-demo-cyber .style-body, .style-card.style-demo-cyber .style-meta-label { color: #c9d1ff; }
+    .style-card.style-demo-cyber .style-demo { background: #0c1025; border-color: #00e5ff; }
+    .style-card.style-demo-cyber .style-demo span { background: #00e5ff; }
+    .style-card.style-demo-retro { background: #f4d16b; border-color: #7c3f30; color: #3b241f; }
+    .style-card.style-demo-retro .style-demo { background: #e47c61; border-color: #7c3f30; }
+    .style-card.style-demo-retro .style-demo span { background: #f9edbf; border-radius: 0; }
+    .style-card.style-demo-minimal { border-color: #17213a; border-radius: 0; box-shadow: none; }
+    .style-card.style-demo-minimal::before { background: #17213a; }
+    .style-card.style-demo-minimal .style-demo { background: #fff; border-color: #17213a; border-radius: 0; }
+    .style-card.style-demo-minimal .style-demo span { background: #17213a; border-radius: 0; }
+    .style-card.style-demo-aurora { background: linear-gradient(135deg, #d5fff2, #dae7ff 58%, #f6ddff); }
+    .style-card.style-demo-aurora .style-demo { background: rgba(255,255,255,.55); }
+    .grid-colors { gap: 1rem; }
+    .color-card, .typo-list, .typo-preview-pane, .creator-box { background: #fff; border: 1px solid #dce4f2; border-radius: 14px; box-shadow: 0 5px 14px rgba(32,52,91,.06); }
+    .color-title, .typo-item-name, .preview-header-field, .creator-name { color: #17213a; font-family: Outfit, Inter, sans-serif; text-transform: none; }
+    .color-title { border-color: #e2e8f2; }
+    .color-swatch-box, .swatch-hex-label { border-color: #dbe4f1; border-radius: 7px; }
+    .swatch-hex-label { background: #fff; color: #43516b; }
+    .typo-item { border-radius: 8px; }
+    .typo-item:hover, .typo-item.active { background: #edf1ff; border-color: #bfcdf7; }
+    .typo-item-sub, .preview-body-field { color: #53617c; }
+    .typo-css-box { background: #f4f7fb; border-color: #e0e7f2; border-radius: 8px; color: #40506b; }
+    footer { border-color: #dce4f2; }
+    .creator-box { animation: none; }
+    .creator-title { color: #5c4ac7; font-family: Inter, Arial, sans-serif; }
+    .btn-vercel { background: #335cff; border-color: #335cff; border-radius: 9px; color: #fff; font-family: Inter, Arial, sans-serif; letter-spacing: 0; text-transform: none; }
+    .btn-vercel:hover { background: #203fa9; box-shadow: none; color: #fff; }
+    .toast { background: #17213a; border-color: #17213a; border-radius: 9px; box-shadow: 0 10px 20px rgba(25,38,68,.2); color: #fff; }
+    @media (max-width: 600px) {
+      body { padding: 1rem .75rem; }
+      header { padding: 1.35rem; }
+      .style-type-switch { display: flex; width: 100%; }
+      .style-type-btn { flex: 1; }
+      .tabs { display: grid; grid-template-columns: 1fr; }
+      .tab-btn { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -522,9 +654,15 @@
   <div class="container">
     
     <header>
-      <a href="index.html" class="back-link">&larr; Back to Main Portal</a><br>
-      <h1>DesignMaxing // Design Reference Catalog</h1>
-      <p class="subtitle">Visual reference database of UI styles, color palettes, and typography</p>
+      <a href="index.html" class="back-link">&larr; Back to VibeMaxing</a><br>
+      <p class="lab-kicker">VibeMaxing / design reference module</p>
+      <h1>DesignMaxing</h1>
+      <p class="subtitle">A practical lab for choosing a UI system, then pairing it with the colors and typography that make it coherent. Explore the visual language before you write the interface.</p>
+      <div class="lab-steps" aria-label="How to use DesignMaxing">
+        <span class="lab-step">1. Select General or Mobile UI</span>
+        <span class="lab-step">2. Compare visual systems</span>
+        <span class="lab-step">3. Match a palette and font pairing</span>
+      </div>
     </header>
 
     <!-- Tab navigation -->
@@ -539,6 +677,11 @@
       <div class="controls-row">
         <input type="text" class="search-input" id="search-styles" placeholder="Search 84 UI styles (e.g. Glassmorphism, Neon, Minimal)..." oninput="filterStyles()">
       </div>
+      <div class="style-type-switch" role="group" aria-label="Choose UI reference type">
+        <button type="button" class="style-type-btn active" data-style-type="General" onclick="setStyleType('General', this)">General UI <span id="general-count"></span></button>
+        <button type="button" class="style-type-btn" data-style-type="Mobile" onclick="setStyleType('Mobile', this)">Mobile UI <span id="mobile-count"></span></button>
+      </div>
+      <p class="style-context" id="style-context">General UI patterns for websites, dashboards, and product surfaces.</p>
       <div class="grid-styles" id="styles-container">
         <!-- Rendered dynamically -->
       </div>
@@ -7618,6 +7761,8 @@
     const toast = document.getElementById('toast');
     const dynamicFontLink = document.getElementById('dynamic-font-link');
 
+    let activeStyleType = 'General';
+
     // Initialize databases
     function init() {
       if (window.DESIGN_MAXING_DATA) {
@@ -7626,6 +7771,7 @@
         typoData = window.DESIGN_MAXING_DATA.typography || [];
       }
       
+      updateStyleTypeCounts();
       renderStyles();
       renderColors();
       renderTypography();
@@ -7641,16 +7787,45 @@
     }
 
     // 1. UI STYLES
+    function updateStyleTypeCounts() {
+      document.getElementById('general-count').textContent = `(${stylesData.filter(s => s['Type'] !== 'Mobile').length})`;
+      document.getElementById('mobile-count').textContent = `(${stylesData.filter(s => s['Type'] === 'Mobile').length})`;
+    }
+
+    function setStyleType(type, button) {
+      activeStyleType = type;
+      document.querySelectorAll('.style-type-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      document.getElementById('style-context').textContent = type === 'Mobile'
+        ? 'Mobile-first patterns: compact hierarchy, touch-safe controls, and small-screen structure.'
+        : 'General UI patterns for websites, dashboards, and product surfaces.';
+      renderStyles();
+    }
+
+    function getStyleDemoClass(name) {
+      const normalized = name.toLowerCase();
+      if (normalized.includes('neumorphism')) return 'style-demo-neumorphism';
+      if (normalized.includes('glass')) return 'style-demo-glass';
+      if (normalized.includes('brutal')) return 'style-demo-brutalism';
+      if (normalized.includes('clay')) return 'style-demo-clay';
+      if (normalized.includes('cyber') || normalized.includes('neon') || normalized.includes('hud')) return 'style-demo-cyber';
+      if (normalized.includes('retro') || normalized.includes('vapor') || normalized.includes('memphis')) return 'style-demo-retro';
+      if (normalized.includes('minimal') || normalized.includes('swiss') || normalized.includes('editorial')) return 'style-demo-minimal';
+      if (normalized.includes('aurora') || normalized.includes('gradient')) return 'style-demo-aurora';
+      return 'style-demo-default';
+    }
+
     function renderStyles() {
       const container = document.getElementById('styles-container');
       const query = document.getElementById('search-styles').value.toLowerCase();
       container.innerHTML = '';
 
       const filtered = stylesData.filter(s => {
-        return s["Style Category"].toLowerCase().includes(query) ||
+        const matchesQuery = s["Style Category"].toLowerCase().includes(query) ||
                s["Keywords"].toLowerCase().includes(query) ||
                s["Best For"].toLowerCase().includes(query) ||
                s["Type"].toLowerCase().includes(query);
+        return matchesQuery && (activeStyleType === 'Mobile' ? s['Type'] === 'Mobile' : s['Type'] !== 'Mobile');
       });
 
       if (filtered.length === 0) {
@@ -7660,25 +7835,13 @@
 
       filtered.forEach(s => {
         const card = document.createElement('div');
-        card.className = 'style-card';
-        
-        // Match specific images for our custom showcase
-        let imageTag = '';
-        const nameLower = s["Style Category"].toLowerCase();
-        if (nameLower.includes('cyberpunk')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_cyberpunk_ui.jpg" alt="Cyberpunk UI reference mockup"></div>`;
-        } else if (nameLower.includes('glassmorphism')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_glassmorphism_ui.jpg" alt="Glassmorphism UI reference mockup"></div>`;
-        } else if (nameLower.includes('bento box grid') || nameLower.includes('bento grids')) {
-          imageTag = `<div class="image-preview-container"><img src="screenshots/design_maxing_bento_grid_ui.jpg" alt="Bento Grid UI reference mockup"></div>`;
-        }
-
+        card.className = `style-card ${getStyleDemoClass(s['Style Category'])}${s['Type'] === 'Mobile' ? ' is-mobile' : ''}`;
         card.innerHTML = `
           <div class="style-header">
             <h3 class="style-title">${s["Style Category"]}</h3>
             <span class="style-badge">${s["Type"]}</span>
           </div>
-          ${imageTag}
+          <div class="style-demo" aria-hidden="true"><span></span><span></span><span></span></div>
           <div class="style-body">
             <p style="margin-bottom:0.75rem;">${s["Keywords"]}</p>
             <div class="style-meta-item">
