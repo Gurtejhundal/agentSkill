@@ -11,5 +11,5 @@ Do not use `content-hierarchy` to do not use content-hierarchy to write raw SEO-
 
 ## Multi-Agent Workflow Example
 ```text
-Use content-hierarchy to define section mapping, design-me to shape typography, and ux-conversion-strategist to position buttons.
+Use content-hierarchy to define section mapping, designer-me to shape typography, and ux-conversion-strategist to position buttons.
 ```

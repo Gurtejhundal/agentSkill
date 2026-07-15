@@ -48,4 +48,4 @@ Repeated content, service explanations, credentials, CTAs, page purpose, scan be
 5. Pages are shorter without losing meaning.
 
 ## Handoff
-Use a domain UX agent and `design-me`.
+Use `designer-me`.

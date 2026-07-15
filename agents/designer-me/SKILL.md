@@ -1,5 +1,5 @@
 ---
-name: design-me
+name: designer-me
 description: Audits and redesigns websites while preserving the strongest parts of their identity.
 version: 1.0.0
 tags:
@@ -8,7 +8,7 @@ tags:
   - audit
 ---
 
-# design-me
+# designer-me
 
 ## Trigger
 Use for a redesign, premium visual direction, hierarchy correction, or full-page critique.

@@ -3,7 +3,7 @@
 Creates a unified motion system and scroll experiences.
 
 ## Sequence
-`design-me → motion-architect → scroll-systems-engineer → performance-optimizer → designer-mobile → visual-qa-agent → interaction-qa-agent`
+`designer-me → motion-architect → scroll-systems-engineer → performance-optimizer → designer-mobile → visual-qa-agent → interaction-qa-agent`
 
 ## Primary Focus
 - Establish a single, consistent motion language across sections

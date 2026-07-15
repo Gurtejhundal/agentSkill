@@ -31,7 +31,6 @@
     "API integrations validation"
   ],
   "recommendedWith": [
-    "healthcare-ux",
     "component-refactor",
     "interaction-qa-agent"
   ],

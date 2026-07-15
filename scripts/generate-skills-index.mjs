@@ -12,11 +12,10 @@ const categoryMapping = {
   'responsive': 'Responsive and Typography',
   'motion': 'Motion and Interaction',
   'architecture': 'Architecture',
-  'domain-ux': 'Domain UX',
   'quality-delivery': 'Quality and Delivery'
 };
 
-const categoryOrder = ['strategy', 'responsive', 'motion', 'architecture', 'domain-ux', 'quality-delivery'];
+const categoryOrder = ['strategy', 'responsive', 'motion', 'architecture', 'quality-delivery'];
 
 try {
   if (!fs.existsSync(agentsDir)) {

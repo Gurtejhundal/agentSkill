@@ -10,15 +10,7 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** Homepage repeats project details, Pages feel long but say little, Critical content is buried
 - **Primary inputs:** Page text, User goal brief, Trust evidence, Call to action priority
 - **Main outputs:** Reorganize content table, Revised copy outline, CTA placement roadmap, Trust credentials structure
-- **Recommended companion skills:** [design-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-me/SKILL.md), [portfolio-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/portfolio-ux/SKILL.md), [automotive-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/automotive-ux/SKILL.md), [healthcare-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md)
-
-### [Creative Design Audit (agents/design-me/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-me/SKILL.md)
-
-- **Purpose:** Audits and redesigns websites while preserving the strongest parts of their identity.
-- **When to use:** The entire page looks generic, The hierarchy feels wrong, The user wants a redesign, Several sections need coordinated improvement
-- **Primary inputs:** Live URL, Screenshots, Business goal, Desired personality, Reference websites
-- **Main outputs:** Design audit, Prioritized defects, Revised section architecture, Design tokens
-- **Recommended companion skills:** [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [designer-mobile](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
+- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md)
 
 ### [Design System Extraction (agents/design-system-extractor/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md)
 
@@ -26,7 +18,15 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** The user likes another website, Exact font or spacing needs inspection, A new website should borrow mechanics, not identity
 - **Primary inputs:** Reference URL, Reference screenshots, Target components
 - **Main outputs:** Design system tokens, Spacing scales, Typography scales, Originality safeguards
-- **Recommended companion skills:** [design-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-me/SKILL.md), [typography-director](file:///e:/Code/models/AgentWorkload/agentSkill/agents/typography-director/SKILL.md), [motion-architect](file:///e:/Code/models/AgentWorkload/agentSkill/agents/motion-architect/SKILL.md)
+- **Recommended companion skills:** [designer-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md), [typography-director](file:///e:/Code/models/AgentWorkload/agentSkill/agents/typography-director/SKILL.md), [motion-architect](file:///e:/Code/models/AgentWorkload/agentSkill/agents/motion-architect/SKILL.md)
+
+### [Creative Cyber Designer (agents/designer-me/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-me/SKILL.md)
+
+- **Purpose:** Audits and redesigns websites while preserving the strongest parts of their identity.
+- **When to use:** The entire page looks generic, The hierarchy feels wrong, The user wants a redesign, Several sections need coordinated improvement
+- **Primary inputs:** Live URL, Screenshots, Business goal, Desired personality, Reference websites
+- **Main outputs:** Design audit, Prioritized defects, Revised section architecture, Design tokens
+- **Recommended companion skills:** [design-system-extractor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md), [designer-mobile](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md), [content-hierarchy](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md)
 
 ### [UX Conversion Strategy (agents/ux-conversion-strategist/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/ux-conversion-strategist/SKILL.md)
 
@@ -34,7 +34,7 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** The site looks good but users do not know what to do, Contact is buried, Too many CTAs compete
 - **Primary inputs:** Conversion goals, Contact points, User concerns, Evidence assets
 - **Main outputs:** CTA layout rules, Trust placement specifications, Friction reduction plan, Mobile actions list
-- **Recommended companion skills:** [automotive-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/automotive-ux/SKILL.md), [healthcare-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md), [portfolio-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/portfolio-ux/SKILL.md)
+- **Recommended companion skills:** 
 
 ## Responsive and Typography
 
@@ -104,7 +104,7 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** Doctors or timings come from admin, Redesign may hard-code existing data
 - **Primary inputs:** Backend schemas, Django settings, API consumption hooks, Form models
 - **Main outputs:** Database compatibility report, Model field mapping, Admin test verification, API integrations validation
-- **Recommended companion skills:** [healthcare-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md), [component-refactor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/component-refactor/SKILL.md), [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md)
+- **Recommended companion skills:** [component-refactor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/component-refactor/SKILL.md), [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md)
 
 ### [Codebase Reconnaissance (agents/codebase-recon/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/codebase-recon/SKILL.md)
 
@@ -122,32 +122,6 @@ This index lists all specialist agent skills available in the repository, groupe
 - **Main outputs:** Refactored component code, Props contract details, Cleaned styles, State separation map
 - **Recommended companion skills:** [media-fit-specialist](file:///e:/Code/models/AgentWorkload/agentSkill/agents/media-fit-specialist/SKILL.md), [visual-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/visual-qa-agent/SKILL.md), [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md)
 
-## Domain UX
-
-### [Automotive UX Design (agents/automotive-ux/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/automotive-ux/SKILL.md)
-
-- **Purpose:** Designs premium automotive detailing websites around trust, craftsmanship, proof, and booking intent.
-- **When to use:** Designing automotive detailing studios, Structuring ceramic coating or PPF page layouts
-- **Primary inputs:** Services list, Package prices, Studio location, Before/after media
-- **Main outputs:** Service comparison cards, Before/after gallery configs, WhatsApp booking integrations, Brand colors selection
-- **Recommended companion skills:** [ux-conversion-strategist](file:///e:/Code/models/AgentWorkload/agentSkill/agents/ux-conversion-strategist/SKILL.md), [designer-mobile](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md), [seo-local-search](file:///e:/Code/models/AgentWorkload/agentSkill/agents/seo-local-search/SKILL.md)
-
-### [Healthcare UX Design (agents/healthcare-ux/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md)
-
-- **Purpose:** Designs trustworthy hospital experiences with clear emergency, doctor, OPD, and appointment flows.
-- **When to use:** Designing clinics, hospital websites, or medical directories
-- **Primary inputs:** OPD timings, Doctor listings, Departments info, Emergency call numbers
-- **Main outputs:** Emergency quick links, OPD schedules layout, Doctor search design, Bilingual Punjabi/English targets
-- **Recommended companion skills:** [accessibility-auditor](file:///e:/Code/models/AgentWorkload/agentSkill/agents/accessibility-auditor/SKILL.md), [backend-admin-preserver](file:///e:/Code/models/AgentWorkload/agentSkill/agents/backend-admin-preserver/SKILL.md), [designer-mobile](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md)
-
-### [Portfolio UX Design (agents/portfolio-ux/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/portfolio-ux/SKILL.md)
-
-- **Purpose:** Optimizes portfolios for positioning, work credibility, scanning, and contact conversion.
-- **When to use:** A portfolio looks artistic but unclear, Projects repeat, Recruiters cannot identify the role
-- **Primary inputs:** Personal bio, Selected works data, Outcomes and case studies, Contact details
-- **Main outputs:** Positioning statements, Selected project grids, About page structure, Scannable credentials log
-- **Recommended companion skills:** [design-me](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-me/SKILL.md), [motion-architect](file:///e:/Code/models/AgentWorkload/agentSkill/agents/motion-architect/SKILL.md), [route-transition-designer](file:///e:/Code/models/AgentWorkload/agentSkill/agents/route-transition-designer/SKILL.md)
-
 ## Quality and Delivery
 
 ### [Accessibility Auditing (agents/accessibility-auditor/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/accessibility-auditor/SKILL.md)
@@ -156,7 +130,7 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** Before every production release, For hospital websites, After adding drawers, menus, or modals
 - **Primary inputs:** Web page routes, Components list, Color codes, Tab index layouts
 - **Main outputs:** Keyboard tab matrix, Color contrast overrides, Focus trap code fixes, Reduced motion stylesheet
-- **Recommended companion skills:** [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md), [healthcare-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md), [deployment-verifier](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md)
+- **Recommended companion skills:** [interaction-qa-agent](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md), [deployment-verifier](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md)
 
 ### [Asset Optimization (agents/asset-optimizer/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/asset-optimizer/SKILL.md)
 
@@ -196,7 +170,7 @@ This index lists all specialist agent skills available in the repository, groupe
 - **When to use:** Before production, For hospitals and local businesses, Favicon or OG images are missing
 - **Primary inputs:** Business location, Services list, Contact numbers, Public routes
 - **Main outputs:** Schema markup files, Sitemap configuration, Robots.txt config, Route-specific meta tags
-- **Recommended companion skills:** [automotive-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/automotive-ux/SKILL.md), [healthcare-ux](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md), [deployment-verifier](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md)
+- **Recommended companion skills:** [deployment-verifier](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md)
 
 ### [Visual QA Auditing (agents/visual-qa-agent/SKILL.md)](file:///e:/Code/models/AgentWorkload/agentSkill/agents/visual-qa-agent/SKILL.md)
 

@@ -50,4 +50,4 @@ Computed type, weights, hierarchy, color roles, spacing rhythm, image ratios, ra
 5. Mobile behavior is included.
 
 ## Handoff
-Use `design-me`, `typography-director`, and `motion-architect`.
+Use `designer-me`, `typography-director`, and `motion-architect`.

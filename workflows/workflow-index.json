@@ -34,7 +34,7 @@
     "name": "Cinematic Motion",
     "description": "Creates a unified motion system and scroll experiences.",
     "steps": [
-      "design-me",
+      "designer-me",
       "motion-architect",
       "scroll-systems-engineer",
       "performance-optimizer",
@@ -52,55 +52,6 @@
       "motion-architect",
       "interaction-qa-agent",
       "accessibility-auditor",
-      "deployment-verifier"
-    ]
-  },
-  "portfolio-workflow": {
-    "name": "Portfolio Workflow",
-    "description": "Optimizes editorial developer portfolios for positioning and credentials.",
-    "steps": [
-      "codebase-recon",
-      "portfolio-ux",
-      "design-system-extractor",
-      "typography-director",
-      "motion-architect",
-      "scroll-systems-engineer",
-      "route-transition-designer",
-      "designer-mobile",
-      "media-fit-specialist",
-      "visual-qa-agent",
-      "interaction-qa-agent",
-      "deployment-verifier"
-    ]
-  },
-  "automotive-workflow": {
-    "name": "Automotive Workflow",
-    "description": "Premium automotive detailing business layout and conversion path.",
-    "steps": [
-      "codebase-recon",
-      "automotive-ux",
-      "design-system-extractor",
-      "content-hierarchy",
-      "designer-mobile",
-      "media-fit-specialist",
-      "ux-conversion-strategist",
-      "seo-local-search",
-      "visual-qa-agent",
-      "deployment-verifier"
-    ]
-  },
-  "healthcare-workflow": {
-    "name": "Healthcare Workflow",
-    "description": "Hospital and clinic website organization, accessibility, and CMS preservation.",
-    "steps": [
-      "codebase-recon",
-      "healthcare-ux",
-      "content-hierarchy",
-      "accessibility-auditor",
-      "backend-admin-preserver",
-      "designer-mobile",
-      "interaction-qa-agent",
-      "seo-local-search",
       "deployment-verifier"
     ]
   },

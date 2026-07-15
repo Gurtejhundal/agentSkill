@@ -32,7 +32,6 @@
   ],
   "recommendedWith": [
     "interaction-qa-agent",
-    "healthcare-ux",
     "deployment-verifier"
   ],
   "skillPath": "./SKILL.md",

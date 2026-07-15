@@ -867,7 +867,6 @@
             <button class="btn-filter" data-category="responsive">Responsive</button>
             <button class="btn-filter" data-category="motion">Motion</button>
             <button class="btn-filter" data-category="architecture">Architecture</button>
-            <button class="btn-filter" data-category="domain-ux">Domain UX</button>
             <button class="btn-filter" data-category="quality-delivery">QA & Verification</button>
           </div>
           
@@ -917,9 +916,6 @@
               <option value="page-transition">Generic page transition</option>
               <option value="accessibility">Accessibility Compliance</option>
               <option value="performance">Low page speed scores</option>
-              <option value="local-biz">Local booking conversions</option>
-              <option value="hospital-ux">Healthcare system security</option>
-              <option value="portfolio-ux">Developer Portfolio redesign</option>
               <option value="deployment-mismatch">Local/Production mismatch</option>
             </select>
           </div>
@@ -1107,7 +1103,6 @@
       ],
       "recommendedWith": [
         "interaction-qa-agent",
-        "healthcare-ux",
         "deployment-verifier"
       ],
       "skillPath": "./SKILL.md",
@@ -1157,47 +1152,6 @@
       "examplesMarkdown": "# Asset Optimization Examples\n\n## Simple Request\nUse `asset-optimizer` to use asset-optimizer to compress a folder of images to WebP.\n\n## Advanced Request\nUse `asset-optimizer` to use asset-optimizer to clean noisy vector SVGs, convert imagery to AVIF responsive variants, and subset Punjabi fonts.\n\n## Incorrect Use\nDo not use `asset-optimizer` to do not use asset-optimizer to change card aspect ratios in HTML/CSS.\n\n## Multi-Agent Workflow Example\n```text\nUse media-fit-specialist to define layouts, asset-optimizer to generate compressed source sets, and performance-optimizer to review load speeds.\n```\n"
     },
     {
-      "name": "automotive-ux",
-      "title": "Automotive UX Design",
-      "version": "1.0.0",
-      "category": "domain-ux",
-      "tags": [
-        "automotive",
-        "detailing",
-        "ceramic-coating",
-        "booking"
-      ],
-      "useWhen": [
-        "Designing automotive detailing studios",
-        "Structuring ceramic coating or PPF page layouts"
-      ],
-      "avoidWhen": [
-        "Applying generic gold luxury styling",
-        "Showing cars without local context or proof"
-      ],
-      "inputs": [
-        "Services list",
-        "Package prices",
-        "Studio location",
-        "Before/after media"
-      ],
-      "outputs": [
-        "Service comparison cards",
-        "Before/after gallery configs",
-        "WhatsApp booking integrations",
-        "Brand colors selection"
-      ],
-      "recommendedWith": [
-        "ux-conversion-strategist",
-        "designer-mobile",
-        "seo-local-search"
-      ],
-      "skillPath": "./SKILL.md",
-      "examplesPath": "./examples.md",
-      "description": "Designs premium automotive detailing websites around trust, craftsmanship, proof, and booking intent.",
-      "examplesMarkdown": "# Automotive UX Design Examples\n\n## Simple Request\nUse `automotive-ux` to use automotive-ux to lay out details of a detailing service description.\n\n## Advanced Request\nUse `automotive-ux` to use automotive-ux to build the detailing packages page, structuring paint correction, ceramic coating, and PPF grids with local proofs.\n\n## Incorrect Use\nDo not use `automotive-ux` to do not use automotive-ux to design generic automotive news sites.\n\n## Multi-Agent Workflow Example\n```text\nUse automotive-ux to shape pages, designer-mobile to align booking buttons, and seo-local-search to ensure address schemas are in place.\n```\n"
-    },
-    {
       "name": "backend-admin-preserver",
       "title": "Backend & Admin Preservation",
       "version": "1.0.0",
@@ -1230,7 +1184,6 @@
         "API integrations validation"
       ],
       "recommendedWith": [
-        "healthcare-ux",
         "component-refactor",
         "interaction-qa-agent"
       ],
@@ -1355,15 +1308,12 @@
         "Trust credentials structure"
       ],
       "recommendedWith": [
-        "design-me",
-        "portfolio-ux",
-        "automotive-ux",
-        "healthcare-ux"
+        "designer-me"
       ],
       "skillPath": "./SKILL.md",
       "examplesPath": "./examples.md",
       "description": "Reduces repetition and reorganizes content around trust, evidence, understanding, and action.",
-      "examplesMarkdown": "# Content Hierarchy Optimization Examples\n\n## Simple Request\nUse `content-hierarchy` to use content-hierarchy to reduce duplicate text blocks in headers.\n\n## Advanced Request\nUse `content-hierarchy` to use content-hierarchy to create a clear layout structure mapping trust elements, services comparison, and CTA actions on the homepage.\n\n## Incorrect Use\nDo not use `content-hierarchy` to do not use content-hierarchy to write raw SEO-optimized copy for ranking.\n\n## Multi-Agent Workflow Example\n```text\nUse content-hierarchy to define section mapping, design-me to shape typography, and ux-conversion-strategist to position buttons.\n```\n"
+      "examplesMarkdown": "# Content Hierarchy Optimization Examples\n\n## Simple Request\nUse `content-hierarchy` to use content-hierarchy to reduce duplicate text blocks in headers.\n\n## Advanced Request\nUse `content-hierarchy` to use content-hierarchy to create a clear layout structure mapping trust elements, services comparison, and CTA actions on the homepage.\n\n## Incorrect Use\nDo not use `content-hierarchy` to do not use content-hierarchy to write raw SEO-optimized copy for ranking.\n\n## Multi-Agent Workflow Example\n```text\nUse content-hierarchy to define section mapping, designer-me to shape typography, and ux-conversion-strategist to position buttons.\n```\n"
     },
     {
       "name": "deployment-verifier",
@@ -1409,8 +1359,50 @@
       "examplesMarkdown": "# Deployment Verification Examples\n\n## Simple Request\nUse `deployment-verifier` to use deployment-verifier to check Vercel build status.\n\n## Advanced Request\nUse `deployment-verifier` to use deployment-verifier to inspect production aliases, env keys, error logs, and verify server responses on live routes.\n\n## Incorrect Use\nDo not use `deployment-verifier` to do not use deployment-verifier to design responsive desktop layouts.\n\n## Multi-Agent Workflow Example\n```text\nUse any design skill to make layout adjustments, run building tools, and deployment-verifier to verify correct commit changes are live.\n```\n"
     },
     {
-      "name": "design-me",
-      "title": "Creative Design Audit",
+      "name": "design-system-extractor",
+      "title": "Design System Extraction",
+      "version": "1.0.0",
+      "category": "strategy",
+      "tags": [
+        "tokens",
+        "design-system",
+        "analysis",
+        "spacing"
+      ],
+      "useWhen": [
+        "The user likes another website",
+        "Exact font or spacing needs inspection",
+        "A new website should borrow mechanics, not identity"
+      ],
+      "avoidWhen": [
+        "Copying private source code",
+        "Reusing project images",
+        "Copying written content"
+      ],
+      "inputs": [
+        "Reference URL",
+        "Reference screenshots",
+        "Target components"
+      ],
+      "outputs": [
+        "Design system tokens",
+        "Spacing scales",
+        "Typography scales",
+        "Originality safeguards"
+      ],
+      "recommendedWith": [
+        "designer-me",
+        "typography-director",
+        "motion-architect"
+      ],
+      "skillPath": "./SKILL.md",
+      "examplesPath": "./examples.md",
+      "description": "Extracts reusable visual rules from references without blindly cloning them.",
+      "examplesMarkdown": "# Design System Extraction Examples\n\n## Simple Request\nUse `design-system-extractor` to use design-system-extractor to inspect spacing margins on a reference site.\n\n## Advanced Request\nUse `design-system-extractor` to use design-system-extractor to analyze karolinahess.com and extract spacing rhythm, typography ratios, and navbar layout ideas.\n\n## Incorrect Use\nDo not use `design-system-extractor` to do not use design-system-extractor to scrape copy or download images.\n\n## Multi-Agent Workflow Example\n```text\nUse design-system-extractor to map reference system properties, typography-director to pair free font alternatives, and component-refactor to implement tokens.\n```\n"
+    },
+    {
+      "name": "designer-me",
+      "title": "Creative Cyber Designer",
       "description": "Audits and redesigns websites while preserving the strongest parts of their identity.",
       "version": "1.0.0",
       "category": "strategy",
@@ -1453,48 +1445,6 @@
       "examplesMarkdown": "# Creative Design Audit Examples\n\n## Simple Request\nUse `design-me` to use design-me to audit the homepage layout and recommend section orders.\n\n## Advanced Request\nUse `design-me` to use design-me to review the layout, typography, contrast, and spacing, then define a new visual direction using an off-white and wine theme.\n\n## Incorrect Use\nDo not use `design-me` to do not use design-me to troubleshoot a failing build in production.\n\n## Multi-Agent Workflow Example\n```text\nUse codebase-recon to map components, design-me to audit visual layout, and designer-mobile to adapt the selected changes to mobile screens.\n```\n"
     },
     {
-      "name": "design-system-extractor",
-      "title": "Design System Extraction",
-      "version": "1.0.0",
-      "category": "strategy",
-      "tags": [
-        "tokens",
-        "design-system",
-        "analysis",
-        "spacing"
-      ],
-      "useWhen": [
-        "The user likes another website",
-        "Exact font or spacing needs inspection",
-        "A new website should borrow mechanics, not identity"
-      ],
-      "avoidWhen": [
-        "Copying private source code",
-        "Reusing project images",
-        "Copying written content"
-      ],
-      "inputs": [
-        "Reference URL",
-        "Reference screenshots",
-        "Target components"
-      ],
-      "outputs": [
-        "Design system tokens",
-        "Spacing scales",
-        "Typography scales",
-        "Originality safeguards"
-      ],
-      "recommendedWith": [
-        "design-me",
-        "typography-director",
-        "motion-architect"
-      ],
-      "skillPath": "./SKILL.md",
-      "examplesPath": "./examples.md",
-      "description": "Extracts reusable visual rules from references without blindly cloning them.",
-      "examplesMarkdown": "# Design System Extraction Examples\n\n## Simple Request\nUse `design-system-extractor` to use design-system-extractor to inspect spacing margins on a reference site.\n\n## Advanced Request\nUse `design-system-extractor` to use design-system-extractor to analyze karolinahess.com and extract spacing rhythm, typography ratios, and navbar layout ideas.\n\n## Incorrect Use\nDo not use `design-system-extractor` to do not use design-system-extractor to scrape copy or download images.\n\n## Multi-Agent Workflow Example\n```text\nUse design-system-extractor to map reference system properties, typography-director to pair free font alternatives, and component-refactor to implement tokens.\n```\n"
-    },
-    {
       "name": "designer-mobile",
       "title": "Mobile Design Reconstruction",
       "description": "Reconstructs desktop experiences for mobile without cropping, shrinking, or deleting core behavior.",
@@ -1534,47 +1484,6 @@
       "skillPath": "./SKILL.md",
       "examplesPath": "./examples.md",
       "examplesMarkdown": "# Mobile Design Reconstruction Examples\n\n## Simple Request\nUse `designer-mobile` to use designer-mobile to fix oversized project cards at 390px.\n\n## Advanced Request\nUse `designer-mobile` to use designer-mobile and scroll-systems-engineer to rebuild the homepage Recent Work pinned carousel for touch devices.\n\n## Incorrect Use\nDo not use `designer-mobile` to do not use designer-mobile to debug a stale Vercel deployment.\n\n## Multi-Agent Workflow Example\n```text\nUse designer-mobile to design the mobile grid, scroll-systems-engineer to implement responsive touch snap, and visual-qa-agent to verify.\n```\n"
-    },
-    {
-      "name": "healthcare-ux",
-      "title": "Healthcare UX Design",
-      "version": "1.0.0",
-      "category": "domain-ux",
-      "tags": [
-        "healthcare",
-        "hospital",
-        "opd",
-        "appointments"
-      ],
-      "useWhen": [
-        "Designing clinics, hospital websites, or medical directories"
-      ],
-      "avoidWhen": [
-        "Adding entertainment-style motion to critical tasks",
-        "Hard-coding admin content",
-        "Reducing text readability"
-      ],
-      "inputs": [
-        "OPD timings",
-        "Doctor listings",
-        "Departments info",
-        "Emergency call numbers"
-      ],
-      "outputs": [
-        "Emergency quick links",
-        "OPD schedules layout",
-        "Doctor search design",
-        "Bilingual Punjabi/English targets"
-      ],
-      "recommendedWith": [
-        "accessibility-auditor",
-        "backend-admin-preserver",
-        "designer-mobile"
-      ],
-      "skillPath": "./SKILL.md",
-      "examplesPath": "./examples.md",
-      "description": "Designs trustworthy hospital experiences with clear emergency, doctor, OPD, and appointment flows.",
-      "examplesMarkdown": "# Healthcare UX Design Examples\n\n## Simple Request\nUse `healthcare-ux` to use healthcare-ux to align hospital contact information.\n\n## Advanced Request\nUse `healthcare-ux` to use healthcare-ux to structure OPD timings, department categories, and doctors index, ensuring patient emergency details are reachable.\n\n## Incorrect Use\nDo not use `healthcare-ux` to do not use healthcare-ux to implement generic fitness tracker landing pages.\n\n## Multi-Agent Workflow Example\n```text\nUse healthcare-ux to layout medical views, backend-admin-preserver to map Django databases, and accessibility-auditor to test focus styles.\n```\n"
     },
     {
       "name": "interaction-qa-agent",
@@ -1746,49 +1655,6 @@
       "examplesMarkdown": "# Performance Optimization Examples\n\n## Simple Request\nUse `performance-optimizer` to use performance-optimizer to audit heavy image downloads.\n\n## Advanced Request\nUse `performance-optimizer` to use performance-optimizer to debug GSAP scroll timeline lag, optimize CSS backdrop filters, and define loading priority.\n\n## Incorrect Use\nDo not use `performance-optimizer` to do not use performance-optimizer to write database migration scripts.\n\n## Multi-Agent Workflow Example\n```text\nUse performance-optimizer to measure runtime stutter, asset-optimizer to compress images, and deployment-verifier to verify production cache.\n```\n"
     },
     {
-      "name": "portfolio-ux",
-      "title": "Portfolio UX Design",
-      "version": "1.0.0",
-      "category": "domain-ux",
-      "tags": [
-        "portfolio",
-        "positioning",
-        "credentials",
-        "showcase"
-      ],
-      "useWhen": [
-        "A portfolio looks artistic but unclear",
-        "Projects repeat",
-        "Recruiters cannot identify the role"
-      ],
-      "avoidWhen": [
-        "Putting skill badges everywhere",
-        "Repeating all projects on every page",
-        "Making motion more important than work"
-      ],
-      "inputs": [
-        "Personal bio",
-        "Selected works data",
-        "Outcomes and case studies",
-        "Contact details"
-      ],
-      "outputs": [
-        "Positioning statements",
-        "Selected project grids",
-        "About page structure",
-        "Scannable credentials log"
-      ],
-      "recommendedWith": [
-        "design-me",
-        "motion-architect",
-        "route-transition-designer"
-      ],
-      "skillPath": "./SKILL.md",
-      "examplesPath": "./examples.md",
-      "description": "Optimizes portfolios for positioning, work credibility, scanning, and contact conversion.",
-      "examplesMarkdown": "# Portfolio UX Design Examples\n\n## Simple Request\nUse `portfolio-ux` to use portfolio-ux to simplify a developer bio paragraph.\n\n## Advanced Request\nUse `portfolio-ux` to use portfolio-ux to clarify professional positioning, display works, and outline credentials on the home layout.\n\n## Incorrect Use\nDo not use `portfolio-ux` to do not use portfolio-ux to build multi-author studio blogs.\n\n## Multi-Agent Workflow Example\n```text\nUse portfolio-ux to define content goals, design-me to layout grids, and route-transition-designer to construct page transition morphs.\n```\n"
-    },
-    {
       "name": "route-transition-designer",
       "title": "Route Transition Design",
       "version": "1.0.0",
@@ -1907,8 +1773,6 @@
         "Route-specific meta tags"
       ],
       "recommendedWith": [
-        "automotive-ux",
-        "healthcare-ux",
         "deployment-verifier"
       ],
       "skillPath": "./SKILL.md",
@@ -1990,11 +1854,7 @@
         "Friction reduction plan",
         "Mobile actions list"
       ],
-      "recommendedWith": [
-        "automotive-ux",
-        "healthcare-ux",
-        "portfolio-ux"
-      ],
+      "recommendedWith": [],
       "skillPath": "./SKILL.md",
       "examplesPath": "./examples.md",
       "description": "Optimizes trust, evidence, CTA hierarchy, and conversion paths.",
@@ -2044,28 +1904,11 @@
     }
   ],
   "workflows": {
-    "automotive-workflow": {
-      "name": "Automotive Workflow",
-      "description": "Premium automotive detailing business layout and conversion path.",
-      "steps": [
-        "codebase-recon",
-        "automotive-ux",
-        "design-system-extractor",
-        "content-hierarchy",
-        "designer-mobile",
-        "media-fit-specialist",
-        "ux-conversion-strategist",
-        "seo-local-search",
-        "visual-qa-agent",
-        "deployment-verifier"
-      ],
-      "markdown": "# Automotive Workflow\n\nAutomotive detailing studio, ceramic coating, and PPF service workflow.\n\n## Sequence\n`codebase-recon → automotive-ux → design-system-extractor → content-hierarchy → designer-mobile → media-fit-specialist → ux-conversion-strategist → seo-local-search → visual-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Establish high-end craftsmanship without generic styling\n- Build strong WhatsApp and booking conversion paths\n- Structure package comparisons clearly\n- Verify image fitting of portrait and landscape project cards\n- Enable local SEO and search snippets\n"
-    },
     "cinematic-motion": {
       "name": "Cinematic Motion",
       "description": "Creates a unified motion system and scroll experiences.",
       "steps": [
-        "design-me",
+        "designer-me",
         "motion-architect",
         "scroll-systems-engineer",
         "performance-optimizer",
@@ -2073,7 +1916,7 @@
         "visual-qa-agent",
         "interaction-qa-agent"
       ],
-      "markdown": "# Cinematic Motion Workflow\n\nCreates a unified motion system and scroll experiences.\n\n## Sequence\n`design-me → motion-architect → scroll-systems-engineer → performance-optimizer → designer-mobile → visual-qa-agent → interaction-qa-agent`\n\n## Primary Focus\n- Establish a single, consistent motion language across sections\n- Separate time-based and scroll-based motion\n- Measure real viewport heights and track scroll triggers\n- Maintain performance budget, optimizing WebGL or blur\n- Capture start, middle, and end scroll-state screenshots\n"
+      "markdown": "# Cinematic Motion Workflow\n\nCreates a unified motion system and scroll experiences.\n\n## Sequence\n`designer-me → motion-architect → scroll-systems-engineer → performance-optimizer → designer-mobile → visual-qa-agent → interaction-qa-agent`\n\n## Primary Focus\n- Establish a single, consistent motion language across sections\n- Separate time-based and scroll-based motion\n- Measure real viewport heights and track scroll triggers\n- Maintain performance budget, optimizing WebGL or blur\n- Capture start, middle, and end scroll-state screenshots\n"
     },
     "full-website-audit": {
       "name": "Full Website Audit",
@@ -2094,22 +1937,6 @@
       ],
       "markdown": "# Full Website Audit Workflow\n\nComprehensive audit, redesign, testing, and production verification.\n\n## Sequence\n`codebase-recon → design-system-extractor → ux-conversion-strategist → content-hierarchy → designer-mobile → motion-architect → scroll-systems-engineer → accessibility-auditor → performance-optimizer → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Map codebase and extract design system rules\n- Rationalize content placement and conversion goals\n- Reconstruct layout for mobile breakpoints\n- Implement coherent motion and scroll interactions\n- Execute full accessibility audit and performance tuning\n- Perform visual and interaction QA, and verify production deployment\n"
     },
-    "healthcare-workflow": {
-      "name": "Healthcare Workflow",
-      "description": "Hospital and clinic website organization, accessibility, and CMS preservation.",
-      "steps": [
-        "codebase-recon",
-        "healthcare-ux",
-        "content-hierarchy",
-        "accessibility-auditor",
-        "backend-admin-preserver",
-        "designer-mobile",
-        "interaction-qa-agent",
-        "seo-local-search",
-        "deployment-verifier"
-      ],
-      "markdown": "# Healthcare Workflow\n\nHospital and clinic website design, accessibility, and content hierarchy workflow.\n\n## Sequence\n`codebase-recon → healthcare-ux → content-hierarchy → accessibility-auditor → backend-admin-preserver → designer-mobile → interaction-qa-agent → seo-local-search → deployment-verifier`\n\n## Primary Focus\n- Quick mobile access to Emergency calling and Ambulance\n- Visible OPD timings and department listings\n- Assistive technology and keyboard navigation checks\n- Protecting editability of operational content in the CMS\n- Verification of sitemap, metadata, and local search presence\n"
-    },
     "mobile-reconstruction": {
       "name": "Mobile Reconstruction",
       "description": "Rebuilds desktop experiences for mobile screens and touch inputs.",
@@ -2123,25 +1950,6 @@
         "interaction-qa-agent"
       ],
       "markdown": "# Mobile Reconstruction Workflow\n\nRebuilds desktop experiences for mobile screens and touch inputs.\n\n## Sequence\n`codebase-recon → designer-mobile → typography-director → media-fit-specialist → scroll-systems-engineer → visual-qa-agent → interaction-qa-agent`\n\n## Primary Focus\n- Adapt desktop compositions for mobile without cropping essential behavior\n- Set fluid typography scales and spacing parameters\n- Fix safe-area and fixed-control collisions\n- Build mobile-specific, lightweight animation timelines\n- Test touch interactions, reverse scroll, and orientation changes\n"
-    },
-    "portfolio-workflow": {
-      "name": "Portfolio Workflow",
-      "description": "Optimizes editorial developer portfolios for positioning and credentials.",
-      "steps": [
-        "codebase-recon",
-        "portfolio-ux",
-        "design-system-extractor",
-        "typography-director",
-        "motion-architect",
-        "scroll-systems-engineer",
-        "route-transition-designer",
-        "designer-mobile",
-        "media-fit-specialist",
-        "visual-qa-agent",
-        "interaction-qa-agent",
-        "deployment-verifier"
-      ],
-      "markdown": "# Portfolio Workflow\n\nEditorial developer and creative professional portfolio workflow.\n\n## Sequence\n`codebase-recon → portfolio-ux → design-system-extractor → typography-director → motion-architect → scroll-systems-engineer → route-transition-designer → designer-mobile → media-fit-specialist → visual-qa-agent → interaction-qa-agent → deployment-verifier`\n\n## Primary Focus\n- Clean, focused professional positioning\n- Seamless typography and spacing system\n- Coherent cinematic motion language (entrance reveals, scroll control)\n- Responsive mobile adaptation (Recent Work touch carousel)\n- Shared element route morphing transitions\n"
     },
     "release-gate": {
       "name": "Release Gate",
@@ -2232,7 +2040,7 @@
     // Workflow Builder Configuration
     const builderMap = {
       "full-redesign": {
-        sequence: ["codebase-recon", "design-me", "design-system-extractor", "content-hierarchy", "designer-mobile", "motion-architect", "visual-qa-agent", "deployment-verifier"],
+        sequence: ["codebase-recon", "designer-me", "design-system-extractor", "content-hierarchy", "designer-mobile", "motion-architect", "visual-qa-agent", "deployment-verifier"],
         prompt: "Perform a full design and workflow audit.\nFollow the Full Website Audit sequence.\nVerify components on desktop and mobile viewports."
       },
       "mobile-opt": {
@@ -2258,18 +2066,6 @@
       "performance": {
         sequence: ["codebase-recon", "performance-optimizer", "asset-optimizer", "deployment-verifier"],
         prompt: "Low pagespeed and loading scores: optimize assets, fonts, and scripts."
-      },
-      "local-biz": {
-        sequence: ["codebase-recon", "automotive-ux", "ux-conversion-strategist", "seo-local-search", "deployment-verifier"],
-        prompt: "Local business leads: Implement localized metadata, reviews trust, and booking widgets."
-      },
-      "hospital-ux": {
-        sequence: ["codebase-recon", "healthcare-ux", "accessibility-auditor", "backend-admin-preserver", "designer-mobile"],
-        prompt: "OPD and doctors lists security check: healthcare-ux layout paired with backend security preservation."
-      },
-      "portfolio-ux": {
-        sequence: ["codebase-recon", "portfolio-ux", "motion-architect", "route-transition-designer", "designer-mobile"],
-        prompt: "Portfolio reconstruction: coordinate editorial look, custom curves, and transitions."
       },
       "deployment-mismatch": {
         sequence: ["codebase-recon", "deployment-verifier"],
@@ -2324,7 +2120,6 @@
           'responsive': 'Responsive & Layouts',
           'motion': 'Motion & Transitions',
           'architecture': 'Architecture Systems',
-          'domain-ux': 'Domain UX Specialties',
           'quality-delivery': 'QA & Verification'
         };
 

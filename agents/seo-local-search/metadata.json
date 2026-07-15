@@ -32,8 +32,6 @@
     "Route-specific meta tags"
   ],
   "recommendedWith": [
-    "automotive-ux",
-    "healthcare-ux",
     "deployment-verifier"
   ],
   "skillPath": "./SKILL.md",
