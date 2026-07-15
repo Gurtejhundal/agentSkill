@@ -1,182 +1,128 @@
-# Website Agent Skills Repository
+# Agent Skills Repository
 
-A repository-ready system of specialized AI-agent skills and workflows for high-end website design, frontend implementation, responsive reconstruction, cinematic motion, accessibility, testing, and production verification.
+![Cyberpunk Header Banner](docs/screenshots/cyberpunk-banner.svg)
 
-> [!NOTE]
-> Read the complete interactive documentation offline by opening [docs/index.html](file:///e:/Code/models/AgentWorkload/agentSkill/docs/index.html) or viewing the GitHub Pages deployment.
-
----
-
-## Why This Repository Exists
-
-Generic AI coding agents often fail at complex website engineering tasks. A single agent asked to inspect a codebase, optimize layout responsiveness, fix animations, and deploy will frequently skip steps, use generic mobile scaling hacks, or claim completion based purely on successful local compilation. 
-
-This repository solves that problem by dividing website work into **24 focused specialist skills**, coordinated by structured multi-agent workflows and validated by strict quality-assurance checklists.
+## 🌐 Interactive Portal Terminal
+Explore modules, view details, compile custom instruction prompts, and decrypt case studies interactively at the live production endpoint:
+👉 **[https://gurtejhundal.github.io/agentSkill/](https://gurtejhundal.github.io/agentSkill/)**
 
 ---
 
-## Architecture Flow
+## ⚡ The Project Mission
+Generic coding assistants fail at complex web design tasks because they start modifying code before inspecting structures, treat mobile viewports as cropped desktops, break scroll timelines, ignore accessibility gates, and mark sprints complete without live deployment verification.
 
-The repository operates on a sequential pipeline that forces AI agents to inspect, plan, and verify before claiming completion:
-
-```text
-       Generic Request
-              ↓
-    Codebase Reconnaissance (codebase-recon)
-              ↓
-    Design/Domain Specialist (design-me, automotive-ux, etc.)
-              ↓
-    Implementation Specialist (designer-mobile, component-refactor)
-              ↓
-    Visual and Interaction QA (visual-qa-agent, interaction-qa-agent)
-              ↓
-    Production Verification (deployment-verifier)
-```
+This repository hosts **24 specialized agent skills** (checklists, triggers, context templates, and prompt interfaces) that elevate AI coding agents into specialist roles:
+- **Reconstruct** responsive layouts dynamically without deleting visual features.
+- **Engineer** robust cinematic scroll animations and transitions.
+- **Audit** keyboard interactions, semantic accessibility, and visual QA differences.
+- **Deploy** stable, validated, and cached production states with zero drift.
 
 ---
 
-## Quick-Start Instructions
+## 🛠️ How to Install a Specific Skill
+This repository is completely **modular**. You do **not** need to install any full-stack dependencies, Node.js packages, or website scripts to use these skills. Each agent folder is completely portable and self-contained.
 
-### 1. Identify the Relevant Skills
-Avoid invoking all skills for a simple task. Select only the necessary ones:
-- **Mobile cards are oversized or breaking:** use `designer-mobile` → `scroll-systems-engineer` → `visual-qa-agent`.
-- **Images are cropped or stretched:** use `media-fit-specialist` → `asset-optimizer` → `visual-qa-agent`.
-- **Page transitions feel basic or cheap:** use `route-transition-designer` → `motion-architect` → `interaction-qa-agent`.
+### Option A: Import globally into Antigravity
+To make a skill available to your global Antigravity coding assistant:
+1. Locate the skill folder you want (e.g., `agents/designer-mobile`).
+2. Copy that folder directly into your global customizations directory:
+   `C:\Users\<username>\.gemini\config\skills\` (Windows) or `~/.gemini/config/skills/` (macOS/Linux).
+3. The skill will be automatically discovered and loaded next time you start Antigravity!
 
-### 2. Supply Concrete Inputs
-Provide the agent with exact targets:
-- Live URL and repository workspace paths.
-- Expected breakpoints (e.g., 390px, 430px, 1440px).
-- Reference websites or design systems.
-- Strict constraints (e.g., "Do not change global color variables").
-
-### 3. Enforce Evidence-Based Handoffs
-Do not accept "build success" as completion. Force agents to report:
-- Root cause analysis and file diffs.
-- Tested viewports and interaction matrix.
-- Screenshots of start, middle, and final animation states.
-- Known remaining limitations.
+### Option B: Project-level workspace import
+To make a skill available to agents working on a specific project repository:
+1. Create a `.agents/skills/` directory at your project root.
+2. Copy the desired skill folder (e.g. `agents/designer-mobile`) into `.agents/skills/`.
+3. Your local development subagents can now use this skill!
 
 ---
 
-## Skill Categories
-
-The 24 skills are categorized systematically. Click a skill name to view its detailed rules:
-
-| Category | Skill Name & Link | Purpose |
-|---|---|---|
-| **Strategy & Design** | [`design-me`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-me/SKILL.md) | Creative direction and layout audits. |
-| | [`design-system-extractor`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/design-system-extractor/SKILL.md) | Extracts visual tokens from reference URLs. |
-| | [`content-hierarchy`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/content-hierarchy/SKILL.md) | Reorganizes pages and reduces redundant copy. |
-| | [`ux-conversion-strategist`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/ux-conversion-strategist/SKILL.md) | Optimizes CTA layout and trust placement. |
-| **Responsive & Typography** | [`designer-mobile`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/designer-mobile/SKILL.md) | True mobile layout reconstruction (not desktop cropping). |
-| | [`typography-director`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/typography-director/SKILL.md) | Fluid responsive typography and pairing scripts. |
-| | [`media-fit-specialist`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/media-fit-specialist/SKILL.md) | Handles mixed-ratio media in cards without stretching. |
-| **Motion & Interaction** | [`motion-architect`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/motion-architect/SKILL.md) | Establishes a unified cinematic animation system. |
-| | [`scroll-systems-engineer`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/scroll-systems-engineer/SKILL.md) | Implements pinned scenes, snap, and ScrollTriggers. |
-| | [`route-transition-designer`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/route-transition-designer/SKILL.md) | Creates shared-element page transitions. |
-| | [`3d-animation`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/3d-animation/SKILL.md) | Restrained Three.js rendering with mobile fallbacks. |
-| **Architecture** | [`codebase-recon`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/codebase-recon/SKILL.md) | Maps routes, configs, and APIs in unfamiliar repos. |
-| | [`component-refactor`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/component-refactor/SKILL.md) | Refactors brittle markup into clean reusable components. |
-| | [`backend-admin-preserver`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/backend-admin-preserver/SKILL.md) | Keeps CMS and database models editable during frontend edits. |
-| **Domain UX** | [`automotive-ux`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/automotive-ux/SKILL.md) | Designs details booking grids and local proof features. |
-| | [`healthcare-ux`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/healthcare-ux/SKILL.md) | Manages hospitals emergency, doctor, and OPD layouts. |
-| | [`portfolio-ux`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/portfolio-ux/SKILL.md) | Elevates creative portfolios, scanning, and positioning. |
-| **Quality & Delivery** | [`accessibility-auditor`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/accessibility-auditor/SKILL.md) | Audits tab order, outline visibility, and WCAG AA. |
-| | [`performance-optimizer`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/performance-optimizer/SKILL.md) | Limits layout shift, loops, and script sizing. |
-| | [`asset-optimizer`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/asset-optimizer/SKILL.md) | Compresses images to WebP/AVIF and subsets fonts. |
-| | [`visual-qa-agent`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/visual-qa-agent/SKILL.md) | Screenshots viewports for regression checks. |
-| | [`interaction-qa-agent`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/interaction-qa-agent/SKILL.md) | Gesture, form submit, history, and keyboard QA tests. |
-| | [`seo-local-search`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/seo-local-search/SKILL.md) | Handles structured schemas, robots, sitemaps, and OG tags. |
-| | [`deployment-verifier`](file:///e:/Code/models/AgentWorkload/agentSkill/agents/deployment-verifier/SKILL.md) | Checks live Vercel deployments, branch commits, and logs. |
-
----
-
-## Common Use Cases
-
-1. **Brand Website Redesign:** Run `codebase-recon` → `design-me` → `component-refactor` to audit layouts, extract color design tokens, and clean duplicate structures.
-2. **Optimizing Desktop Sites for Mobile:** Invoke `designer-mobile` → `typography-director` → `visual-qa-agent` to adapt viewports down to 390px, fix safe areas, and screenshot card structures.
-3. **Debugging Stuttering Scroll Animation:** Run `scroll-systems-engineer` → `performance-optimizer` to inspect ScrollTrigger markers, optimize rendering loops, and set up performance gates.
-4. **Deploying Local Business Portals:** Use `automotive-ux` (or `healthcare-ux`) → `seo-local-search` → `deployment-verifier` to configure LocalBusiness maps, schema meta tags, and test the production live URL.
-5. **Pre-release Quality Audit:** Invoke `accessibility-auditor` → `interaction-qa-agent` → `deployment-verifier` to verify keyboard tab navigation, form feedback, and production deployment commit logs.
-
----
-
-## Recommended Workflows
-
-Workflows coordinates multiple agents in sequence. The files in the `workflows/` folder document their rules:
-- **[Full Website Audit](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/full-website-audit.md):** From repo reconnaissance to live verification.
-- **[Mobile Reconstruction](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/mobile-reconstruction.md):** Fix mobile layout, overflow, and scrolling.
-- **[Cinematic Motion](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/cinematic-motion.md):** Unifies reveals and scroll snap.
-- **[Route Transition](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/route-transition.md):** Shared morphing page animations.
-- **[Portfolio Workflow](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/portfolio-workflow.md):** Editorial style profile audits.
-- **[Automotive Workflow](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/automotive-workflow.md):** Packages, booking, and local SEO.
-- **[Healthcare Workflow](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/healthcare-workflow.md):** Emergency call links, OPD tables, and DB editability.
-- **[Release Gate](file:///e:/Code/models/AgentWorkload/agentSkill/workflows/release-gate.md):** Final QA, audits, and Vercel build verification.
-
----
-
-## Repository Structure
-
+## 🖥️ Directory Structure
 ```text
 website-agent-skills-repo/
-├── agents/                 # 24 specialized skill folders (metadata & rules)
-├── workflows/              # 8 structured multi-agent sequences & index
-├── checklists/             # Quality-assurance checklist templates
-├── templates/              # Standard prompts and deliverables templates
-├── schemas/                # Schemas for JSON validations
-├── examples/               # Reference logs and risks for real website plans
-├── docs/                   # Interactive offline-first documentation website
-├── scripts/                # Node validation and data generation scripts
-├── AGENTS.md               # Global orchestration rules
-├── SKILLS_INDEX.md         # Detailed markdown index
-├── manifest.json           # Central database declaration
-└── README.md               # This concise manual
+├── agents/             # The 24 independent, self-contained agent skill folders
+│   ├── designer-mobile/
+│   ├── motion-architect/
+│   └── ...all 22 other skills
+│
+├── workflows/          # Coordinated routing pipelines & index.json
+├── checklists/         # Verification protocols (mobile, performance, WCAG)
+├── templates/          # Context request templates & completion report outlines
+├── schemas/            # JSON schemas enforcing formatting rules
+├── examples/           # Case studies containing markdown blueprints and prompts
+│
+└── docs/               # Single-file Cyberpunk Portal (index.html)
 ```
 
 ---
 
-## How to Invoke a Skill
+## 🧬 System Modules (24 Active Skills)
 
-Create your prompt matching the input template located at `templates/AGENT_REQUEST_TEMPLATE.md`:
+### 📊 Strategy & Design
+* [design-me](agents/design-me) - **Creative Design Audit**: Audits layouts and redesigns websites while preserving brand identity.
+* [design-system-extractor](agents/design-system-extractor) - **Design System Extractor**: Extracts color tokens, variables, margins, and type rules.
+* [content-hierarchy](agents/content-hierarchy) - **Content Hierarchy Specialist**: Coordinates text content layout, heading hierarchy, and reading flows.
+* [ux-conversion-strategist](agents/ux-conversion-strategist) - **UX Conversion Strategist**: Guides user layouts to drive booking, actions, and leads.
 
-```text
-Use the designer-mobile skill.
+### 📱 Responsive & Layouts
+* [designer-mobile](agents/designer-mobile) - **Mobile Design Reconstruction**: Reconstructs layouts for small widths without shrinking or deleting elements.
+* [typography-director](agents/typography-director) - **Typography Direction**: Pairs multilingual serifs, establishes line-heights, and corrects overflows.
+* [media-fit-specialist](agents/media-fit-specialist) - **Media Fitting**: Adapts aspect ratios, source crop boundaries, and object cover styles.
+* [component-refactor](agents/component-refactor) - **Component Refactor**: Splits large UI templates into reusable modular layouts.
 
-PROJECT
-Gurtejbir Singh Portfolio
+### 🎬 Motion & Transitions
+* [3d-animation](agents/3d-animation) - **Purposeful 3D Animation**: Coordinates performant Three.js/WebGL states with 2D fallbacks.
+* [motion-architect](agents/motion-architect) - **Motion Architecture**: Designs entrances, parallax, and reveals.
+* [scroll-systems-engineer](agents/scroll-systems-engineer) - **Scroll Systems Engineering**: Customizes scroll triggers, Lenis scrolling, and snapping.
+* [route-transition-designer](agents/route-transition-designer) - **Route Transition**: Builds shared-element morphing page routes transitions.
 
-TARGET
-Homepage Recent Work carousel.
+### 🏛️ Architecture Systems
+* [codebase-recon](agents/codebase-recon) - **Codebase Reconnaissance**: Maps folders, dependencies, styles, and configurations.
+* [backend-admin-preserver](agents/backend-admin-preserver) - **Backend Admin Preservation**: Safeguards backend routing, auth states, and admin panel forms.
+* [asset-optimizer](agents/asset-optimizer) - **Asset Optimization**: Compresses layout assets, source sets, and formats (WebP, webfonts).
+* [performance-optimizer](agents/performance-optimizer) - **Performance Optimization**: Bundles scripts, optimizes stylesheets, and speeds up load times.
 
-CURRENT PROBLEM
-Desktop pinned carousel breaks on mobile, falling back to a vertical list. 
-Grid headings are oversized at 390px.
+### 🏥 Domain UX Specialties
+* [automotive-ux](agents/automotive-ux) - **Automotive UX**: Optimizes car detailing packages layout, booking triggers, and CTAs.
+* [healthcare-ux](agents/healthcare-ux) - **Healthcare UX**: Simplifies portal flows, emergency info pages, and OPD tables.
+* [seo-local-search](agents/seo-local-search) - **SEO & Local Search**: Implements local Business schemas, sitemaps, and OG meta.
 
-CONSTRAINTS
-- Do not redesign desktop styles.
-- Preserve Punjab Gurmukhi font styling.
+### 🧪 QA & Verification
+* [accessibility-auditor](agents/accessibility-auditor) - **Accessibility Auditing**: Verifies WCAG contrast, screen-reader landmarks, and tab locks.
+* [visual-qa-agent](agents/visual-qa-agent) - **Visual QA Auditing**: Compares code outputs against specs using image differentials.
+* [interaction-qa-agent](agents/interaction-qa-agent) - **Interaction QA Auditing**: Automates browser checks, forms click checks, and states tests.
+* [deployment-verifier](agents/deployment-verifier) - **Deployment Verification**: Asserts that live production matches local configurations.
+
+---
+
+## 🚦 Routing Pipelines (Workflows)
+Pipelines coordinate complex, multi-agent sprints. You can compile instructions for these pipelines dynamically on the [Interactive Portal Terminal](https://gurtejhundal.github.io/agentSkill/):
+1. **Full Website Audit** (`codebase-recon` ➔ `design-me` ➔ `visual-qa-agent`)
+2. **Mobile Reconstruction** (`codebase-recon` ➔ `designer-mobile` ➔ `visual-qa-agent`)
+3. **Cinematic Motion** (`codebase-recon` ➔ `motion-architect` ➔ `interaction-qa-agent`)
+4. **Route Transition** (`codebase-recon` ➔ `route-transition-designer` ➔ `interaction-qa-agent`)
+5. **Portfolio Workflow** (`codebase-recon` ➔ `portfolio-ux` ➔ `designer-mobile`)
+6. **Automotive Workflow** (`codebase-recon` ➔ `automotive-ux` ➔ `seo-local-search`)
+7. **Healthcare Workflow** (`codebase-recon` ➔ `healthcare-ux` ➔ `accessibility-auditor`)
+8. **Release Gate** (`visual-qa-agent` ➔ `interaction-qa-agent` ➔ `deployment-verifier`)
+
+---
+
+## ⚙️ Compilation & Automation
+If you modify the source skill markdown files or metadata files, you can update the embedded database block in the portal page directly:
+
+```bash
+# Aggregates raw files and compiles them into docs/index.html
+npm run build:docs
+
+# Regenerates the SKILLS_INDEX.md category table
+npm run generate:index
+
+# Validates skill file formats against schema definitions
+npm run validate
 ```
 
 ---
 
-## How to Add a New Skill
-
-1. Copy `templates/SKILL_TEMPLATE.md` to `agents/<new-skill-name>/SKILL.md`.
-2. Populate its mission, inspection rules, deliverables, and handoff.
-3. Write its `metadata.json` and `examples.md` details.
-4. Add the skill name to `manifest.json`.
-5. Run `npm run validate` to test validation schemas.
-6. Run `npm run build:docs` to compile site databases.
-
----
-
-## Contributions
-
-Contributions are welcome! Please read our [Contributing Guide](file:///e:/Code/models/AgentWorkload/agentSkill/CONTRIBUTING.md) and conform to our [Code of Conduct](file:///e:/Code/models/AgentWorkload/agentSkill/CODE_OF_CONDUCT.md).
-
----
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](file:///e:/Code/models/AgentWorkload/agentSkill/LICENSE) for details.
+## 🔓 License
+This project is licensed under the MIT License. System active.
